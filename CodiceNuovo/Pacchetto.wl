@@ -1,19 +1,21 @@
 (* ::Package:: *)
 
-(* :Title: Hangman-Geoguesser *)
-(* :Context: Gioco dell'impiccato dove devo indovinare il paese e successivamente la capitale *)
-(* :Author: Billie AI-Lish+ *)
-(* :Summary: a preliminary version of the ComplexMap package *)
-(* :Copyright: BA 2026 *)
-(* :Package Version: 3 *)
-(* :Mathematica Version: 14.3 *)
-(* :History: last modified 22/04/2026 *)
-(* :Keywords: programming style, local variables *)
-(* :Sources: biblio *)
-(* :Limitations: this is a preliminary version, for educational purposes only. *)
-(* :Discussion: *)
-(* :Requirements: *)
-(* :Warning: Documentare TUTTO il codice *)
+(* ::Package:: *)
+(*(* :Title: Hangman-Geoguesser *)*)
+(*(* :Context: Gioco dell'impiccato dove devo indovinare il paese e successivamente la capitale *)*)
+(*(* :Author: Billie AI-Lish+ *)*)
+(*(* :Summary: a preliminary version of the ComplexMap package *)*)
+(*(* :Copyright: BA 2026 *)*)
+(*(* :Package Version: 3 *)*)
+(*(* :Mathematica Version: 14.3 *)*)
+(*(* :History: last modified 22/04/2026 *)*)
+(*(* :Keywords: programming style, local variables *)*)
+(*(* :Sources: biblio *)*)
+(*(* :Limitations: this is a preliminary version, for educational purposes only. *)*)
+(*(* :Discussion: *)*)
+(*(* :Requirements: *)*)
+(*(* :Warning: Documentare TUTTO il codice *)*)
+
 
 BeginPackage["HangmanGame`"];
 
@@ -24,19 +26,56 @@ GeneraInterfaccia::usage = "GeneraInterfaccia[]
 
 Begin["`Private`"];
 
-(* === DIZIONARIO GEOGRAFICO: Nazioni e Capitali === *)
+(* === DIZIONARIO GEOGRAFICO COMPLETO === *)
 dizionarioGeografia = <|
-  "cina" -> "pechino", "cuba" -> "l'avana", "cile" -> "santiago", "peru" -> "lima",
-  "iran" -> "teheran", "iraq" -> "baghdad", "mali" -> "bamako", "nepal" -> "kathmandu",
-  "siria" -> "damasco", "india" -> "nuova delhi", "qatar" -> "doha", "yemen" -> "sana'a",
-  "italia" -> "roma", "spagna" -> "madrid", "francia" -> "parigi", "svezia" -> "stoccolma",
-  "olanda" -> "amsterdam", "belgio" -> "bruxelles", "albania" -> "tirana", "croazia" -> "zagabria",
-  "canada" -> "ottawa", "messico" -> "citta del messico", "brasile" -> "brasilia", "russia" -> "mosca",
-  "giappone" -> "tokyo", "germania" -> "berlino", "argentina" -> "buenos aires",
-  "australia" -> "canberra", "indonesia" -> "giacarta", "portogallo" -> "lisbona",
-  "inghilterra" -> "londra", "madagascar" -> "antananarivo", "groenlandia" -> "nuuk",
-  "colombia" -> "bogota", "norvegia" -> "oslo", "finlandia" -> "helsinki",
-  "grecia" -> "atene", "egitto" -> "il cairo", "marocco" -> "rabat", "thailandia" -> "bangkok"
+  "afghanistan" -> "kabul", "albania" -> "tirana", "algeria" -> "algeri", "andorra" -> "andorra la vella", 
+  "angola" -> "luanda", "antigua e barbuda" -> "saint john's", "arabia saudita" -> "riyad", "argentina" -> "buenos aires", 
+  "armenia" -> "erevan", "australia" -> "canberra", "austria" -> "vienna", "azerbaigian" -> "baku", 
+  "bahamas" -> "nassau", "bahrein" -> "manama", "bangladesh" -> "dacca", "barbados" -> "bridgetown", 
+  "belgio" -> "bruxelles", "belize" -> "belmopan", "benin" -> "porto-novo", "bhutan" -> "thimphu", 
+  "bielorussia" -> "minsk", "birmania" -> "naypyidaw", "bolivia" -> "sucre", "bosnia ed erzegovina" -> "sarajevo", 
+  "botswana" -> "gaborone", "brasile" -> "brasilia", "brunei" -> "bandar seri begawan", "bulgaria" -> "sofia", 
+  "burkina faso" -> "ouagadougou", "burundi" -> "citega", "cambogia" -> "phnom penh", "camerun" -> "yaounde", 
+  "canada" -> "ottawa", "capo verde" -> "praia", "repubblica ceca" -> "praga", "repubblica centrafricana" -> "bangui", 
+  "ciad" -> "n'djamena", "cile" -> "santiago", "cina" -> "pechino", "cipro" -> "nicosia", 
+  "colombia" -> "bogota", "comore" -> "moroni", "corea del nord" -> "pyongyang", "corea del sud" -> "seul", 
+  "costa d'avorio" -> "yamoussoukro", "costa rica" -> "san jose", "croazia" -> "zagabria", "cuba" -> "l'avana", 
+  "danimarca" -> "copenaghen", "dominica" -> "roseau", "ecuador" -> "quito", "egitto" -> "il cairo", 
+  "el salvador" -> "san salvador", "emirati arabi uniti" -> "abu dhabi", "eritrea" -> "asmara", "estonia" -> "tallinn", 
+  "etiopia" -> "addis abeba", "figi" -> "suva", "filippine" -> "manila", "finlandia" -> "helsinki", 
+  "francia" -> "parigi", "gabon" -> "libreville", "gambia" -> "banjul", "georgia" -> "tbilisi", 
+  "germania" -> "berlino", "ghana" -> "accra", "giamaica" -> "kingston", "giappone" -> "tokyo", 
+  "gibuti" -> "gibuti", "giordania" -> "amman", "grecia" -> "atene", "grenada" -> "saint george's", 
+  "guatemala" -> "citta del guatemala", "guinea" -> "conakry", "guinea-bissau" -> "bissau", "guinea equatoriale" -> "malabo", 
+  "guyana" -> "georgetown", "haiti" -> "port-au-prince", "honduras" -> "tegucigalpa", "india" -> "nuova delhi", 
+  "indonesia" -> "giacarta", "iran" -> "teheran", "iraq" -> "baghdad", "irlanda" -> "dublino", 
+  "islanda" -> "reykjavik", "israele" -> "gerusalemme", "italia" -> "roma", "kazakistan" -> "astana", 
+  "kenya" -> "nairobi", "kirghizistan" -> "bisceek", "kiribati" -> "tarawa sud", "kuwait" -> "kuwait city", 
+  "laos" -> "vientiane", "lesotho" -> "maseru", "letonia" -> "riga", "libano" -> "beirut", 
+  "liberia" -> "monrovia", "libia" -> "tripoli", "liechtenstein" -> "vaduz", "lituania" -> "vilnius", 
+  "lussemburgo" -> "lussemburgo", "madagascar" -> "antananarivo", "malawi" -> "lilongwe", "malesia" -> "kuala lumpur", 
+  "maldive" -> "male", "mali" -> "bamako", "malta" -> "la valletta", "marocco" -> "rabat", 
+  "isole marshall" -> "majuro", "mauritania" -> "nouakchott", "mauritius" -> "port louis", "messico" -> "citta del messico", 
+  "micronesia" -> "palikir", "moldavia" -> "chisinau", "monaco" -> "monaco", "mongolia" -> "ulaanbaatar", 
+  "montenegro" -> "podgorica", "mozambico" -> "maputo", "namibia" -> "windhoek", "nauru" -> "yaren", 
+  "nepal" -> "kathmandu", "nicaragua" -> "managua", "niger" -> "niamey", "nigeria" -> "abuja", 
+  "norvegia" -> "oslo", "nuova zelanda" -> "wellington", "oman" -> "mascate", "paesi bassi" -> "amsterdam", 
+  "pakistan" -> "islamabad", "palau" -> "ngerulmud", "panama" -> "panama", "papua nuova guinea" -> "port moresby", 
+  "paraguay" -> "asuncion", "peru" -> "lima", "polonia" -> "varsavia", "portogallo" -> "lisbona", 
+  "qatar" -> "doha", "regno unito" -> "londra", "romania" -> "bucarest", "russia" -> "mosca", 
+  "rwanda" -> "kigali", "saint kitts e nevis" -> "basseterre", "santa lucia" -> "castries", "saint vincent e grenadine" -> "kingstown", 
+  "isole salomone" -> "honiara", "samoa" -> "apia", "san marino" -> "san marino", "sao tome e principe" -> "sao tome", 
+  "senegal" -> "dakar", "serbia" -> "belgrado", "seychelles" -> "victoria", "sierra leone" -> "freetown", 
+  "singapore" -> "singapore", "siria" -> "damasco", "slovacchia" -> "bratislava", "slovenia" -> "lubiana", 
+  "somalia" -> "mogadiscio", "spagna" -> "madrid", "sri lanka" -> "sri jayawardenepura kotte", "stati uniti" -> "washington", 
+  "sudafrica" -> "pretoria", "sudan" -> "khartum", "sudan del sud" -> "juba", "suriname" -> "paramaribo", 
+  "svezia" -> "stoccolma", "svizzera" -> "berna", "swaziland" -> "mbabane", "tagikistan" -> "dushanbe", 
+  "taiwan" -> "taipei", "tanzania" -> "dodoma", "thailandia" -> "bangkok", "timor est" -> "dili", 
+  "togo" -> "lome", "tonga" -> "nuku'alofa", "trinidad e tobago" -> "port of spain", "tunisia" -> "tunisi", 
+  "turchia" -> "ankara", "turkmenistan" -> "ashgabat", "tuvalu" -> "funafuti", "ucraina" -> "kiev", 
+  "uganda" -> "kampala", "ungheria" -> "budapest", "uruguay" -> "montevideo", "uzbekistan" -> "tashkent", 
+  "vanuatu" -> "port vila", "vaticano" -> "citta del vaticano", "venezuela" -> "caracas", "vietnam" -> "hanoi", 
+  "yemen" -> "sana'a", "zambia" -> "lusaka", "zimbabwe" -> "harare"
 |>;
 
 
@@ -80,10 +119,7 @@ MostraSoluzione[soluzione_List] := Module[
 {
 	stringa (* Soluzione da mostrare *)
 },
-	(* Concatenazione della lista di caratteri in una stringa da mostrare all'utente *)
 	stringa = StringJoin[soluzione];
-	
-	(* Messaggio da mostrare all'utente attraverso un pop-up *)
 	MessageDialog[
 		Panel[
 			Row[{"La parola da indovinare era: ", Style[stringa, Bold]}],
@@ -96,20 +132,13 @@ MostraSoluzione[soluzione_List] := Module[
 (* Fornisce un suggerimento e penalizza il punteggio *)
 Suggerimento[word_List, stato_List, errors_List, score_Integer, gameMode_Integer] := Module[
 {
-	suggerimento, (* Una tra le lettere mancanti *)
-	lettereMancanti, (* Lista di lettere mancanti senza ripetizioni *)
-	newScore (* Punteggio aggiornato con la penalit\[AGrave] *)
+	suggerimento, 
+	lettereMancanti, 
+	newScore 
 },
-	(* Calcola le lettere mancanti senza ripetizioni *)
 	lettereMancanti = DeleteDuplicates[Complement[word, stato]];
-	
-	(* Scelta casuale di una lettera mancante *)
 	suggerimento = RandomChoice[lettereMancanti];
-	
-	(* Penalit\[AGrave]: -5 punti per ogni livello di difficolt\[AGrave]  *)
 	newScore = score - 5 * gameMode;
-	
-	(* Applica il suggerimento aggiornando lo stato senza cambiare punteggio *)
 	AggiornaStato[word, stato, suggerimento, newScore, 0, errors]
 ];
 
@@ -117,123 +146,165 @@ Suggerimento[word_List, stato_List, errors_List, score_Integer, gameMode_Integer
 (* Reinizializza lo stato di gioco *)
 Pulisci[stato_List] := Module[
 {
-	newState, (* Vettore di trattini bassi quanti la lunghezza della parola *)
-	errors = {}, (* Errori *)
-	score = 0 (* Punteggio *)
+	newState, 
+	errors = {}, 
+	score = 0 
 },
-	(* Reinizializza lo stato *)
 	newState = InizializzaStato[stato];
-	
-	(* Ritorna il nuovo stato e la lista vuota degli errori *)
 	{newState, errors, score} 
 ];
 
 
 (* Funzioni ausiliarie *)
-(* Verifica la presenza di caratteri accentati o apostrofi *)
 HaCaratteriNonAmmessiQ[s_] := Module[ 
 { 
-	accenti = {"\[AGrave]", "\[EGrave]", "\[IGrave]", "\[OGrave]", "\[UGrave]", "\[AAcute]", "\[EAcute]", "\[IAcute]", "\[OAcute]", "\[UAcute]"} (* Vettore delle lettere accentate presenti nella lingua italiana *)
+	accenti = {"\[AGrave]", "\[EGrave]", "\[IGrave]", "\[OGrave]", "\[UGrave]", "\[AAcute]", "\[EAcute]", "\[IAcute]", "\[OAcute]", "\[UAcute]"} 
 },
 	StringContainsQ[s, Alternatives @@ accenti] || StringContainsQ[s, "'"]
 ];
 
-(* Crea un array di trattini bassi della lunghezza della parola *)
 InizializzaStato[word_List] := ConstantArray["_", Length[word]]
 
-(* Aggiorna lo stato in base al tentativo dell'utente *)
 AggiornaStato[word_List, currentState_List, guess_, score_Integer, gameMode_, errors_List:{}] := Module[
 {
-	newState, (* Nuovo vettore che indica le lettere indovinate o trattini bassi *)
-	newErrors, (* Nuovo vettore con le lettere non presenti nella parola da indovinare *)
-	newScore (* Punteggio aggiornato in caso la lettera \[EGrave] stata indovinata *)
+	newState, 
+	newErrors, 
+	newScore 
 },
-
 	If[MemberQ[word, guess],
-		(* Lettera corretta: aggiorno currentState e punteggio *)
 		newState = MapThread[If[#2 == guess, guess, #1] &, {currentState, word}];
 		newErrors = errors;
-		newScore = score + 10 * gameMode, (* In caso di lettera corretta per suggerimento gameMode = 0 *)
+		newScore = score + 10 * gameMode, 
 		
-		(* Lettera sbagliata: mantengo lo stato e aggiungo l'errore *)
 		newState = currentState;
 		newErrors = Append[errors, guess];
 		newScore = score
 	];
-	
-	(* Ritorna un vettore con lo stato, gli errori e il punteggio aggiornati *)
 	{newState, newErrors, newScore}
 ];
 
-(* Salva il record di punteggio in un file JSON *)
+(* ================= GESTIONE CLASSIFICA E DATI ================= *)
+
+(* Salva il record controllando l'esistenza del nome *)
 SalvaRecord[nome_String, punteggio_Integer, file_:"score.json"] := Module[
 {
-	record, (* Record da memorizzare *)
-	datiEsistenti = {}, (* Record memorizzati precedentemente *)
-	nuovoContenuto (* Lista dei 10 migliori record ordinati in base al punteggio *)
+	datiEsistenti = {}, 
+	nuovoContenuto,
+	punteggioMax = punteggio
 },
-	record = {"nome" -> nome, "punteggio" -> punteggio};
-	datiEsistenti = RecuperaClassifica[];
-	nuovoContenuto = Append[datiEsistenti, record];
-	nuovoContenuto = Take[Reverse@SortBy[nuovoContenuto, #[[2,2]] &], UpTo[10]];
+	datiEsistenti = RecuperaClassifica[file];
+	
+	(* Cerca se il nome esiste gi\[AGrave] e aggiorna il punteggio massimo storico *)
+	Map[
+		If[Lookup[#, "nome", ""] == nome, 
+			punteggioMax = Max[punteggioMax, Lookup[#, "punteggio", 0]]
+		]&, 
+		datiEsistenti
+	];
+	
+	(* Rimuove tutte le vecchie occorrenze di quel nome in modo blindato *)
+	datiEsistenti = DeleteCases[datiEsistenti, x_ /; Lookup[x, "nome", ""] == nome];
+  
+	(* Aggiunge il record aggiornato *)
+	nuovoContenuto = Append[datiEsistenti, {"nome" -> nome, "punteggio" -> punteggioMax}];
+
+	(* Ordina in modo decrescente e prende i primi 50 *)
+	nuovoContenuto = Reverse[SortBy[nuovoContenuto, Lookup[#, "punteggio", 0] &]];
+	nuovoContenuto = Take[nuovoContenuto, UpTo[50]]; 
+	
+	(* Sovrascrivi il file JSON *)
 	Export[file, nuovoContenuto, "JSON"];
 ];
 
-(* Carica e ordina la classifica dal file JSON *)
+(* Carica e ordina la classifica dal file JSON in modo sicuro *)
 RecuperaClassifica[file_:"score.json"] := Module [
 {
-	classifica = {}
+	classifica = {} 
 },
 	If[FileExistsQ[file], 
-	classifica = Import[file, "JSON"]; 
-	If[!ListQ[classifica], classifica = {}], 
-	classifica = {} 
+		classifica = Quiet[Import[file, "JSON"]]; 
+		If[!ListQ[classifica], classifica = {}]
 	];
-	classifica = Reverse@SortBy[classifica, #[[2,2]] &] 
+	
+	(* Ordina in ordine decrescente in modo sicuro *)
+	classifica = Reverse[SortBy[classifica, Lookup[#, "punteggio", 0] &]];
+	classifica
 ];
 
-(* Interfaccia grafica per mostrare la classifica *)
+(* Interfaccia grafica infallibile (Macchina a Stati) *)
 MostraClassificaGUI[score_Integer] := DynamicModule[
 {
-	nome = "", 
-	classifica = {}, 
-	punteggioSalvato = False, 
+	nomeUtente = "", 
+	datiClassifica = {}, 
+	faseClassifica = 1, (* 1 = Inserimento, 2 = Conferma, 3 = Salvato *)
 	file = "score.json" 
 },
-	SetDirectory[NotebookDirectory[]];
-	classifica = RecuperaClassifica[];
+	(* Imposta la directory ma non si blocca se c'e' un errore *)
+	Quiet[SetDirectory[NotebookDirectory[]]];
+	datiClassifica = RecuperaClassifica[];
 
 	CreateDialog[
 		Framed[
-			Dynamic[
+			Dynamic[ (* Il Dynamic avvolge tutto e reagisce ai cambiamenti di 'faseClassifica' *)
 				Column[{
-					Style["Classifica", Bold, 16],
-						Grid[
-							Prepend[
-								MapIndexed[{#2[[1]], #[[1,2]], #[[2,2]]} &, classifica],
-								{"#", "Nome", "Punteggio"}
+					Style["Classifica Globale", Bold, 16],
+					
+						(* Tabella con barra di scorrimento automatica *)
+						Pane[
+							Grid[
+								Prepend[
+									MapIndexed[{#2[[1]], Lookup[#, "nome", "N/A"], Lookup[#, "punteggio", 0]} &, datiClassifica],
+									{"#", "Nome", "Punteggio"}
+								],
+							Frame -> All,
+							Alignment -> Center
 							],
-						Frame -> All,
-						Alignment -> Center
+							{Automatic, 200}, 
+							Scrollbars -> Automatic
 						],
-					If[
-						!punteggioSalvato,
+						
+					Spacer[10],
+
+					(* Macchina a stati per l'interazione *)
+					Switch[faseClassifica,
+						
+						1, (* Fase di Inserimento *)
 						Column[{
-	                            "Inserisci il tuo nome:",
-	                            InputField[Dynamic[nome], String, FieldSize -> 20],
-		                            Button[
-		                                 "Salva Punteggio",
-										Module[{nomeVal = nome},
-		                                    SalvaRecord[nomeVal, score];
-		                                    classifica = RecuperaClassifica[];
-		                                    punteggioSalvato = True;
-		                                 ],
-		                                 Enabled -> Dynamic[StringLength[nome] > 0]
-		                            ]
-	                        }],
-	                        Button["Chiudi", DialogReturn[]]
+		                        "Inserisci il tuo nome:",
+								(* L'opzione ContinuousAction aggiorna in tempo reale per sbloccare il bottone *)
+		                        InputField[Dynamic[nomeUtente], String, FieldSize -> 20, ContinuousAction -> True],
+		                        Button["Salva Punteggio",
+									 faseClassifica = 2;, (* Passa alla fase 2 *)
+		                             Enabled -> Dynamic[StringLength[nomeUtente] > 0]
+		                        ]
+		                }, Alignment -> Center],
+		                    
+						2, (* Fase di Conferma Inline *)
+						Column[{
+								Style["Sei sicuro che '" <> nomeUtente <> "' sia corretto?", Darker[Red], Bold],
+								Row[{
+									Button["S\[IGrave], Salva",
+										Module[{nomeVal = nomeUtente},
+											SalvaRecord[nomeVal, score];
+											datiClassifica = RecuperaClassifica[]; (* Ricarica i dati per mostrarli *)
+											faseClassifica = 3; (* Passa alla fase 3 *)
+										],
+										Background -> LightGreen
+									],
+									Spacer[10],
+									Button["No, Modifica", faseClassifica = 1;, Background -> LightRed]
+								}]
+						}, Alignment -> Center],
+						
+						3, (* Fase Finale Salvata *)
+						Column[{
+							Style["Punteggio salvato con successo!", Darker[Green], Bold],
+							Spacer[5],
+	                        Button["Chiudi Finestra", DialogReturn[]]
+						}, Alignment -> Center]
 					]
-				}, Spacings -> 1.5]
+
+				}, Spacings -> 1.5, Alignment -> Center]
 			],
 			FrameMargins -> 20,
 			FrameStyle -> None,
@@ -281,12 +352,10 @@ GeneraInterfaccia[] := DynamicModule[
     fase = "selezione", 
     gamemode = 1, 
     parola, stato, errori, score, 
-    letteraUtente = "", 
     messaggio = "", 
     maxErrori = 6, 
-    classificaMostrata = False,
 	(* Variabili per la fase Bonus *)
-	rispostaBonus = "",
+	opzioniBonus = {}, 
 	faseBonusCompletata = False,
 	messaggioBonus = ""
   },
@@ -296,7 +365,7 @@ GeneraInterfaccia[] := DynamicModule[
 
       "selezione", 
       Column[{
-        Style["\|01f3afSeleziona la difficolt\[AGrave]", Bold, 16], 
+        Style["\|01f3af Seleziona la difficolt\[AGrave]", Bold, 16], 
         RadioButtonBar[Dynamic[gamemode], {1 -> "Facile", 2 -> "Media", 3 -> "Difficile"}], 
         Row[{"Seed (opzionale): ", InputField[
 				Dynamic[seed, ({seed, seedError} = If[StringMatchQ[#, DigitCharacter ..] || StringMatchQ[#, ""], {#, ""}, {seed, "\:26a0\:fe0f Inserire solo numeri naturali (0, 1, 2, ...)."}]) &],  
@@ -305,19 +374,15 @@ GeneraInterfaccia[] := DynamicModule[
 				ContinuousAction->True 
 				]}], 
         Dynamic[
-			If[seedError != "",
-				Style[seedError, Red, Italic], 
-				"" 
-			]
+			If[seedError != "", Style[seedError, Red, Italic], ""]
         ],
         Button["Inizia partita", 
           Module[{},
             If[StringQ[seed] && seed != "", seed = ToExpression[seed], seed = Automatic]; 
             {parola, stato, errori, score} = GeneraEsericizio[gamemode, seed]; 
             fase = "gioco"; 
-            letteraUtente = ""; messaggio = ""; classificaMostrata = False;
-			(* Resetta le variabili della fase bonus *)
-			rispostaBonus = ""; faseBonusCompletata = False; messaggioBonus = "";
+            messaggio = "";
+			opzioniBonus = {}; faseBonusCompletata = False; messaggioBonus = "";
           ],
           ImageSize -> {200, 60}, 
           BaseStyle -> {FontSize -> 16, Bold} 
@@ -331,14 +396,14 @@ GeneraInterfaccia[] := DynamicModule[
         Dynamic[Row[Riffle[If[# === "_", Style[" _ ", Gray], Style[#]] & /@ stato, " "]]], 
         
         Row[{
-          Button["\|01f4a1Suggerimento", 
+          Button["\|01f4a1 Suggerimento", 
             {stato, errori, score} = Suggerimento[parola, stato, errori, score, gamemode], 
 			Enabled -> MemberQ[stato, "_"] && Length[errori] < maxErrori
           ],
           Spacer[20], 
-          Button["\|01f50eMostra soluzione",
+          Button["\|01f50e Mostra soluzione",
            MostraSoluzione[parola] 
-           {stato = parola, fase = "selezione", letteraUtente = ""; messaggio = ""; seedError = ""}
+           {stato = parola, fase = "selezione", messaggio = ""; seedError = ""}
            ]
         }],
 
@@ -386,60 +451,63 @@ GeneraInterfaccia[] := DynamicModule[
               If[stato === parola, 
                 (* GESTIONE VITTORIA E DOMANDA BONUS *)
 				If[!faseBonusCompletata,
+					
+					(* Genera 4 opzioni random per il Bonus (1 corretta, 3 sbagliate) *)
+					If[opzioniBonus === {},
+						Module[{corretta = dizionarioGeografia[StringJoin[parola]], sbagliate},
+							sbagliate = RandomSample[DeleteCases[Values[dizionarioGeografia], corretta], 3];
+							opzioniBonus = RandomSample[Join[{corretta}, sbagliate]];
+						]
+					];
+
 					Column[{
 						Style["Hai vinto!", Green, Bold, 16],
 						Style["Domanda Bonus (+50 punti extra!):", Purple, Bold],
 						Row[{"Qual \[EGrave] la capitale di ", Capitalize[StringJoin[parola]], "? "}],
-						Row[{
-							InputField[Dynamic[rispostaBonus], String, FieldSize -> 15],
-							Button["Conferma",
-								If[ToLowerCase[StringTrim[rispostaBonus]] === dizionarioGeografia[StringJoin[parola]],
-									score = score + 50;
-									messaggioBonus = "Risposta corretta! Hai guadagnato 50 punti.",
+						
+						(* Generazione bottoni Bonus a scelta multipla *)
+						Row[Riffle[
+							Button[Capitalize[#],
+								If[# === dizionarioGeografia[StringJoin[parola]],
+									score = score + 50; 
+									messaggioBonus = "Risposta corretta! Hai guadagnato 50 punti extra.",
 									messaggioBonus = "Sbagliato! La risposta corretta era: " <> Capitalize[dizionarioGeografia[StringJoin[parola]]]
 								];
 								faseBonusCompletata = True;
-							]
-						}]
+							] & /@ opzioniBonus, 
+							Spacer[10] 
+						]]
 					}, Alignment -> Center],
 
-					(* SE LA FASE BONUS E' FINITA, MOSTRA CLASSIFICA *)
+					(* SE LA FASE BONUS E' FINITA, PULSANTE SICURO PER CLASSIFICA *)
 					Column[{
 						Style[messaggioBonus, If[StringContainsQ[messaggioBonus, "corretta"], Green, Red], Bold],
-						Module[{},
-							If[!classificaMostrata, 
-								classificaMostrata = True;
-								MostraClassificaGUI[score]; 
-							];        
-							""
-						]
+						Spacer[10],
+						Button["\|01f3c6 Salva e Mostra Classifica", MostraClassificaGUI[score], ImageSize -> {250, 40}, Background -> LightBlue]
 					}, Alignment -> Center]
 				],
 
                 (* GESTIONE SCONFITTA *)
 				Column[{
-					Module[{},
-						If[!classificaMostrata, 
-							classificaMostrata = True;
-							MostraClassificaGUI[score]; 
-						];        
-						Style["Hai perso! La nazione era: " <> Capitalize[StringJoin[parola]], Red, Bold]
-					]
+					Style["Hai perso! La nazione era: " <> Capitalize[StringJoin[parola]], Red, Bold],
+					Spacer[10],
+					Button["\|01f3c6 Salva e Mostra Classifica", MostraClassificaGUI[score], ImageSize -> {250, 40}, Background -> LightBlue]
 				}, Alignment -> Center]
               ],
-              Button["\|01f9fdPulisci",
+			  Spacer[15],
+              Button["\|01f9fd Pulisci Campi",
                 {stato, errori, score} = Pulisci[parola];
-				faseBonusCompletata = False; rispostaBonus = ""; messaggioBonus = "";
+				opzioniBonus = {}; faseBonusCompletata = False; messaggioBonus = "";
               ]
             }],
             ""        
           ]
         ],
-        Button["\|01f504Nuova partita", 
+        Button["\|01f504 Nuova partita", 
           Module[{},
             fase = "selezione"; 
-            letteraUtente = ""; messaggio = ""; seedError = "";
-			rispostaBonus = ""; faseBonusCompletata = False; messaggioBonus = "";
+            messaggio = ""; seedError = "";
+			opzioniBonus = {}; faseBonusCompletata = False; messaggioBonus = "";
           ]
         ]
       }]
@@ -447,13 +515,6 @@ GeneraInterfaccia[] := DynamicModule[
   ]
 ];
 
-
 End[];
 
-
 EndPackage[]
-
-
-
-
-
