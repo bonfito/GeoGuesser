@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    137831,       2350]
-NotebookOptionsPosition[    136821,       2326]
-NotebookOutlinePosition[    137260,       2344]
-CellTagsIndexPosition[    137217,       2341]
+NotebookDataLength[    136851,       2328]
+NotebookOptionsPosition[    135955,       2306]
+NotebookOutlinePosition[    136394,       2324]
+CellTagsIndexPosition[    136351,       2321]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,7 +22,7 @@ Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.9858340492432137`*^9, 3.985834116574463*^9}, {
   3.985834194364908*^9, 3.985834195980934*^9}, {3.985835970526531*^9, 
   3.985835971671873*^9}},
- CellLabel->"In[99]:=",ExpressionUUID->"c2d1207f-3149-8e48-86f9-e1bd576e2728"],
+ CellLabel->"In[13]:=",ExpressionUUID->"c2d1207f-3149-8e48-86f9-e1bd576e2728"],
 
 Cell[TextData[{
  StyleBox["Hangman Geoguesser Game\n",
@@ -2274,7 +2274,12 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"ClearAll", "[", "\"\<HangmanGame`*\>\"", "]"}], ";"}], "\n", 
  RowBox[{
-  RowBox[{"ClearAll", "[", "\"\<HangmanGame`Private`*\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"ClearAll", "[", "\"\<HangmanGame`Private`*\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<Pacchetto_styled.wl\>\"", "]"}], ";"}], "\n", 
  RowBox[{"DynamicModule", "[", 
   RowBox[{
    RowBox[{"{", 
@@ -2285,44 +2290,19 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"!", "cliccato"}], ",", 
        RowBox[{
-        RowBox[{"SetDirectory", "[", 
-         RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Get", "[", "\"\<Pacchetto_styled.wl\>\"", "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Print", "[", 
-         RowBox[{"GeneraInterfaccia", "[", "]"}], "]"}], ";", 
-        "\[IndentingNewLine]", 
+        RowBox[{"CellPrint", "[", 
+         RowBox[{"ExpressionCell", "[", 
+          RowBox[{
+           RowBox[{"GeneraInterfaccia", "[", "]"}], ",", "\"\<Output\>\""}], 
+          "]"}], "]"}], ";", 
         RowBox[{"cliccato", "=", "True"}], ";"}]}], "]"}], ",", 
      RowBox[{"Enabled", "->", 
       RowBox[{"Dynamic", "[", 
        RowBox[{"!", "cliccato"}], "]"}]}], ",", 
-     RowBox[{"(*", 
-      RowBox[{
-      "Controlla", " ", "se", " ", "il", " ", "bottone", " ", "\[EGrave]", " ",
-        "attivo"}], "*)"}], 
      RowBox[{"Method", "->", "\"\<Queued\>\""}]}], "]"}]}], "]"}]}], "Input",
  CellOpen->False,
- CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}, {
-   3.9858393679939156`*^9, 3.98583939388468*^9}, {3.985839493405655*^9, 
-   3.985839511125353*^9}, {3.9858399706838684`*^9, 3.9858399724642887`*^9}, 
-   3.9858407604158764`*^9, {3.985841150432787*^9, 3.985841151350281*^9}, {
-   3.985841221534157*^9, 3.985841222234911*^9}, 3.985841392965868*^9, {
-   3.9860100858192616`*^9, 3.986010087951206*^9}, {3.986010192002228*^9, 
-   3.986010200275633*^9}, {3.9860110756118793`*^9, 3.9860110761339645`*^9}, {
-   3.986011157135639*^9, 3.986011161058523*^9}},
- CellLabel->
-  "In[100]:=",ExpressionUUID->"853ca839-05d4-fa42-8d8e-36fe831a7382"],
-
-Cell[OutputFormData["\<\
-Null\
-\>", "\<\
-Null\
-\>"], "Input",
- CellOpen->False,
- CellChangeTimes->{{3.986008081595417*^9, 3.9860080986932163`*^9}},
- CellLabel->
-  "In[103]:=",ExpressionUUID->"a47dbeda-091c-214e-9b64-7118451844ce"]
+ CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"853ca839-05d4-fa42-8d8e-36fe831a7382"]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{0, Automatic}, {Automatic, 1}},
@@ -2348,9 +2328,7 @@ Cell[828, 26, 131190, 2175, 425, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338
 Cell[132021, 2203, 1423, 36, 456, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
 Cell[133447, 2241, 333, 9, 77, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
 Cell[133783, 2252, 887, 18, 149, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[134673, 2272, 1911, 42, 22, "Input",ExpressionUUID->"853ca839-05d4-fa42-8d8e-36fe831a7382",
- CellOpen->False],
-Cell[136587, 2316, 230, 8, 22, "Input",ExpressionUUID->"a47dbeda-091c-214e-9b64-7118451844ce",
+Cell[134673, 2272, 1278, 32, 22, "Input",ExpressionUUID->"853ca839-05d4-fa42-8d8e-36fe831a7382",
  CellOpen->False]
 }
 ]
