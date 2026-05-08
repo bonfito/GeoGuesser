@@ -1,7 +1,7 @@
 geoGuesser per Mc
 
 TODO:
-- Controllo dei nomi
+- Controllo dei nomi (magari con lo spazio)
 - Controllo del seed (ad esempio se uno mette un seed troppo grande, negativo, una lettera ecc...)
 
 Attualmente l'inserimento del seed funziona così:
