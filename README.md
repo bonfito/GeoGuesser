@@ -3,6 +3,7 @@ geoGuesser per Mc
 TODO:
 - Controllo dei nomi (magari con lo spazio)
 - Controllo del seed (ad esempio se uno mette un seed troppo grande, negativo, una lettera ecc...)
+- Quando qualcuno deve salvare la classifica, il nome viene tagliato
 
 Attualmente l'inserimento del seed funziona così:
 - blocca qualsiasi inserimento diverso da numeri naturali con un messaggio di avviso (anche numeri negativi)
