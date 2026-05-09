@@ -10,25 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    136851,       2328]
-NotebookOptionsPosition[    135955,       2306]
-NotebookOutlinePosition[    136394,       2324]
-CellTagsIndexPosition[    136351,       2321]
+NotebookDataLength[    144262,       2473]
+NotebookOptionsPosition[    142966,       2447]
+NotebookOutlinePosition[    143405,       2465]
+CellTagsIndexPosition[    143362,       2462]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.9858340492432137`*^9, 3.985834116574463*^9}, {
-  3.985834194364908*^9, 3.985834195980934*^9}, {3.985835970526531*^9, 
-  3.985835971671873*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"c2d1207f-3149-8e48-86f9-e1bd576e2728"],
-
 Cell[TextData[{
- StyleBox["Hangman Geoguesser Game\n",
-  FontSize->24,
+ StyleBox["GEOGRAPHIC HANGMAN\n",
+  FontSize->44,
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["Gruppo Numero: Billie AI-lish+\nMC 2025/2026\n\n",
+ StyleBox["Gruppo Numero 5 : Gli Impiccati\nMC 2025/2026\n\n",
   FontSize->18,
   FontColor->RGBColor[1., 1., 1.]],
  Cell[BoxData[
@@ -567,7 +561,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "892e3adf-b87c-7c45-894a-da49fbba18f5"],
+  "e791b617-1743-46a6-85c9-31716b3cdbda"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1104,7 +1098,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "3e59dc5d-2e24-8a4d-b200-10c7186d48b0"],
+  "aeedcdd5-e1cf-4fd7-b7c1-6e2003afa6d5"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1641,7 +1635,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "64e07f9f-afee-7a40-95fd-ecdba6fb1651"],
+  "f3ec6703-25fb-4949-a7c0-db1a4dd8664b"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -2178,7 +2172,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "2aeef594-2c11-8143-8935-6aa271ad7506"],
+  "c834fbb4-01af-4a18-982d-d6c42150b91c"],
  "\n    ",
  StyleBox["Gaetano Muscarello\t                  Jacopo Bonifazi\t\t          \
          Paolo Fusco\t                          Shivam Kumar\n(Anno 1 - \
@@ -2202,61 +2196,13 @@ curriculum C)          (Anno 1 - curriculum A)",
 3f0ee091783d"],
 
 Cell[TextData[{
- StyleBox["Indice",
-  FontSize->22,
-  FontWeight->"Bold"],
- StyleBox["\nIntroduzione\nI. Sezione\n\t",
-  FontSize->18,
-  FontWeight->"Bold"],
- StyleBox["I.1 sottosezione\[LineSeparator]\tI.2 esempi",
-  FontSize->18],
- StyleBox["\nII. Sezione\n\t",
-  FontSize->18,
-  FontWeight->"Bold"],
- StyleBox["II.2 sottosezione\n\tI.2 esempi",
-  FontSize->18],
- StyleBox["\nIII. Approfondimento\n\t",
-  FontSize->18,
-  FontWeight->"Bold"],
- StyleBox["III. sottosezione\n\tIII.2 esempi",
-  FontSize->18],
- StyleBox["\nIV. Bibliografia e Sitografia\nV. Commenti",
-  FontSize->18,
-  FontWeight->"Bold"],
- "\n"
-}], "Text",
- CellFrame->{{0, 0}, {0, 0.5}},
- CellFrameColor->GrayLevel[0.75],
- CellChangeTimes->{{3.9858360014789486`*^9, 3.9858360306143284`*^9}, {
-  3.9858360732825184`*^9, 3.985836145124634*^9}, {3.9858361954915047`*^9, 
-  3.9858361969220734`*^9}, {3.9858362329447994`*^9, 3.9858362673060646`*^9}, {
-  3.985836327335438*^9, 3.985836353543562*^9}, {3.9858363906426277`*^9, 
-  3.985836483617651*^9}, {3.9858374962166767`*^9, 3.98583750173946*^9}, {
-  3.9858375866057167`*^9, 3.985837630997324*^9}, {3.985837684023142*^9, 
-  3.9858376858858986`*^9}, {3.9858377358055496`*^9, 3.985837739437933*^9}, {
-  3.9858378073290215`*^9, 3.9858378224481792`*^9}, {3.985837871715273*^9, 
-  3.9858379528118877`*^9}, {3.9858386000979633`*^9, 
-  3.9858386326541595`*^9}},ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-\
-22e64bc08852"],
-
-Cell["\<\
-Varie sezioni ...
-\
-\>", "Text",
- CellFrame->{{0, 0}, {0, 0.5}},
- CellFrameColor->GrayLevel[0.75],
- CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
-  3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
-  3.9858387681869087`*^9}},ExpressionUUID->"c6da6e88-2037-be42-abe5-\
-6f1cb2d9dae3"],
-
-Cell[TextData[{
- StyleBox["XX. Gioco\n",
-  FontSize->22,
-  FontWeight->"Bold"],
- StyleBox["Note:\n\t- Dal men\[UGrave] orizzontale in alto, scegliere : \
-Evaluation > Evaluate Notebook\n\t- Se appare in alto a destra, accettare il \
-pulsante di \[OpenCurlyDoubleQuote]Enable Dynamics?\[CloseCurlyDoubleQuote]",
+ StyleBox[" Gioco\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Per avviare il gioco : \n\t 1. Se appare \"Enable Dynamics?\", \
+accettalo \n\t 2. Dal menu: Evaluation \[RightArrow] Evaluate Notebook \n\t \
+3. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] qui sotto",
   FontSize->17]
 }], "Text",
  CellFrame->{{0, 0}, {0, 0.5}},
@@ -2266,9 +2212,9 @@ pulsante di \[OpenCurlyDoubleQuote]Enable Dynamics?\[CloseCurlyDoubleQuote]",
    3.9858388067837715`*^9}, {3.9858389303471565`*^9, 3.985838983171753*^9}, 
    3.9858390663128757`*^9, 3.9858391635457516`*^9, {3.9858392090279865`*^9, 
    3.985839231116436*^9}, {3.985840146632084*^9, 3.9858401709332104`*^9}, {
-   3.985840228906309*^9, 
-   3.9858402553834953`*^9}},ExpressionUUID->"c1d52f11-e0af-304c-b931-\
-3923f58b8f58"],
+   3.985840228906309*^9, 3.9858402553834953`*^9}, {3.9873402088382893`*^9, 
+   3.9873402378403463`*^9}},ExpressionUUID->"582b1ab8-2703-4c05-9eef-\
+e6ab983f7114"],
 
 Cell[BoxData[{
  RowBox[{
@@ -2302,7 +2248,202 @@ Cell[BoxData[{
      RowBox[{"Method", "->", "\"\<Queued\>\""}]}], "]"}]}], "]"}]}], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"853ca839-05d4-fa42-8d8e-36fe831a7382"]
+ CellLabel->"In[52]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
+
+Cell[TextData[{
+ StyleBox["Indice",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["\nIntroduzione\n",
+  FontSize->20,
+  FontWeight->"Bold"],
+ StyleBox["I. Regole del gioco\nII Guida all'Uso dell'Interfaccia\nIII. \
+Livello Bonus e Classifica\nIV. Bibliografia e Sitografia\nV. Commenti e \
+lavoro futuro",
+  FontSize->18,
+  FontWeight->"Bold"],
+ "\n"
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.9858360014789486`*^9, 3.9858360306143284`*^9}, {
+   3.9858360732825184`*^9, 3.985836145124634*^9}, {3.9858361954915047`*^9, 
+   3.9858361969220734`*^9}, {3.9858362329447994`*^9, 
+   3.9858362673060646`*^9}, {3.985836327335438*^9, 3.985836353543562*^9}, {
+   3.9858363906426277`*^9, 3.985836483617651*^9}, {3.9858374962166767`*^9, 
+   3.98583750173946*^9}, {3.9858375866057167`*^9, 3.985837630997324*^9}, {
+   3.985837684023142*^9, 3.9858376858858986`*^9}, {3.9858377358055496`*^9, 
+   3.985837739437933*^9}, {3.9858378073290215`*^9, 3.9858378224481792`*^9}, {
+   3.985837871715273*^9, 3.9858379528118877`*^9}, {3.9858386000979633`*^9, 
+   3.9858386326541595`*^9}, 
+   3.9873393814061832`*^9},ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-\
+22e64bc08852"],
+
+Cell[TextData[{
+ StyleBox["Introduzione\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Benvenuto in Geographic Hangman! \n Questo progetto \[EGrave] una \
+rivisitazione interattiva e didattica del classico gioco dell'impiccato.\n \
+L'obiettivo dell'applicativo \[EGrave] unire il ragionamento logico e la \
+conoscenza geografica.\n Il gioco \[EGrave] progettato per essere intuitivo e \
+non richiede alcuna competenza informatica pregressa: tutto \[EGrave] gestito \
+da una comoda interfaccia grafica.\n Mettiti alla prova, indovina le nazioni \
+nascoste e scala la classifica globale!\n",
+  FontSize->17]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
+  3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
+  3.9858387681869087`*^9}},ExpressionUUID->"c6da6e88-2037-be42-abe5-\
+6f1cb2d9dae3"],
+
+Cell[TextData[{
+ StyleBox["I. Regole del gioco\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Il computer sceglie casualmente il nome di una Nazione. Il tuo \
+compito \[EGrave] indovinare la parola lettera per lettera prima di \
+commettere 6 errori (che porteranno al completamento del disegno \
+dell'impiccato).\n\nLa difficolt\[AGrave] (Facile, Media, Difficile) \
+influenza tre fattori:\n\t 1. a difficolt\[AGrave] pi\[UGrave] alte \
+corrispondono nomi di nazioni pi\[UGrave] lunghi.\n\t 2. Punteggio: Riceverai \
+pi\[UGrave] punti per ogni lettera corretta se giochi a difficolt\[AGrave] \
+elevata.\n\t 3. Penalit\[AGrave]: Richiedere un suggerimento coster\[AGrave] \
+pi\[UGrave] punti ai livelli di difficolt\[AGrave] maggiori.\n",
+  FontSize->17]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
+  3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
+  3.9858387681869087`*^9}, {3.9873512930195704`*^9, 
+  3.987351294208749*^9}},ExpressionUUID->"c1d52f11-e0af-304c-b931-\
+3923f58b8f58"],
+
+Cell[TextData[{
+ StyleBox["II. Guida all'Uso dell'Interfaccia\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["L'interfaccia si divide in due fasi principali. Ecco come \
+utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\n\n",
+  FontSize->17],
+ StyleBox["1. Fase di Selezione (Genera Esercizio e Seed)\n",
+  FontSize->25],
+ StyleBox["\[Bullet] Seleziona la difficolt\[AGrave]: Usa i bottoni per \
+scegliere il livello (Facile, Media, Difficile).\n\[Bullet] Seed (Opzionale): \
+Puoi inserire un numero intero nel campo di testo. Inserendo lo stesso numero \
+in partite future,   il computer generer\[AGrave] esattamente la stessa \
+parola. \[CapitalEGrave] utile per sfidare un amico ad armi pari!\n\[Bullet] \
+Clicca su INIZIA GIOCO per generare l'esercizio.\n",
+  FontSize->17],
+ StyleBox["\n 2. Fase di Gioco (Verifica Risultato)\n",
+  FontSize->25],
+ StyleBox["\[Bullet] Tastiera a schermo: Clicca sulle lettere per fare un \
+tentativo. Se la lettera \[EGrave] corretta (Verifica Risultato positiva) \
+diventer\[AGrave] verde e guadagnerai punti; \n  se \[EGrave] sbagliata, \
+diventer\[AGrave] rossa e verr\[AGrave] aggiunto un pezzo al patibolo.\n\
+\[Bullet] Suggerimento: Se sei bloccato, clicca su \"Suggerimento\". Il \
+computer sveler\[AGrave] una lettera mancante, ma ti verr\[AGrave] sottratto \
+del punteggio.\n\[Bullet] Mostra Soluzione: Se vuoi arrenderti, clicca su \
+questo bottone. Un pop-up ti riveler\[AGrave] la parola nascosta e la partita \
+terminer\[AGrave].\n\[Bullet] Pulisci Campi: Questo tasto azzera i tuoi \
+tentativi, gli errori e il punteggio per la nazione corrente, permettendoti \
+di ricominciare da capo la stessa parola (utile dopo aver visto la \
+soluzione).\n",
+  FontSize->17]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
+  3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
+  3.9858387681869087`*^9}, {3.987351461665354*^9, 
+  3.987351461924592*^9}},ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-\
+331c59ce4f3b"],
+
+Cell[TextData[{
+ StyleBox["III. Livello Bonus e Interfaccia\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Se riesci a indovinare la Nazione senza farti impiccare, avrai \
+accesso a una Domanda Bonus. Ti verranno proposti 4 bottoni a scelta multipla \
+per indovinare la Capitale di quella specifica Nazione. \nSe indovini, \
+guadagnerai ben 50 punti extra!\nAl termine della partita (vittoria o \
+sconfitta), potrai salvare il tuo nome e confrontare il tuo punteggio nella \
+Classifica Globale dei migliori 50 giocatori.\n",
+  FontSize->17]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
+  3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
+  3.9858387681869087`*^9}},ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-\
+b0d2c30c0c9d"],
+
+Cell[TextData[{
+ StyleBox["IV. Bibliografia e Sitografia\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Per lo sviluppo di questo progetto e la comprensione delle \
+funzioni di interfaccia dinamica, ci siamo avvalsi della seguente \
+documentazione:\n",
+  FontSize->17],
+ StyleBox["[1] Wolfram Language & System Documentation Center, DynamicModule. \
+https://reference.wolfram.com/language/ref/DynamicModule.html\n",
+  FontSize->17],
+ StyleBox["[2] Wolfram Language & System Documentation Center, Import/Export. \
+https://reference.wolfram.com/language/guide/ImportingAndExporting.html\n",
+  FontSize->17],
+ StyleBox["[3] Dizionario Geografico: Lista delle Nazioni e Capitali del \
+Mondo.\n",
+  FontSize->17]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellFrameColor->GrayLevel[0.75],
+ CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
+  3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
+  3.9858387681869087`*^9}},ExpressionUUID->"79d8cb74-d9a4-4994-b884-\
+9d2a243c0812"],
+
+Cell[TextData[{
+ StyleBox["V. Commenti e lavoro futuro\n",
+  FontSize->32,
+  FontWeight->"Bold",
+  FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Commenti Tecnici : \n",
+  FontSize->17],
+ "Lo sviluppo del progetto ha richiesto un'attenta analisi per quanto \
+riguarda l'aggiornamento dinamico dell'interfaccia utente in Mathematica. Per \
+evitare \n conflitti di \"shadowing\" e blocchi causati da finestre di pop-up \
+sovrapposte (come la conferma del nome in classifica), abbiamo implementato   \
+una \"Macchina a Stati\" (faseClassifica) all'interno del DynamicModule. La \
+persistenza dei dati \[EGrave] gestita in modo ",
+ " tramite lettura/scrittura  di file score.json locali, utilizzando il \
+comando Quiet per prevenire crash derivati da file corrotti o inesistenti.\n\
+",
+ StyleBox["\nLavoro Futuro : \n",
+  FontSize->17],
+ StyleBox["\[Bullet] Inserimento di un timer che introduca un moltiplicatore \
+di punteggio per premiare la velocit\[AGrave] di risposta.\n",
+  FontSize->17],
+ StyleBox["\[Bullet] Ampliamento del dizionario con altre categorie \
+didattiche (es. Chimica: Elemento e Formula; Storia: Evento e Data).\n",
+  FontSize->17],
+ StyleBox["\[Bullet] Supporto per account utente con cronologia delle partite \
+precedenti per tenere traccia dei propri miglioramenti.\n",
+  FontSize->17]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.987353539626474*^9, 3.9873535398047123`*^9}, 
+   3.9873540896158133`*^9},
+ FontSize->17,ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{0, Automatic}, {Automatic, 1}},
@@ -2323,13 +2464,17 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 271, 4, 35, "Input",ExpressionUUID->"c2d1207f-3149-8e48-86f9-e1bd576e2728"],
-Cell[828, 26, 131190, 2175, 425, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[132021, 2203, 1423, 36, 456, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[133447, 2241, 333, 9, 77, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[133783, 2252, 887, 18, 149, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[134673, 2272, 1278, 32, 22, "Input",ExpressionUUID->"853ca839-05d4-fa42-8d8e-36fe831a7382",
- CellOpen->False]
+Cell[554, 20, 131186, 2175, 455, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+Cell[131743, 2197, 968, 19, 193, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[132714, 2218, 1278, 32, 22, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
+ CellOpen->False],
+Cell[133995, 2252, 1244, 28, 290, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[135242, 2282, 956, 19, 251, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[136201, 2303, 1155, 22, 310, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[137359, 2327, 2124, 39, 580, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[139486, 2368, 891, 18, 222, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[140380, 2388, 1058, 24, 222, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
+Cell[141441, 2414, 1521, 31, 398, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
