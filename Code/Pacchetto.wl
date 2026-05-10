@@ -4,24 +4,19 @@
 (**)
 
 
-(* :Title:            Hangman-Geoguesser                          *)
+(* :Title:            Geographic Hangman                          *)
 (* :Context:          Gioco dell'impiccato geografico             *)
-(* :Author:           Billie AI-Lish+                             *)
+(* :Author:           Gli impiccati                          *)
 (* :Summary:          Interfaccia interattiva per indovinare       *)
 (*                    nazioni e capitali del mondo                 *)
 (* :Copyright:        BA 2026                                     *)
 (* :Package Version:  4                                           *)
 (* :Mathematica Ver.: 14.3                                        *)
-(* :History:          last modified 28/04/2026                    *)
+(* :History:          last modified 10/05/2026                    *)
 (* :Keywords:         DynamicModule, interfaccia, gioco           *)
 (* :Discussion: *)
 (* :Requirements: *)
-(* :Limitations:      Quando un utente salva il proprio nome e chiude la classfica, il bottone "salva e mostra classifica" rimane e l'utente pu ricliccarci 
-e inserendo il nome di un altro utente gi\[AGrave] presente nella tabella pu\[OGrave] aggiornarlo se il punteggio dell'attuale utente \[EGrave] > di quello che aveva l'utente gi\[AGrave] presente
-in classfica.
-
-Se uno stesso utente fa una partita e realizza un punteggio minore a quello che aveva realizato in precedenza, mantenendo lo stesso nome utente, il suo punteggio
-in classifica non si aggiorner\[AGrave].
+(* :Limitations:
 *)
 
 
@@ -275,15 +270,18 @@ HaCaratteriNonAmmessiQ[s_] := Module[
 (* ============================================================== *)
 (* InizializzaStato                                               *)
 (* Crea lo stato iniziale del gioco: una lista di "_"             *)
-(* lunga quanto la parola da indovinare                           *)
+(* lunga quanto la parola da indovinare.                          *)
+(* Gli spazi vengono rivelati subito come " " invece di "_"       *)
+(* cos\[IGrave] l'utente non \[EGrave] ingannato da trattini nelle posizioni    *)
+(* in cui si trovano gli spazi nelle nazioni composte             *)
+(* es. "stati uniti" -> {"_","_","_","_","_"," ","_","_","_","_","_","_"} *)
 (*                                                                *)
 (* Parametri:                                                     *)
 (*   word : lista di caratteri                                    *)
 (*                                                                *)
-(* Restituisce: lista di "_" es. {"_","_","_","_"}                *)
+(* Restituisce: lista di "_" e " " es. {"_","_"," ","_","_"}     *)
 (* ============================================================== *)
-
-InizializzaStato[word_List] := ConstantArray["_", Length[word]]
+InizializzaStato[word_List] := Map[If[# === " ", " ", "_"] &, word]
 
 
 (* ============================================================== *)
@@ -310,8 +308,10 @@ AggiornaStato[word_List, currentState_List, guess_, score_Integer, gameMode_, er
  },
 	If[MemberQ[word, guess],
 	    (* LETTERA CORRETTA: MapThread scorre in parallelo currentState e word.
-		   Per ogni posizione: se il carattere di word coincide con guess,
-		   sostituisce "_" con la lettera; altrimenti lascia invariato *)
+        Per ogni posizione: se il carattere di word coincide con guess,
+        sostituisce "_" con la lettera; altrimenti lascia invariato.
+        Gli spazi sono gi\[AGrave] rivelati da InizializzaStato e non vengono
+        mai inseriti come guess dall'utente *)
 		newState = MapThread[If[#2 == guess, guess, #1] &, {currentState, word}];
 		newErrors = errors;                 (* Nessun nuovo errore *)
 		newScore = score + 10 * gameMode,   (* Bonus: 10 punti * difficolta' *)
@@ -737,11 +737,12 @@ GeneraInterfaccia[] := DynamicModule[
            altrimenti mostra la lettera in nero grassetto grande.
            Riffle inserisce uno spazio " " tra ogni elemento della lista *)
         Dynamic[Row[Riffle[
-          If[# === "_",
-            Style[" _ ", Gray, Bold, 28],   (* trattino  *)
-            Style[#, Bold, 28]              (* lettera  *)
-          ] & /@ stato,
-          " "
+          Which[
+            # === " ", Style["   ", Bold, 28],  (* spazio: mostra vuoto *)
+            # === "_", Style[" _ ", Gray, Bold, 28],  (* da indovinare *)
+            True,      Style[#, Bold, 28]             (* lettera indovinata *)
+           ] & /@ stato,
+           " "
         ]]], 
         
         Spacer[10],
