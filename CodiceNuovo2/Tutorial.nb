@@ -10,18 +10,20 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    144262,       2473]
-NotebookOptionsPosition[    142966,       2447]
-NotebookOutlinePosition[    143405,       2465]
-CellTagsIndexPosition[    143362,       2462]
+NotebookDataLength[    144350,       2475]
+NotebookOptionsPosition[    143054,       2449]
+NotebookOutlinePosition[    143493,       2467]
+CellTagsIndexPosition[    143450,       2464]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[TextData[{
  StyleBox["GEOGRAPHIC HANGMAN\n",
-  FontSize->44,
+  FontSize->50,
   FontColor->RGBColor[0.93, 0.27, 0.27]],
+ StyleBox["Un'avventura didattica tra nazioni e capitali del mondo.\n",
+  FontSize->25],
  StyleBox["Gruppo Numero 5 : Gli Impiccati\nMC 2025/2026\n\n",
   FontSize->18,
   FontColor->RGBColor[1., 1., 1.]],
@@ -561,7 +563,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "e791b617-1743-46a6-85c9-31716b3cdbda"],
+  "6627d554-580a-4e11-972d-9192d1ac86e2"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1098,7 +1100,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "aeedcdd5-e1cf-4fd7-b7c1-6e2003afa6d5"],
+  "9eaeb165-ded4-4438-a9b4-d82fea31379d"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1635,7 +1637,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "f3ec6703-25fb-4949-a7c0-db1a4dd8664b"],
+  "f8d4106f-bb64-40da-8b4a-9b9eaf6b150a"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -2172,7 +2174,7 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofDWUr+H4ZP9ag=
    DefaultBaseStyle->"ImageGraphics",
    ImageSizeRaw->{164.25, 164.25},
    PlotRange->{{0, 164.25}, {0, 164.25}}]], "Input",ExpressionUUID->
-  "c834fbb4-01af-4a18-982d-d6c42150b91c"],
+  "3ebd83f8-ddf5-4445-8ac9-ef1d41040731"],
  "\n    ",
  StyleBox["Gaetano Muscarello\t                  Jacopo Bonifazi\t\t          \
          Paolo Fusco\t                          Shivam Kumar\n(Anno 1 - \
@@ -2248,7 +2250,7 @@ Cell[BoxData[{
      RowBox[{"Method", "->", "\"\<Queued\>\""}]}], "]"}]}], "]"}]}], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
- CellLabel->"In[52]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
+ CellLabel->"In[6]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
 
 Cell[TextData[{
  StyleBox["Indice",
@@ -2464,17 +2466,17 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 131186, 2175, 455, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[131743, 2197, 968, 19, 193, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
-Cell[132714, 2218, 1278, 32, 22, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
+Cell[554, 20, 131275, 2177, 505, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+Cell[131832, 2199, 968, 19, 193, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[132803, 2220, 1277, 32, 22, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
  CellOpen->False],
-Cell[133995, 2252, 1244, 28, 290, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[135242, 2282, 956, 19, 251, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[136201, 2303, 1155, 22, 310, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[137359, 2327, 2124, 39, 580, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[139486, 2368, 891, 18, 222, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[140380, 2388, 1058, 24, 222, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
-Cell[141441, 2414, 1521, 31, 398, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[134083, 2254, 1244, 28, 290, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[135330, 2284, 956, 19, 251, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[136289, 2305, 1155, 22, 310, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[137447, 2329, 2124, 39, 580, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[139574, 2370, 891, 18, 222, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[140468, 2390, 1058, 24, 222, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
+Cell[141529, 2416, 1521, 31, 398, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
