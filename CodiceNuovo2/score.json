@@ -18,5 +18,9 @@
 	{
 		"nome":"aa",
 		"punteggio":100
+	},
+	{
+		"nome":"Ciao",
+		"punteggio":90
 	}
 ]

@@ -471,7 +471,7 @@ MostraClassificaGUI[score_Integer] := DynamicModule[
 						Frame -> All,        (* Bordo per tutte le celle *)
 						Alignment -> Center  (* Testo centrato *)
 					],
-					{Automatic, 450}, 
+					{Automatic, 250}, 
 					Scrollbars -> Automatic
 				],
 				
