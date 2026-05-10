@@ -409,158 +409,158 @@ RecuperaClassifica[file_:"score.json"] := Module[
 
 
 (* ============================================================== *)
+(* ============================================================== *)
 (* MostraClassificaGUI                                            *)
-(* Interfaccia grafica per la classifica \[LongDash] macchina a 3 stati:    *)
+(* Interfaccia grafica per la classifica — macchina a 3 stati:    *)
 (*   Stato 1: inserimento nome                                    *)
 (*   Stato 2: conferma nome                                       *)
 (*   Stato 3: punteggio salvato con successo                      *)
 (*                                                                *)
-(* Usa DynamicModule per mantenere le variabili locali tra        *)
-(* un'interazione e l'altra all'interno del dialog.               *)
-(* Due Dynamic separati con TrackedSymbols evitano il problema    *)
-(* del contesto mangled tipico dei package Mathematica:           *)
-(*   - Il primo Dynamic aggiorna solo la tabella (datiClassifica) *)
-(*   - Il secondo Dynamic aggiorna solo i controlli (faseClass.)  *)
+(* NOTA: DynamicModule e' l'argomento diretto di CreateDialog,   *)
+(* NON il contenitore esterno. Cosi' le variabili dinamiche       *)
+(* vengono montate nella cella del dialog e il tracking           *)
+(* funziona correttamente (evita il bug del nome "mangled"        *)
+(* tipo datiClassifica$11784 che compare al posto del contenuto)  *)
 (*                                                                *)
 (* Parametri:                                                     *)
 (*   score : punteggio intero da mostrare e salvare               *)
 (* ============================================================== *)
-MostraClassificaGUI[score_Integer] := DynamicModule[
-{
-	nomeUtente = "",     (* Nome inserito dall'utente nell'InputField *)
-	datiClassifica = {}, (* Lista dei record caricata dal file JSON *)
-	faseClassifica = 1,  (* Stato corrente: 1 = Inserimento, 2 = Conferma, 3 = Salvato *)
-	file = "score.json"  (* Percorso del file della classifica *)
-},
+MostraClassificaGUI[score_Integer] := (
 
-    (* SetDirectory punta alla cartella del notebook corrente,
-	   cos\[IGrave] score.json viene cercato e scritto nella stessa cartella.
-	   Quiet evita messaggi se SetDirectory fallisce *)
+	(* SetDirectory punta alla cartella del notebook corrente,
+	   cosi score.json viene cercato e scritto nella stessa cartella. *)
 	Quiet[SetDirectory[NotebookDirectory[]]];
-	
-	(* Carica i dati esistenti all'apertura del dialog *)
-	datiClassifica = RecuperaClassifica[];
-	
-	(* CreateDialog apre una finestra modale separata dal notebook *)
-	CreateDialog[
-	    (* Framed aggiunge bordo arrotondato e sfondo colorato al dialog *)
-		Framed[
-			Column[{
-				Style["Classifica Globale", Bold, 20],
-				
-				(* ---- TABELLA CLASSIFICA ---- *)
-				(* Dynamic con TrackedSymbols:{datiClassifica}:
-				   rivaluta SOLO quando datiClassifica cambia (dopo il salvataggio),
-				   non ad ogni cambio di faseClassifica \[LongDash] evita problemi di contesto *)
-				
-			Dynamic[
-			 (* Pane crea un contenitore a dimensione fissa con scrollbar:
-					   {Automatic, 200} = larghezza automatica, altezza max 200px *)
-				Pane[
-				  (* Grid costruisce la tabella con intestazioni e dati.
-						   Prepend aggiunge la riga header {"#","Nome","Punteggio"} in cima.
-						   MapIndexed mappa ogni record aggiungendo l'indice #2[[1]] come numero di riga.
-						   Lookup accede ai campi "nome" e "punteggio" di ogni Association in modo sicuro
-						   (terzo argomento = valore di fallback se il campo manca) *)
-					Grid[
-						Prepend[
-							MapIndexed[{  Style[#2[[1]], 16],  Style[Lookup[#, "nome", "N/A"], 16],  Style[Lookup[#, "punteggio", 0], Bold, 16]
-							} &, datiClassifica],
-							{Style["#", Bold, 16], Style["Nome", Bold, 16], Style["Punteggio", Bold, 16]}
-						],
-						Frame -> All,        (* Bordo per tutte le celle *)
-						Alignment -> Center  (* Testo centrato *)
-					],
-					{Automatic, 450}, 
-					Scrollbars -> Automatic
-				],
-				
-				TrackedSymbols :> {datiClassifica}  (* si aggiorna solo quando datiClassifica cambia *)
-				
-			],	
-					
-				Spacer[10],   (* Spazio verticale tra tabella e controlli *)
 
-				(* ---- CONTROLLI A STATI ---- *)
-				(* Dynamic con TrackedSymbols:{faseClassifica}:
-				   rivaluta SOLO quando faseClassifica cambia (1->2->3),
-				   non quando datiClassifica viene aggiornato \[LongDash] i due Dynamic
-				   sono indipendenti e non si interferiscono *)
-				Dynamic[
-				  (* Switch seleziona il blocco di controlli in base alla fase corrente *)
-					Switch[faseClassifica,
-					
-					   (* ---- FASE 1: INSERIMENTO NOME ---- *)
-						
-						1, 
-						Column[{
-							"Inserisci il tuo nome:",
-							(* InputField con ContinuousAction -> True:
-							   aggiorna Dynamic[nomeUtente] ad ogni tasto premuto,
-							   necessario per abilitare il bottone in tempo reale *)
-							InputField[Dynamic[nomeUtente], String, FieldSize -> 25, ContinuousAction -> True],
-							
-							(* Enabled -> Dynamic[...]: il bottone e' cliccabile
-							   solo se il campo nome non e' vuoto *)
-							Button["Salva Punteggio",
-								faseClassifica = 2,
-								Enabled -> Dynamic[StringLength[nomeUtente] > 0]
-							]
-						}, Alignment -> Center, BaseStyle->"Subsection"],
-						
-						(* ---- FASE 2: CONFERMA NOME ---- *)
-		                    
-						2, 
-						Column[{
-						   (* Mostra il nome inserito per la conferma.
-							   <> \[EGrave] l'operatore di concatenazione stringhe in Mathematica *)
-							Style["Sei sicuro che '" <> nomeUtente <> "' sia corretto?", Darker[Red], Bold, 16],
-							Spacer[10],
-							Row[{
-							  (* "Si, Salva": salva il record, ricarica la classifica
-								   e avanza alla fase 3 *)
-								Button["Si, Salva",
-									Module[{nomeVal = nomeUtente},
-									    (* nomeVal cattura il valore corrente di nomeUtente
-										   in modo sicuro con Module, evitando side effects *)
-										SalvaRecord[nomeVal, score];
-										(* Ricarica i dati dal file \[LongDash] aggiorner\[AGrave] la tabella
-										   tramite il Dynamic con TrackedSymbols:{datiClassifica} *)
-										datiClassifica = RecuperaClassifica[]; 
-										faseClassifica = 3 (* Passa alla fase 3 *)
+	(* CreateDialog apre una finestra modale separata dal notebook.
+	   DynamicModule e' l'argomento diretto: le sue variabili vengono
+	   montate nella cella del dialog, rendendo Dynamic funzionante. *)
+	CreateDialog[
+		DynamicModule[
+			{
+				nomeUtente    = "",              (* Nome inserito dall'utente *)
+				datiClassifica = RecuperaClassifica[], (* Classifica caricata subito *)
+				faseClassifica = 1               (* 1=Inserimento 2=Conferma 3=Salvato *)
+			},
+
+			Framed[
+				Column[{
+					Style["Classifica Globale", Bold, 20, White],
+
+					(* ---- TABELLA CLASSIFICA ---- *)
+					(* Dynamic senza TrackedSymbols: con DynamicModule dentro
+					   CreateDialog il tracking automatico funziona correttamente *)
+					Dynamic[
+						Row[{
+							Pane[
+								Style[
+									Grid[
+										Prepend[
+											MapIndexed[
+												{ Style[#2[[1]], 13, White],
+												  Style[Lookup[#, "nome", "N/A"], 13, White],
+												  Style[Lookup[#, "punteggio", 0], Bold, 13, White]
+												} &,
+												datiClassifica
+											],
+											{ Style["#", Bold, 13, White],
+											  Style["Nome", Bold, 13, White],
+											  Style["Punteggio", Bold, 13, White] }
+										],
+										Frame -> All,
+										FrameStyle -> White,
+										Alignment -> Center,
+										Spacings -> {1, 0.5}
 									],
-									Background -> RGBColor[0.3, 0.7, 0.9]
+									TextAlignment -> Center
 								],
-								Spacer[10],
-								(* "No, Modifica": torna alla fase 1 senza salvare *)
-								Button["No, Modifica", faseClassifica = 1, Background -> Red]
-							}]
-						}, Alignment -> Center],
-						
-						(* ---- FASE 3: SALVATAGGIO COMPLETATO ---- *)
-						
-						3,  
-						Column[{
-						  (* Messaggio di conferma in verde *)
-							Style["Punteggio salvato con successo!", Darker[Green], Bold, 18],
-							Spacer[5],
-							(* DialogReturn[] chiude il dialog restituendo Null *)
-							Button["Chiudi Finestra", DialogReturn[]]
+								{Automatic, 200},
+								Scrollbars -> {False, Automatic}
+							]
 						}, Alignment -> Center]
 					],
-					TrackedSymbols :> {faseClassifica}  (* Aggiorna solo se faseClassifica cambia *)
-				]
 
-			}, Spacings -> 1.5, Alignment -> Center],
-			FrameMargins -> 20,   (* Padding interno *)
-			FrameStyle -> None,
-			RoundingRadius -> 10,
-			Background -> RGBColor[0.1, 0.4, 0.9]
-		],
-		WindowTitle -> "Classifica"    (* Titolo della finestra del dialog *)
-		
+					Spacer[6],
+
+					(* ---- CONTROLLI A STATI ---- *)
+					Dynamic[
+						Switch[faseClassifica,
+
+							(* ---- FASE 1: INSERIMENTO NOME ---- *)
+							1,
+							Column[{
+								Style["Inserisci il tuo nome:", White, 14],
+								InputField[
+									Dynamic[nomeUtente],
+									String,
+									FieldSize -> 22,
+									ContinuousAction -> True,
+									BaseStyle -> {FontSize -> 14}
+								],
+								Button["Salva Punteggio",
+									faseClassifica = 2,
+									Enabled -> Dynamic[StringLength[nomeUtente] > 0],
+									ImageSize -> {160, 36},
+									Background -> RGBColor[0.2, 0.6, 0.9],
+									BaseStyle -> {White, Bold, FontSize -> 13}
+								]
+							}, Alignment -> Center, Spacings -> 1],
+
+							(* ---- FASE 2: CONFERMA NOME ---- *)
+							2,
+							Column[{
+								Style["Sei sicuro che '" <> nomeUtente <> "' sia corretto?",
+									  Darker[Red], Bold, 15],
+								Spacer[6],
+								Row[{
+									Button["Si, Salva",
+										Module[{nomeVal = nomeUtente},
+											SalvaRecord[nomeVal, score];
+											datiClassifica = RecuperaClassifica[];
+											faseClassifica = 3
+										],
+										ImageSize -> {110, 34},
+										Background -> RGBColor[0.2, 0.7, 0.9],
+										BaseStyle -> {White, Bold, FontSize -> 13}
+									],
+									Spacer[12],
+									Button["No, Modifica",
+										faseClassifica = 1,
+										ImageSize -> {120, 34},
+										Background -> Darker[Red],
+										BaseStyle -> {White, Bold, FontSize -> 13}
+									]
+								}]
+							}, Alignment -> Center, Spacings -> 1],
+
+							(* ---- FASE 3: SALVATAGGIO COMPLETATO ---- *)
+							3,
+							Column[{
+								Style["Punteggio salvato con successo!", Darker[Green], Bold, 15],
+								Spacer[4],
+								Button["Chiudi Finestra",
+									DialogReturn[],
+									ImageSize -> {160, 34},
+									Background -> RGBColor[0.2, 0.5, 0.2],
+									BaseStyle -> {White, Bold, FontSize -> 13}
+								]
+							}, Alignment -> Center, Spacings -> 1]
+						]
+					]
+
+				}, Spacings -> {1, 1}, Alignment -> Center],
+
+				FrameMargins   -> {{16, 16}, {12, 16}},
+				FrameStyle     -> None,
+				RoundingRadius -> 10,
+				Background     -> RGBColor[0.1, 0.4, 0.9]
+			]
+		],  (* fine DynamicModule *)
+
+		WindowTitle -> "Classifica",
+		WindowSize  -> {500, Automatic},
+		NotebookDynamicsEnabled -> True
 	]
-];
+);
 
 
 (* ============================================================== *)

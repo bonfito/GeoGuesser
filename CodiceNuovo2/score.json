@@ -22,5 +22,13 @@
 	{
 		"nome":"Shivam",
 		"punteggio":90
+	},
+	{
+		"nome":"Mario",
+		"punteggio":20
+	},
+	{
+		"nome":"Prova",
+		"punteggio":10
 	}
 ]
