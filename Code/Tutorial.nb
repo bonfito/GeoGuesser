@@ -10,17 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-<<<<<<< HEAD:Code/Tutorial_finale.nb
-NotebookDataLength[    151043,       2636]
-NotebookOptionsPosition[    149307,       2602]
-NotebookOutlinePosition[    149954,       2624]
-CellTagsIndexPosition[    149911,       2621]
-=======
 NotebookDataLength[    149466,       2584]
 NotebookOptionsPosition[    148041,       2556]
 NotebookOutlinePosition[    148508,       2575]
 CellTagsIndexPosition[    148465,       2572]
->>>>>>> 30eccd696edf4643cd9babcfbb972d7d30542d87:Code/Tutorial.nb
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2215,8 +2208,7 @@ Cell[TextData[{
  StyleBox["Per avviare il gioco : \n\t 1. Se appare \"Enable Dynamics?\", \
 accettalo \n\t 2. Dal menu: Evaluation \[RightArrow] Evaluate Notebook \n\t \
 3. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] qui sotto",
-  FontSize->17,
-  FontColor->GrayLevel[1]]
+  FontSize->17]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
  CellMargins->{{50, 50}, {6, 6}},
@@ -2231,8 +2223,6 @@ accettalo \n\t 2. Dal menu: Evaluation \[RightArrow] Evaluate Notebook \n\t \
    3.9873402378403463`*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -2277,53 +2267,22 @@ Cell[BoxData[{
   "]"}]}], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
-<<<<<<< HEAD:Code/Tutorial_finale.nb
- CellLabel->"In[1]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
-
-Cell[BoxData[
- DynamicModuleBox[{$CellContext`cliccato$$ = False}, 
-  ButtonBox["\<\"Avvia Gioco\"\>",
-   Appearance->Automatic,
-   Background->RGBColor[0.1, 0.4, 0.9],
-   BaseStyle->{
-     GrayLevel[1], Bold, FontSize -> 16},
-   ButtonFunction:>If[
-     Not[$CellContext`cliccato$$], CellPrint[
-       ExpressionCell[
-        HangmanGame`GeneraInterfaccia[], "Output"]]; $CellContext`cliccato$$ = 
-      True; Null],
-   Enabled->Dynamic[
-     Not[$CellContext`cliccato$$]],
-   Evaluator->Automatic,
-   ImageSize->{150, 50},
-   Method->"Queued"],
-  DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.987415634359707*^9, 3.9874231115401287`*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"9f90e0ff-e742-0949-b25a-e95fd331e48b"]
-}, Open  ]],
-=======
  CellLabel->
   "In[121]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
->>>>>>> 30eccd696edf4643cd9babcfbb972d7d30542d87:Code/Tutorial.nb
 
 Cell[TextData[{
  StyleBox["Indice",
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["\n",
+ StyleBox["\nIntroduzione\n",
   FontSize->20,
   FontWeight->"Bold"],
- StyleBox["Introduzione\n",
-  FontSize->20,
-  FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
  StyleBox["I. Regole del gioco\nII Guida all'Uso dell'Interfaccia\nIII. \
 Livello Bonus e Classifica\nIV. Approfondimenti\nV. Bibliografia e Sitografia\
 \nVI. Commenti e lavoro futuro",
   FontSize->18,
-  FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontWeight->"Bold"],
  "\n"
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -2355,10 +2314,7 @@ L'obiettivo dell'applicativo \[EGrave] unire il ragionamento logico e la \
 conoscenza geografica. Il gioco \[EGrave] progettato per essere intuitivo e \
 non richiede alcuna competenza informatica pregressa: tutto \[EGrave] gestito \
 da una comoda interfaccia grafica.Mettiti alla prova, indovina le nazioni \
-nascoste e scala la classifica globale!",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+nascoste e scala la classifica globale!\n",
   FontSize->17]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -2367,8 +2323,7 @@ nascoste e scala la classifica globale!",
  CellFrameColor->RGBColor[0.93, 0.27, 0.27],
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
-  3.9858387681869087`*^9}, {3.9874096802827625`*^9, 3.987409693324892*^9}, {
-  3.987423139293293*^9, 3.9874231510466156`*^9}},
+  3.9858387681869087`*^9}, {3.9874096802827625`*^9, 3.987409693324892*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
 
@@ -2385,10 +2340,7 @@ influenza tre fattori:\n\t 1. a difficolt\[AGrave] pi\[UGrave] alte \
 corrispondono nomi di nazioni pi\[UGrave] lunghi.\n\t 2. Punteggio: Riceverai \
 pi\[UGrave] punti per ogni lettera corretta se giochi a difficolt\[AGrave] \
 elevata.\n\t 3. Penalit\[AGrave]: Richiedere un suggerimento coster\[AGrave] \
-pi\[UGrave] punti ai livelli di difficolt\[AGrave] maggiori.",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+pi\[UGrave] punti ai livelli di difficolt\[AGrave] maggiori.\n",
   FontSize->17]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -2407,10 +2359,7 @@ Cell[TextData[{
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["L'interfaccia si divide in due fasi principali. Ecco come \
-utilizzare tutte le funzionalit\[AGrave] a tua disposizione:",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n\n",
+utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\n\n",
   FontSize->17],
  StyleBox["1. Fase di Selezione (Genera Esercizio e Seed)\n",
   FontSize->25,
@@ -2420,10 +2369,7 @@ scegliere il livello (Facile, Media, Difficile).\n\[Bullet] Seed (Opzionale): \
 Puoi inserire un numero intero nel campo di testo. Inserendo lo stesso numero \
 in partite future,   il computer generer\[AGrave] esattamente la stessa \
 parola. \[CapitalEGrave] utile per sfidare un amico ad armi pari!\n\[Bullet] \
-Clicca su INIZIA GIOCO per generare l'esercizio.",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+Clicca su INIZIA GIOCO per generare l'esercizio.\n",
   FontSize->17],
  StyleBox["\n 2. Fase di Gioco (Verifica Risultato)\n",
   FontSize->25,
@@ -2439,10 +2385,7 @@ questo bottone. Un pop-up ti riveler\[AGrave] la parola nascosta e la partita \
 terminer\[AGrave].\n\[Bullet] Pulisci Campi: Questo tasto azzera i tuoi \
 tentativi, gli errori e il punteggio per la nazione corrente, permettendoti \
 di ricominciare da capo la stessa parola (utile dopo aver visto la \
-soluzione).",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+soluzione).\n",
   FontSize->17]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -2465,10 +2408,7 @@ accesso a una Domanda Bonus. Ti verranno proposti 4 bottoni a scelta multipla \
 per indovinare la Capitale di quella specifica Nazione. \nSe indovini, \
 guadagnerai ben 50 punti extra!\nAl termine della partita (vittoria o \
 sconfitta), potrai salvare il tuo nome e confrontare il tuo punteggio nella \
-Classifica Globale dei migliori 50 giocatori.",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+Classifica Globale dei migliori 50 giocatori.\n",
   FontSize->17,
   FontColor->GrayLevel[0.88]]
 }], "Text",
@@ -2544,9 +2484,12 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["Per lo sviluppo di questo progetto e la comprensione delle \
 funzioni di interfaccia dinamica, ci siamo avvalsi della seguente \
-documentazione:\n[1] Wolfram Language & System Documentation Center, \
-DynamicModule. https://reference.wolfram.com/language/ref/DynamicModule.html\n\
-[2] Wolfram Language & System Documentation Center, Import/Export. \
+documentazione:\n",
+  FontSize->17,
+  FontColor->GrayLevel[0.88]],
+ StyleBox["[1] Wolfram Language & System Documentation Center, DynamicModule. \
+https://reference.wolfram.com/language/ref/DynamicModule.html\n[2] Wolfram \
+Language & System Documentation Center, Import/Export. \
 https://reference.wolfram.com/language/guide/ImportingAndExporting.html\n[3] \
 Dizionario Geografico: Lista delle Nazioni e Capitali del Mondo.\n[4] \
 Wikipedia: https://it.wikipedia.org/wiki/L%27impiccato\n[5] Wolfram Language \
@@ -2557,10 +2500,7 @@ https://reference.wolfram.com/language/ref/Circle.html\n[7] Wolfram Language \
 & System Documentation Center, Pane. \
 https://reference.wolfram.com/language/ref/Pane.html\n[8] Wolfram Language & \
 System Documentation Center, Grid. \
-https://reference.wolfram.com/language/ref/Grid.html",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+https://reference.wolfram.com/language/ref/Grid.html\n",
   FontSize->17]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -2581,25 +2521,27 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["Commenti Tecnici : \n",
   FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["Lo sviluppo del progetto ha richiesto un'attenta analisi per \
-quanto riguarda l'aggiornamento dinamico dell'interfaccia utente in \
-Mathematica. Per evitare \n conflitti di \"shadowing\" e blocchi causati da \
-finestre di pop-up sovrapposte (come la conferma del nome in classifica), \
-abbiamo implementato   una \"Macchina a Stati\" (faseClassifica) all'interno \
-del DynamicModule. La persistenza dei dati \[EGrave] gestita in modo  tramite \
-lettura/scrittura  di file score.json locali, utilizzando il comando Quiet \
-per prevenire crash derivati da file corrotti o inesistenti.\n",
-  FontColor->GrayLevel[1]],
- StyleBox["\nLavoro Futuro : \n\[Bullet] Inserimento di un timer che \
-introduca un moltiplicatore di punteggio per premiare la velocit\[AGrave] di \
-risposta.\n\[Bullet] Ampliamento del dizionario con altre categorie \
-didattiche (es. Chimica: Elemento e Formula; Storia: Evento e Data).\n\
-\[Bullet] Supporto per account utente con cronologia delle partite precedenti \
-per tenere traccia dei propri miglioramenti.",
+  FontColor->GrayLevel[0.88]],
+ "Lo sviluppo del progetto ha richiesto un'attenta analisi per quanto \
+riguarda l'aggiornamento dinamico dell'interfaccia utente in Mathematica. Per \
+evitare \n conflitti di \"shadowing\" e blocchi causati da finestre di pop-up \
+sovrapposte (come la conferma del nome in classifica), abbiamo implementato   \
+una \"Macchina a Stati\" (faseClassifica) all'interno del DynamicModule. La \
+persistenza dei dati \[EGrave] gestita in modo ",
+ " tramite lettura/scrittura  di file score.json locali, utilizzando il \
+comando Quiet per prevenire crash derivati da file corrotti o inesistenti.\n\
+",
+ StyleBox["\nLavoro Futuro : \n",
   FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n",
+  FontColor->GrayLevel[0.88]],
+ StyleBox["\[Bullet] Inserimento di un timer che introduca un moltiplicatore \
+di punteggio per premiare la velocit\[AGrave] di risposta.\n",
+  FontSize->17],
+ StyleBox["\[Bullet] Ampliamento del dizionario con altre categorie \
+didattiche (es. Chimica: Elemento e Formula; Storia: Evento e Data).\n",
+  FontSize->17],
+ StyleBox["\[Bullet] Supporto per account utente con cronologia delle partite \
+precedenti per tenere traccia dei propri miglioramenti.\n",
   FontSize->17]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -2612,15 +2554,12 @@ per tenere traccia dei propri miglioramenti.",
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
-ScreenStyleEnvironment->"SlideShow",
-WindowSize->{966.8571428571428, 576.8571428571428},
-WindowMargins->{{
-  Automatic, -5.14285714285711}, {-5.14285714285711, Automatic}},
+WindowSize->{Full, Full},
+WindowMargins->{{4, 628}, {96, 4}},
 DockedCells->{},
-TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
 Magnification:>1.05 Inherited,
 Background->RGBColor[0.07, 0.07, 0.13],
-FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 ]
@@ -2635,23 +2574,6 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-<<<<<<< HEAD:Code/Tutorial_finale.nb
-Cell[554, 20, 131393, 2180, 457, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[131950, 2202, 1119, 23, 186, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
-Cell[CellGroupData[{
-Cell[133094, 2229, 1670, 43, 26, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
- CellOpen->False],
-Cell[134767, 2274, 729, 19, 76, "Output",ExpressionUUID->"9f90e0ff-e742-0949-b25a-e95fd331e48b"]
-}, Open  ]],
-Cell[135511, 2296, 1540, 36, 307, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[137054, 2334, 1230, 26, 263, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[138287, 2362, 1334, 27, 288, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[139624, 2391, 2499, 52, 627, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[142126, 2445, 1103, 25, 237, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[143232, 2472, 2572, 53, 578, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[145807, 2527, 1761, 35, 519, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
-Cell[147571, 2564, 1732, 36, 493, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
-=======
 Cell[554, 20, 131393, 2180, 447, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
 Cell[131950, 2202, 1092, 22, 186, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[133045, 2226, 1668, 44, 19, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
@@ -2664,7 +2586,6 @@ Cell[140883, 2400, 1045, 22, 212, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-acc
 Cell[141931, 2424, 2572, 53, 444, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
 Cell[144506, 2479, 1764, 35, 340, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
 Cell[146273, 2516, 1764, 38, 365, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
->>>>>>> 30eccd696edf4643cd9babcfbb972d7d30542d87:Code/Tutorial.nb
 }
 ]
 *)
