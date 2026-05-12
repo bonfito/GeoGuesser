@@ -582,7 +582,7 @@ MostraClassificaGUI[score_Integer] := DynamicModule[
 (* ============================================================== *)
 DisegnaImpiccato[n_] := Graphics[
   {
-    Thick,  (* Spessore delle linee *)
+    White,Thick,  (* Spessore delle linee *)
     
     (* Forca: base orizzontale, palo verticale, traversa, cappio *)
     Line[{{0, 0}, {3, 0}}], 
@@ -664,18 +664,22 @@ GeneraInterfaccia[] := DynamicModule[
       (* ========================================================= *)
       "selezione", 
       Column[{
-        Style["Seleziona la difficolt\[AGrave]", Bold, 20], 
+        Style["Seleziona la difficolt\[AGrave]", Bold, White, 20], 
         
         (* RadioButtonBar crea i bottoni radio collegati a gamemode.
            Dynamic[gamemode] aggiorna la variabile al click *)
-        RadioButtonBar[Dynamic[gamemode], {1 -> "Facile", 2 -> "Media", 3 -> "Difficile"}], 
+        Row[{
+         RadioButton[Dynamic[gamemode], 1], Style[" Facile  ", White, 16],
+         RadioButton[Dynamic[gamemode], 2], Style[" Media   ", White, 16],
+         RadioButton[Dynamic[gamemode], 3], Style[" Difficile", White, 16]
+           }], 
         
         (* Campo seed con validazione in tempo reale.
            La funzione di setter ({seed, seedError} = If[...]) viene chiamata
            ad ogni tasto grazie a ContinuousAction -> True.
            StringMatchQ[#, DigitCharacter..] accetta solo cifre decimali.
            StringMatchQ[#, ""] accetta il campo vuoto (seed non specificato) *)
-        Row[{"Seed (opzionale): ", InputField[
+        Row[{Style["Seed (opzionale): ",White], InputField[
             Dynamic[seed, ({seed, seedError} = If[
               StringMatchQ[#, DigitCharacter ..] || StringMatchQ[#, ""],
               {#, ""},     (* Input valido: aggiorna seed, azzera errore *)
@@ -722,12 +726,12 @@ GeneraInterfaccia[] := DynamicModule[
       (* ========================================================= *)
       "gioco", 
       Column[{
-        Style["Gioco dell'impiccato", Bold, 28],
+        Style["Gioco dell'impiccato", Bold, 28, White],
         
         Spacer[10],
 
         (* Punteggio aggiornato in tempo reale grazie a Dynamic *)
-        Dynamic[Row[{"Punteggio: ", Style[score, RGBColor[0.1, 0.4, 0.9], Bold, 20]}]], 
+        Dynamic[Row[{Style["Punteggio: ", White, 14], Style[score, Blue, Bold, 14]}]], 
         
         Spacer[10],
 
@@ -740,7 +744,7 @@ GeneraInterfaccia[] := DynamicModule[
           Which[
             # === " ", Style["   ", Bold, 28],  (* spazio: mostra vuoto *)
             # === "_", Style[" _ ", Gray, Bold, 28],  (* da indovinare *)
-            True,      Style[#, Bold, 28]             (* lettera indovinata *)
+            True,      Style[#, Bold, 28, White]             (* lettera indovinata *)
            ] & /@ stato,
            " "
         ]]], 
@@ -775,10 +779,10 @@ GeneraInterfaccia[] := DynamicModule[
 
         (* Lettere sbagliate: Riffle inserisce ", " tra gli elementi di errori.
            StringJoin ricostruisce la stringa dalla lista *)
-        Dynamic[Row[{"Lettere sbagliate: ", Style[StringJoin[Riffle[errori, ", "]], Red, Bold]}]],
+        Dynamic[Row[{Style["Lettere sbagliate: ", White],Style[StringJoin[Riffle[errori, ", "]], Red, Bold]}]],
       
         (* Contatore errori con massimo consentito *)
-        Dynamic[Row[{"Errori: ", Style[Length[errori], Red, Bold], "/", maxErrori}]],
+        Dynamic[Row[{Style["Errori: ", White], Style[Length[errori], Red, Bold], Style["/", White], maxErrori}]],
         
         (* Messaggio di feedback dopo ogni lettera (corretto/sbagliato) *)
         Dynamic[Style[messaggio, RGBColor[0.1, 0.4, 0.9], Bold]], 
@@ -872,7 +876,8 @@ GeneraInterfaccia[] := DynamicModule[
                     Style["Domanda Bonus (+50 punti extra!):", Purple, Bold, 18],
                     Spacer[10],
                     (* Capitalize porta la prima lettera in maiuscolo per la visualizzazione *)
-                    Row[{"Qual \[EGrave] la capitale di ", Capitalize[StringJoin[parola]], "? "}],
+                    Row[{Style["Qual \[EGrave] la capitale di ", White, 16],Style[Capitalize[StringJoin[parola]], White, Bold, 16],Style["?", White, 16]
+                    }],
                     
                     (* Generazione bottoni Bonus a scelta multipla *)
                     Row[Riffle[
