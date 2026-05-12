@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   3842852,      63167]
-NotebookOptionsPosition[   3841141,      63134]
-NotebookOutlinePosition[   3841736,      63155]
-CellTagsIndexPosition[   3841693,      63152]
+NotebookDataLength[   3858667,      63552]
+NotebookOptionsPosition[   3856585,      63510]
+NotebookOutlinePosition[   3857420,      63538]
+CellTagsIndexPosition[   3857341,      63533]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,7 +25,7 @@ Cell[TextData[{
  StyleBox["Un'avventura didattica tra nazioni e capitali del mondo.\n",
   FontSize->25,
   FontColor->RGBColor[0.98, 0.75, 0.2]],
- StyleBox["Gruppo Numero 5 : Gli Impiccati\nMC 2025/2026\n\n",
+ StyleBox["Gruppo Numero 5 : Veni, Vidi, Wolfram\nMC 2025/2026\n\n",
   FontSize->18,
   FontColor->RGBColor[1., 1., 1.]],
  Cell[BoxData[
@@ -62133,7 +62133,8 @@ curriculum B)               (Anno 1 - curriculum B)                        \
    3.987577018967802*^9}, {3.987591445129198*^9, 3.987591445129253*^9}, {
    3.987591505653558*^9, 3.987591511064474*^9}, {3.987599761135378*^9, 
    3.987599761135378*^9}, {3.987599860374296*^9, 3.987599865118412*^9}, {
-   3.9875998998968945`*^9, 3.987599906542309*^9}},
+   3.9875998998968945`*^9, 3.987599906542309*^9}, {3.98760103997633*^9, 
+   3.9876010474507217`*^9}, 3.9876012906499214`*^9},
  Background->RGBColor[
   0.07, 0.07, 0.13],ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
 
@@ -62208,11 +62209,10 @@ Cell[BoxData[{
   "]"}]}], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
- CellLabel->
-  "In[276]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
+ CellLabel->"In[1]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`cliccato$$ = False}, 
+ DynamicModuleBox[{$CellContext`cliccato$$ = True}, 
   ButtonBox["\<\"Avvia Gioco\"\>",
    Appearance->Automatic,
    Background->RGBColor[0.1, 0.4, 0.9],
@@ -62230,9 +62230,279 @@ Cell[BoxData[
    Method->"Queued"],
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{{3.9875737932456217`*^9, 3.98757380544016*^9}, 
-   3.987580284199943*^9, 3.987580344180171*^9, 3.987580658679132*^9},
- CellLabel->
-  "Out[280]=",ExpressionUUID->"907a0ab8-9b63-49ba-ae84-5ec7625f62a3"]
+   3.987580284199943*^9, 3.987580344180171*^9, 3.987580658679132*^9, 
+   3.9876002295993176`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"c28754f5-6c2f-8b46-960f-59523dd51367"],
+
+Cell[BoxData[
+ DynamicModuleBox[{HangmanGame`Private`seed$$ = 1, 
+  HangmanGame`Private`seedError$$ = "", HangmanGame`Private`fase$$ = "gioco", 
+  HangmanGame`Private`gamemode$$ = 1, HangmanGame`Private`parola$$ = {
+  "s", "i", "r", "i", "a"}, HangmanGame`Private`stato$$ = {
+  "_", "_", "_", "_", "_"}, HangmanGame`Private`errori$$ = {}, 
+  HangmanGame`Private`score$$ = 0, HangmanGame`Private`messaggio$$ = "", 
+  HangmanGame`Private`maxErrori$$ = 6, 
+  HangmanGame`Private`opzioniBonus$$ = {}, 
+  HangmanGame`Private`faseBonusCompletata$$ = False, 
+  HangmanGame`Private`messaggioBonus$$ = ""}, 
+  DynamicBox[ToBoxes[
+    Switch[HangmanGame`Private`fase$$, "selezione", 
+     Column[{
+       Style["Seleziona la difficolt\[AGrave]", Bold, White, 20], 
+       Row[{
+         RadioButton[
+          Dynamic[HangmanGame`Private`gamemode$$], 1], 
+         Style[" Facile  ", White, 16], 
+         RadioButton[
+          Dynamic[HangmanGame`Private`gamemode$$], 2], 
+         Style[" Media   ", White, 16], 
+         RadioButton[
+          Dynamic[HangmanGame`Private`gamemode$$], 3], 
+         Style[" Difficile", White, 16]}], 
+       Row[{
+         Style["Seed (opzionale): ", White], 
+         InputField[
+          Dynamic[
+          HangmanGame`Private`seed$$, ({
+            HangmanGame`Private`seed$$, HangmanGame`Private`seedError$$} = If[
+             Or[
+              StringMatchQ[#, 
+               Repeated[DigitCharacter]], 
+              StringMatchQ[#, ""]], {#, ""}, {
+             HangmanGame`Private`seed$$, 
+              "Inserire solo numeri naturali (0, 1, 2, ...)."}])& ], String, 
+          FieldHint -> "Inserire un numero naturale", ContinuousAction -> 
+          True]}], 
+       Dynamic[
+        If[HangmanGame`Private`seedError$$ != "", 
+         Style[HangmanGame`Private`seedError$$, Red, Italic], ""]], 
+       Button["Inizia partita", 
+        Module[{}, If[
+           And[
+            StringQ[HangmanGame`Private`seed$$], HangmanGame`Private`seed$$ != 
+            ""], HangmanGame`Private`seed$$ = 
+           ToExpression[HangmanGame`Private`seed$$], 
+           HangmanGame`Private`seed$$ = Automatic]; {
+           HangmanGame`Private`parola$$, HangmanGame`Private`stato$$, 
+            HangmanGame`Private`errori$$, HangmanGame`Private`score$$} = 
+          HangmanGame`Private`GeneraEsericizio[
+           HangmanGame`Private`gamemode$$, HangmanGame`Private`seed$$]; 
+         HangmanGame`Private`fase$$ = "gioco"; 
+         HangmanGame`Private`messaggio$$ = ""; 
+         HangmanGame`Private`opzioniBonus$$ = {}; 
+         HangmanGame`Private`faseBonusCompletata$$ = False; 
+         HangmanGame`Private`messaggioBonus$$ = ""; Null], 
+        ImageSize -> {150, 60}, BaseStyle -> {FontSize -> 16, Bold, White}, 
+        Background -> RGBColor[0.1, 0.4, 0.9]]}, Spacings -> 2], "gioco", 
+     Column[{
+       Style["Gioco dell'impiccato", Bold, 28, White], 
+       Spacer[10], 
+       Dynamic[
+        Row[{
+          Style["Punteggio: ", White, 14], 
+          Style[HangmanGame`Private`score$$, Blue, Bold, 14]}]], 
+       Spacer[10], 
+       Dynamic[
+        Row[
+         Riffle[
+          Map[Which[# === " ", 
+            Style["   ", Bold, 28], # === "_", 
+            Style[" _ ", Gray, Bold, 28], True, 
+            Style[#, Bold, 28, White]]& , HangmanGame`Private`stato$$], 
+          " "]]], 
+       Spacer[10], 
+       Row[{
+         Button[
+         "Suggerimento", {
+           HangmanGame`Private`stato$$, HangmanGame`Private`errori$$, 
+            HangmanGame`Private`score$$} = 
+          HangmanGame`Private`Suggerimento[
+           HangmanGame`Private`parola$$, HangmanGame`Private`stato$$, 
+            HangmanGame`Private`errori$$, HangmanGame`Private`score$$, 
+            HangmanGame`Private`gamemode$$], Enabled -> And[
+            MemberQ[HangmanGame`Private`stato$$, "_"], 
+            Length[HangmanGame`Private`errori$$] < 
+            HangmanGame`Private`maxErrori$$], 
+          BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+          RGBColor[0.8, 0.5, 0.], ImageSize -> {140, 38}], 
+         Spacer[20], 
+         Button[
+         "Mostra soluzione", 
+          HangmanGame`Private`MostraSoluzione[
+           HangmanGame`Private`parola$$]; {
+            HangmanGame`Private`stato$$, HangmanGame`Private`fase$$, 
+             HangmanGame`Private`messaggio$$, 
+             HangmanGame`Private`seedError$$} = {
+            HangmanGame`Private`parola$$, "selezione", "", ""}, 
+          BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+          RGBColor[0.4, 0.1, 0.6], ImageSize -> {160, 38}]}], 
+       Dynamic[
+        Row[{
+          Style["Lettere sbagliate: ", White], 
+          Style[
+           StringJoin[
+            Riffle[HangmanGame`Private`errori$$, ", "]], Red, Bold]}]], 
+       Dynamic[
+        Row[{
+          Style["Errori: ", White], 
+          Style[
+           Length[HangmanGame`Private`errori$$], Red, Bold], 
+          Style["/", White], HangmanGame`Private`maxErrori$$}]], 
+       Dynamic[
+        Style[HangmanGame`Private`messaggio$$, 
+         RGBColor[0.1, 0.4, 0.9], Bold]], 
+       Dynamic[
+        HangmanGame`Private`DisegnaImpiccato[
+         Length[HangmanGame`Private`errori$$]]], 
+       Spacer[10], 
+       Dynamic[
+        Column[
+         Map[Row[
+           Join[{
+             Spacer[Part[#, 1] 25]}, 
+            Table[
+             With[{HangmanGame`Private`l$ = HangmanGame`Private`lettera}, 
+              Button[
+               Style[HangmanGame`Private`l$, White, Bold, FontSize -> 16], 
+               Module[{HangmanGame`Private`guess$ = ToLowerCase[
+                   StringTrim[HangmanGame`Private`l$]]}, {
+                  HangmanGame`Private`stato$$, HangmanGame`Private`errori$$, 
+                   HangmanGame`Private`score$$} = 
+                 HangmanGame`Private`AggiornaStato[
+                  HangmanGame`Private`parola$$, HangmanGame`Private`stato$$, 
+                   HangmanGame`Private`guess$, HangmanGame`Private`score$$, 
+                   HangmanGame`Private`gamemode$$, 
+                   HangmanGame`Private`errori$$]; 
+                HangmanGame`Private`messaggio$$ = If[
+                   MemberQ[
+                   HangmanGame`Private`parola$$, HangmanGame`Private`guess$], 
+                   "Lettera corretta!", "Lettera sbagliata!"]; Null], Enabled -> 
+               And[
+                 Not[
+                  MemberQ[
+                   Join[
+                   HangmanGame`Private`stato$$, HangmanGame`Private`errori$$], 
+                   ToLowerCase[HangmanGame`Private`l$]]], 
+                 MemberQ[HangmanGame`Private`stato$$, "_"], 
+                 Length[HangmanGame`Private`errori$$] < 
+                 HangmanGame`Private`maxErrori$$], Background -> Which[
+                 MemberQ[HangmanGame`Private`stato$$, 
+                  ToLowerCase[HangmanGame`Private`l$]], 
+                 RGBColor[0.2, 0.7, 0.3], 
+                 MemberQ[HangmanGame`Private`errori$$, 
+                  ToLowerCase[HangmanGame`Private`l$]], 
+                 RGBColor[0.75, 0.15, 0.15], True, 
+                 RGBColor[0.15, 0.35, 0.75]], ImageSize -> {48, 48}]], {
+             HangmanGame`Private`lettera, 
+              Part[#, 2]}]], 
+           Spacer[4]]& , HangmanGame`Private`righeTastiera], Spacings -> 
+         0.8]], 
+       Dynamic[
+        If[
+         Or[
+         HangmanGame`Private`stato$$ === HangmanGame`Private`parola$$, 
+          Length[HangmanGame`Private`errori$$] >= 
+          HangmanGame`Private`maxErrori$$], 
+         Column[{
+           If[HangmanGame`Private`stato$$ === HangmanGame`Private`parola$$, 
+            If[
+             Not[HangmanGame`Private`faseBonusCompletata$$], 
+             If[HangmanGame`Private`opzioniBonus$$ === {}, 
+               
+               Module[{
+                HangmanGame`Private`corretta$ = 
+                 HangmanGame`Private`dizionarioGeografia[
+                   StringJoin[HangmanGame`Private`parola$$]], 
+                 HangmanGame`Private`sbagliate$}, 
+                HangmanGame`Private`sbagliate$ = RandomSample[
+                   DeleteCases[
+                    Values[HangmanGame`Private`dizionarioGeografia], 
+                    HangmanGame`Private`corretta$], 3]; 
+                HangmanGame`Private`opzioniBonus$$ = RandomSample[
+                   
+                   Join[{HangmanGame`Private`corretta$}, 
+                    HangmanGame`Private`sbagliate$]]; Null]]; Column[{
+                Spacer[10], 
+                Style["Hai vinto!", Green, Bold, 18], 
+                Style["Domanda Bonus (+50 punti extra!):", Purple, Bold, 18], 
+                Spacer[10], 
+                Row[{
+                  Style["Qual \[EGrave] la capitale di ", White, 16], 
+                  Style[
+                   Capitalize[
+                    StringJoin[HangmanGame`Private`parola$$]], White, Bold, 
+                   16], 
+                  Style["?", White, 16]}], 
+                Row[
+                 Riffle[
+                  Map[Button[
+                    Capitalize[#], 
+                    If[# === HangmanGame`Private`dizionarioGeografia[
+                    StringJoin[HangmanGame`Private`parola$$]], 
+                    HangmanGame`Private`score$$ = 
+                    HangmanGame`Private`score$$ + 50; 
+                    HangmanGame`Private`messaggioBonus$$ = 
+                    "Risposta corretta! Hai guadagnato 50 punti extra.", 
+                    HangmanGame`Private`messaggioBonus$$ = 
+                    "Sbagliato! La risposta corretta era: " <> Capitalize[
+                    HangmanGame`Private`dizionarioGeografia[
+                    StringJoin[HangmanGame`Private`parola$$]]]]; 
+                    HangmanGame`Private`faseBonusCompletata$$ = True; Null]& ,
+                    HangmanGame`Private`opzioniBonus$$], 
+                  Spacer[10]]]}, Alignment -> Center], 
+             Column[{
+               Spacer[10], 
+               Style[HangmanGame`Private`messaggioBonus$$, 
+                If[
+                 StringContainsQ[
+                 HangmanGame`Private`messaggioBonus$$, "punti extra"], Green, 
+                 Red], Bold], 
+               Spacer[10], 
+               Button["Salva e Mostra Classifica", 
+                SessionSubmit[
+                 HangmanGame`Private`MostraClassificaGUI[
+                 HangmanGame`Private`score$$]], 
+                BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+                RGBColor[0.1, 0.4, 0.9], ImageSize -> {240, 42}]}, Alignment -> 
+              Center]], 
+            Column[{
+              Spacer[10], 
+              Style["Hai perso! La nazione era: " <> Capitalize[
+                 StringJoin[HangmanGame`Private`parola$$]], Red, Bold], 
+              Spacer[10], 
+              Button["Salva e Mostra Classifica", 
+               SessionSubmit[
+                HangmanGame`Private`MostraClassificaGUI[
+                HangmanGame`Private`score$$]], 
+               BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+               RGBColor[0.1, 0.4, 0.9], ImageSize -> {240, 42}]}, Alignment -> 
+             Center]], 
+           Spacer[25], 
+           Button[
+           "Pulisci Campi", {
+              HangmanGame`Private`stato$$, HangmanGame`Private`errori$$, 
+               HangmanGame`Private`score$$} = 
+             HangmanGame`Private`Pulisci[HangmanGame`Private`parola$$]; 
+            HangmanGame`Private`opzioniBonus$$ = {}; 
+            HangmanGame`Private`faseBonusCompletata$$ = False; 
+            HangmanGame`Private`messaggioBonus$$ = ""; Null, 
+            BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+            RGBColor[0.2, 0.5, 0.7], ImageSize -> {150, 38}]}], ""]], 
+       Button["Nuova partita", 
+        Module[{}, HangmanGame`Private`fase$$ = "selezione"; 
+         HangmanGame`Private`messaggio$$ = ""; 
+         HangmanGame`Private`seedError$$ = ""; 
+         HangmanGame`Private`opzioniBonus$$ = {}; 
+         HangmanGame`Private`faseBonusCompletata$$ = False; 
+         HangmanGame`Private`messaggioBonus$$ = ""; Null], 
+        BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+        RGBColor[0.3, 0.3, 0.8], ImageSize -> {150, 40}]}]], StandardForm],
+   ImageSizeCache->{
+    647.3729882812503, {453.5036127486399, 462.7628900923899}}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.9876007562181377`*^9},ExpressionUUID->"94b0cba7-42e6-3640-9867-\
+ecdb63e6637f"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -62247,9 +62517,11 @@ Cell[TextData[{
   FontSize->20,
   FontWeight->"Bold",
   FontColor->GrayLevel[1]],
- StyleBox["I. Regole del gioco\nII Guida all'Uso dell'Interfaccia\nIII. \
-Livello Bonus e Classifica\nIV. Approfondimenti\nV. Bibliografia e Sitografia\
-\nVI. Commenti e lavoro futuro",
+ StyleBox["I. Regole del gioco\nII Guida all'Uso dell'Interfaccia\
+\[LineSeparator]\tFase di selezione\n\tFase di gioco\nIII. Livello Bonus e \
+Interfaccia\nIV. Approfondimenti\n\tStoria\n\tStrategi\n\tSchema delle \
+dipendenze funzionali\nV. Bibliografia e Sitografia\nVI. Commenti e lavoro \
+futuro",
   FontSize->18,
   FontWeight->"Bold",
   FontColor->GrayLevel[1]],
@@ -62269,7 +62541,7 @@ Livello Bonus e Classifica\nIV. Approfondimenti\nV. Bibliografia e Sitografia\
    3.985837739437933*^9}, {3.9858378073290215`*^9, 3.9858378224481792`*^9}, {
    3.985837871715273*^9, 3.9858379528118877`*^9}, {3.9858386000979633`*^9, 
    3.9858386326541595`*^9}, 3.9873393814061832`*^9, {3.98740915493186*^9, 
-   3.98740919761302*^9}},
+   3.98740919761302*^9}, {3.987600279716486*^9, 3.98760033928755*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
 
@@ -62283,8 +62555,8 @@ rivisitazione interattiva e didattica del classico gioco dell'impiccato.\n\
 L'obiettivo dell'applicativo \[EGrave] unire il ragionamento logico e la \
 conoscenza geografica. Il gioco \[EGrave] progettato per essere intuitivo e \
 non richiede alcuna competenza informatica pregressa: tutto \[EGrave] gestito \
-da una comoda interfaccia grafica.Mettiti alla prova, indovina le nazioni \
-nascoste e scala la classifica globale!",
+da una comoda interfaccia grafica.\[LineSeparator]Mettiti alla prova, \
+indovina le nazioni nascoste e scala le classifiche!",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -62297,7 +62569,8 @@ nascoste e scala la classifica globale!",
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
   3.9858387681869087`*^9}, {3.9874096802827625`*^9, 3.987409693324892*^9}, {
-  3.987423139293293*^9, 3.9874231510466156`*^9}},
+  3.987423139293293*^9, 3.9874231510466156`*^9}, {3.9876009833462334`*^9, 
+  3.9876010020359287`*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
 
@@ -62306,15 +62579,16 @@ Cell[TextData[{
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["Il computer sceglie casualmente il nome di una Nazione. Il tuo \
-compito \[EGrave] indovinare la parola lettera per lettera prima di \
-commettere 6 errori (che porteranno al completamento del disegno \
+ StyleBox["Il computer sceglie il nome di una Nazione in base al seed \
+inserito. Il tuo compito \[EGrave] indovinare la parola lettera per lettera \
+prima di commettere 6 errori (che porteranno al completamento del disegno \
 dell'impiccato).\n\nLa difficolt\[AGrave] (Facile, Media, Difficile) \
-influenza tre fattori:\n\t 1. a difficolt\[AGrave] pi\[UGrave] alte \
-corrispondono nomi di nazioni pi\[UGrave] lunghi.\n\t 2. Punteggio: Riceverai \
-pi\[UGrave] punti per ogni lettera corretta se giochi a difficolt\[AGrave] \
-elevata.\n\t 3. Penalit\[AGrave]: Richiedere un suggerimento coster\[AGrave] \
-pi\[UGrave] punti ai livelli di difficolt\[AGrave] maggiori.",
+influenza tre fattori:\n\t 1. Lunghezza della parola: pi\[UGrave] \[EGrave] \
+alta la difficolt\[AGrave], pi\[UGrave] i nomi delle Nazioni saranno lunghi.\n\
+\t 2. Punteggio: riceverai pi\[UGrave] punti per ogni lettera corretta se \
+giochi a difficolt\[AGrave] elevata.\n\t 3. Penalit\[AGrave]: richiedere un \
+suggerimento coster\[AGrave] pi\[UGrave] punti ai livelli di difficolt\
+\[AGrave] maggiori.",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -62326,7 +62600,9 @@ pi\[UGrave] punti ai livelli di difficolt\[AGrave] maggiori.",
  CellFrameColor->RGBColor[0.93, 0.27, 0.27],
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
-  3.9858387681869087`*^9}, {3.9873512930195704`*^9, 3.987351294208749*^9}},
+  3.9858387681869087`*^9}, {3.9873512930195704`*^9, 3.987351294208749*^9}, {
+  3.987600807091959*^9, 3.987600830924261*^9}, {3.987600861653717*^9, 
+  3.987600962174679*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
 
@@ -62336,39 +62612,38 @@ Cell[TextData[{
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["L'interfaccia si divide in due fasi principali. Ecco come \
-utilizzare tutte le funzionalit\[AGrave] a tua disposizione:",
-  FontSize->17,
-  FontColor->GrayLevel[1]],
- StyleBox["\n\n",
-  FontSize->17],
- StyleBox["1. Fase di Selezione (Genera Esercizio e Seed)\n",
-  FontSize->25,
-  FontColor->RGBColor[0.98, 0.75, 0.2]],
- StyleBox["\[Bullet] Seleziona la difficolt\[AGrave]: Usa i bottoni per \
-scegliere il livello (Facile, Media, Difficile).\n\[Bullet] Seed (Opzionale): \
-Puoi inserire un numero intero nel campo di testo. Inserendo lo stesso numero \
-in partite future,   il computer generer\[AGrave] esattamente la stessa \
-parola. \[CapitalEGrave] utile per sfidare un amico ad armi pari!\n\[Bullet] \
-Clicca su INIZIA GIOCO per generare l'esercizio.",
+utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\[LineSeparator]",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
   FontSize->17],
+ StyleBox["1. Fase di Selezione (Genera Esercizio e Seed)\n",
+  FontSize->25,
+  FontColor->RGBColor[0.98, 0.75, 0.2]],
+ StyleBox["\[Bullet] Seleziona la difficolt\[AGrave]: usa i bottoni per \
+scegliere il livello (Facile, Media, Difficile).\n\[Bullet] Seed (Opzionale): \
+puoi inserire un numero intero nel campo di testo. Inserendo lo stesso numero \
+in partite future,  il computer generer\[AGrave] esattamente la stessa \
+parola. \[CapitalEGrave] utile per sfidare un amico ad armi pari!\n\[Bullet] \
+Clicca su \[OpenCurlyDoubleQuote]Avvia Gioco\[CloseCurlyDoubleQuote] per \
+generare l'esercizio.\n",
+  FontSize->17,
+  FontColor->GrayLevel[1]],
  StyleBox["\n 2. Fase di Gioco (Verifica Risultato)\n",
   FontSize->25,
   FontColor->RGBColor[0.98, 0.75, 0.2]],
  StyleBox["\[Bullet] Tastiera a schermo: Clicca sulle lettere per fare un \
 tentativo. Se la lettera \[EGrave] corretta (Verifica Risultato positiva) \
-diventer\[AGrave] verde e guadagnerai punti; \n  se \[EGrave] sbagliata, \
-diventer\[AGrave] rossa e verr\[AGrave] aggiunto un pezzo al patibolo.\n\
-\[Bullet] Suggerimento: Se sei bloccato, clicca su \"Suggerimento\". Il \
-computer sveler\[AGrave] una lettera mancante, ma ti verr\[AGrave] sottratto \
-del punteggio.\n\[Bullet] Mostra Soluzione: Se vuoi arrenderti, clicca su \
-questo bottone. Un pop-up ti riveler\[AGrave] la parola nascosta e la partita \
-terminer\[AGrave].\n\[Bullet] Pulisci Campi: Questo tasto azzera i tuoi \
-tentativi, gli errori e il punteggio per la nazione corrente, permettendoti \
-di ricominciare da capo la stessa parola (utile dopo aver visto la \
-soluzione).",
+diventer\[AGrave] verde e guadagnerai punti.\[LineSeparator]Se \[EGrave] \
+sbagliata, diventer\[AGrave] rossa e verr\[AGrave] aggiunto un pezzo al \
+patibolo.\n\[Bullet] Suggerimento: se sei bloccato, clicca su \
+\"Suggerimento\". Il computer sveler\[AGrave] una lettera mancante, ma ti \
+verr\[AGrave] sottratto del punteggio.\n\[Bullet] Mostra Soluzione: se vuoi \
+arrenderti, clicca su questo bottone. Un pop-up ti riveler\[AGrave] la parola \
+nascosta e la partita terminer\[AGrave].\n\[Bullet] Pulisci Campi: questo \
+tasto azzera i tuoi tentativi, gli errori e il punteggio per la nazione \
+corrente, permettendoti di ricominciare da capo la stessa parola (utile dopo \
+aver visto la soluzione).",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -62380,7 +62655,8 @@ soluzione).",
  CellFrameColor->RGBColor[0.93, 0.27, 0.27],
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
-  3.9858387681869087`*^9}, {3.987351461665354*^9, 3.987351461924592*^9}},
+  3.9858387681869087`*^9}, {3.987351461665354*^9, 3.987351461924592*^9}, {
+  3.987600663965748*^9, 3.98760079184289*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
 
@@ -62394,7 +62670,7 @@ accesso a una Domanda Bonus. Ti verranno proposti 4 bottoni a scelta multipla \
 per indovinare la Capitale di quella specifica Nazione. \nSe indovini, \
 guadagnerai ben 50 punti extra!\nAl termine della partita (vittoria o \
 sconfitta), potrai salvare il tuo nome e confrontare il tuo punteggio nella \
-Classifica Globale dei migliori 50 giocatori.",
+Classifica dei migliori 50 giocatori.",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -62407,12 +62683,12 @@ Classifica Globale dei migliori 50 giocatori.",
  CellFrameColor->RGBColor[0.93, 0.27, 0.27],
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
-  3.9858387681869087`*^9}},
+  3.9858387681869087`*^9}, {3.9876006546107903`*^9, 3.987600655544779*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
 
 Cell[TextData[{
- StyleBox["IV.  Approfondimenti\n\n",
+ StyleBox["IV.  Approfondimenti\n",
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
@@ -62430,7 +62706,15 @@ Il gioco viene citato anche nel libro \[OpenCurlyDoubleQuote]Traditional \
 Games\[CloseCurlyDoubleQuote] di Alice Bertha Gomme 1894, col nome \
 \[OpenCurlyDoubleQuote]Uccelli, belve e pesci.\[CloseCurlyDoubleQuote] Le \
 regole sono quasi uguali, eccetto che il giocatore che sceglie la parola deve \
-scriverne subito la prima e l\[CloseCurlyQuote]ultima lettera [4].\n\n",
+scriverne subito la prima e l\[CloseCurlyQuote]ultima lettera [",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox[ButtonBox["4",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Bibliografia"],
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["].\n\n",
   FontSize->18,
   FontColor->GrayLevel[1]],
  StyleBox["2",
@@ -62446,15 +62730,22 @@ altrettanto bene a essere usato con scopi opposti dal giocatore che sceglie \
 la parola (es., una parola come \[OpenCurlyDoubleQuote]hobby\
 \[CloseCurlyDoubleQuote] potrebbe essere molto difficile da immaginare \
 proprio perch\[EAcute] contiene poche lettere, e almeno due molto poco \
-frequenti).\n\nUna buona tattica pu\[OGrave] essere psicologica, ossia \
-conoscere il proprio avversario e i suoi campi d\[CloseCurlyQuote]interesse \
-[4].\n\n",
+frequenti).\nUna buona tattica pu\[OGrave] essere psicologica, ossia \
+conoscere il proprio avversario e i suoi campi d\[CloseCurlyQuote]interesse [",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox[ButtonBox["4",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Bibliografia"],
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["].\n\n",
   FontSize->18,
   FontColor->GrayLevel[1]],
  StyleBox["3",
   FontSize->24,
   FontColor->RGBColor[1, 0.75, 0]],
- StyleBox[". Schema delle Dipendenze Funzionali\n",
+ StyleBox[". Schema delle dipendenze funzionali\n",
   FontSize->25,
   FontColor->RGBColor[1, 0.75, 0]],
  StyleBox["L\[CloseCurlyQuote]architettura del pacchetto HangmanGame \
@@ -62464,9 +62755,12 @@ la gestione dei dati. \[LineSeparator]Di seguito \[EGrave] riportata la \
 struttura delle dipendenze:  \n\n",
   FontSize->18,
   FontColor->GrayLevel[1]],
- StyleBox["1. Punto di Ingresso (Top Level)GeneraInterfaccia[]", 
-  "Subsubsection",
+ StyleBox["1. Punto di Ingresso (Top Level)\n", "Subsubsection",
   FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["GeneraInterfaccia[]", "Subsubsection",
+  FontSize->18,
+  FontWeight->"Bold",
   FontColor->GrayLevel[1]],
  StyleBox[": \n\[CapitalEGrave] l\[CloseCurlyQuote]unica  funzione pubblica \
 del package. \[LineSeparator]Gestisce l\[CloseCurlyQuote]intero ciclo di vita \
@@ -62474,25 +62768,102 @@ del gioco (selezione difficolt\[AGrave], partita, bonus e classifica) tramite \
 un \tDynamicModule che mantiene lo stato locale.\n\t\n2. Funzioni di Gestione \
 e Logica (Livello Intermedio)\nLe seguenti funzioni sono richiamate \
 direttamente dall\[CloseCurlyQuote]interfaccia per gestire le azioni dell\
-\[CloseCurlyQuote]utente:GeneraEsercizio[]: Richiamata \
-all\[CloseCurlyQuote]avvio per selezionare una nazione dal \
-dizionarioGeografia in base alla difficolt\[AGrave] scelta.  \n\
-AggiornaStato[]: Gestisce la logica di ogni mossa, verificando se la lettera \
-\[EGrave] corretta e aggiornando punteggio ed errori. \nSuggerimento[]: \
-Rivela una lettera mancante penalizzando il punteggio; delega l\
-\[CloseCurlyQuote]aggiornamento a AggiornaStato[]. \nMostraClassificaGUI[]: \
-Crea la finestra di dialogo per il salvataggio dei record e la \
-visualizzazione della graduatoria.  \nDisegnaImpiccato[]: Funzione grafica \
-che genera l\[CloseCurlyQuote]immagine dinamica in base al numero di errori \
-correnti. \[LineSeparator]MostraSoluzione[] e Pulisci[]: Gestiscono \
-rispettivamente la resa del giocatore e il reset della partita corrente.  \n\n\
-3. Utility e Persistenza (Livello Base)\nFunzioni di supporto che eseguono \
-operazioni atomiche sui dati:InizializzaStato[]: Crea il vettore di trattini \
-bassi e spazi; \[EGrave] utilizzata da GeneraEsercizio e Pulisci.  \n\
-SalvaRecord[] e RecuperaClassifica[]: Gestiscono \
-l\[CloseCurlyQuote]interazione con il file score.json per la persistenza dei \
-punteggi.  \[LineSeparator]HaCaratteriNonAmmessiQ[]: Funzione di validazione \
-per filtrare caratteri speciali non supportati dalla tastiera.  \n",
+\[CloseCurlyQuote]utente:\[LineSeparator]",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["GeneraEsercizio[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Richiamata all\[CloseCurlyQuote]avvio per selezionare una \
+nazione dal dizionarioGeografia in base alla difficolt\[AGrave] scelta.  \n",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["AggiornaStato[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Gestisce la logica di ogni mossa, verificando se la lettera \
+\[EGrave] corretta e aggiornando punteggio ed errori. \n",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["Suggerimento[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Rivela una lettera mancante penalizzando il punteggio; delega l\
+\[CloseCurlyQuote]aggiornamento a ",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["AggiornaStato[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[". \n",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["MostraClassificaGUI[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Crea la finestra di dialogo per il salvataggio dei record e la \
+visualizzazione della graduatoria.  \n",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["DisegnaImpiccato[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Funzione grafica che genera l\[CloseCurlyQuote]immagine dinamica \
+in base al numero di errori correnti. \[LineSeparator]",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["MostraSoluzione[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[" e",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox[" Pulisci[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Gestiscono rispettivamente la resa del giocatore e il reset \
+della partita corrente.  \n\n3. Utility e Persistenza (Livello Base)\n\
+Funzioni di supporto che eseguono operazioni atomiche sui dati:\
+\[LineSeparator]",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["InizializzaStato[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Crea il vettore di trattini bassi e spazi; \[EGrave] utilizzata \
+da GeneraEsercizio e Pulisci.  \n",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["SalvaRecord[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[" e ",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["RecuperaClassifica[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Gestiscono l\[CloseCurlyQuote]interazione con il file score.json \
+per la persistenza dei punteggi.  \[LineSeparator]",
+  FontSize->18,
+  FontColor->GrayLevel[1]],
+ StyleBox["HaCaratteriNonAmmessiQ[]",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[": Funzione di validazione per filtrare caratteri speciali non \
+supportati dalla tastiera.  \n",
   FontSize->18,
   FontColor->GrayLevel[1]],
  Cell[BoxData[
@@ -63053,7 +63424,9 @@ gAEDBgwYMGDUwqCQV2NQyGHAgAEDBgwYMGDUwqCQV2NEhv8PPj/pkA==
    3.9874110682792053`*^9, 3.9874110847460938`*^9}, {3.9874241698084335`*^9, 
    3.9874242216493874`*^9}, {3.9874264599546375`*^9, 
    3.9874265648553143`*^9}, {3.9874266319619503`*^9, 3.9874267625205975`*^9}, 
-   3.9874272936452713`*^9, 3.987427364577284*^9},
+   3.9874272936452713`*^9, 3.987427364577284*^9, {3.98760019923386*^9, 
+   3.987600219175991*^9}, {3.9876003188659*^9, 3.987600365751219*^9}, 
+   3.9876004813907433`*^9, 3.987600594976713*^9},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
 
@@ -63091,8 +63464,9 @@ https://reference.wolfram.com/language/ref/Grid.html",
    3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
    3.9858387681869087`*^9}, 3.9874098133055325`*^9, {3.987410893193001*^9, 
    3.987410914444002*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
+ Background->RGBColor[0.1, 0.1, 0.18],
+ CellTags->
+  "Bibliografia",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
 
 Cell[TextData[{
  StyleBox["VI. Commenti e lavoro futuro\n",
@@ -63104,12 +63478,13 @@ Cell[TextData[{
   FontColor->GrayLevel[1]],
  StyleBox["Lo sviluppo del progetto ha richiesto un'attenta analisi per \
 quanto riguarda l'aggiornamento dinamico dell'interfaccia utente in \
-Mathematica. Per evitare \n conflitti di \"shadowing\" e blocchi causati da \
-finestre di pop-up sovrapposte (come la conferma del nome in classifica), \
-abbiamo implementato   una \"Macchina a Stati\" (faseClassifica) all'interno \
-del DynamicModule. La persistenza dei dati \[EGrave] gestita in modo  tramite \
-lettura/scrittura  di file score.json locali, utilizzando il comando Quiet \
-per prevenire crash derivati da file corrotti o inesistenti.\n",
+Mathematica. \[LineSeparator]Per evitare conflitti di \"shadowing\" e blocchi \
+causati da finestre di pop-up sovrapposte (come la conferma del nome in \
+classifica), abbiamo implementato  una \"Macchina a Stati\" (faseClassifica) \
+all'interno del DynamicModule. \[LineSeparator]La persistenza dei dati \
+\[EGrave] gestita in modo tramite lettura/scrittura  di file score.json \
+locali, utilizzando il comando Quiet per prevenire crash derivati da file \
+corrotti o inesistenti.\n",
   FontColor->GrayLevel[1]],
  StyleBox["\nLavoro Futuro : \n\[Bullet] Inserimento di un timer che \
 introduca un moltiplicatore di punteggio per premiare la velocit\[AGrave] di \
@@ -63127,12 +63502,14 @@ per tenere traccia dei propri miglioramenti.",
  CellFrameMargins->{{20, 20}, {14, 14}},
  CellFrameColor->RGBColor[0.93, 0.27, 0.27],
  CellChangeTimes->{{3.987353539626474*^9, 3.9873535398047123`*^9}, 
-   3.9873540896158133`*^9, 3.987409816505165*^9},
+   3.9873540896158133`*^9, 3.987409816505165*^9, {3.9876005394395027`*^9, 
+   3.987600562886055*^9}},
  FontSize->17,
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
 ScreenStyleEnvironment->"SlideShow",
+WindowSize->{966.8571428571428, 576.8571428571428},
 WindowMargins->{{
   Automatic, -5.14285714285711}, {-5.14285714285711, Automatic}},
 DockedCells->{},
@@ -63147,28 +63524,36 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Bibliografia"->{
+  Cell[3852977, 63432, 1788, 36, 519, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+   CellTags->"Bibliografia"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Bibliografia", 3857186, 63527}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 3787470, 62117, 457, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[3788027, 62139, 1144, 24, 160, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[554, 20, 3787551, 62118, 457, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+Cell[3788108, 62140, 1144, 24, 160, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[3789196, 62167, 1668, 44, 26, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
+Cell[3789277, 62168, 1663, 43, 26, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
  CellOpen->False],
-Cell[3790867, 62213, 805, 21, 76, "Output",ExpressionUUID->"907a0ab8-9b63-49ba-ae84-5ec7625f62a3"]
+Cell[3790943, 62213, 827, 21, 76, "Output",ExpressionUUID->"c28754f5-6c2f-8b46-960f-59523dd51367"],
+Cell[3791773, 62236, 12461, 268, 940, "Output",ExpressionUUID->"94b0cba7-42e6-3640-9867-ecdb63e6637f"]
 }, Open  ]],
-Cell[3791687, 62237, 1540, 36, 307, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[3793230, 62275, 1230, 26, 237, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[3794463, 62303, 1334, 27, 288, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[3795800, 62332, 2499, 52, 627, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[3798302, 62386, 1103, 25, 237, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[3799408, 62413, 38230, 644, 1759, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[3837641, 63059, 1761, 35, 519, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
-Cell[3839405, 63096, 1732, 36, 468, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[3804249, 62507, 1702, 38, 441, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[3805954, 62547, 1292, 27, 263, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[3807249, 62576, 1482, 30, 314, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[3808734, 62608, 2588, 52, 602, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[3811325, 62662, 1143, 25, 237, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[3812471, 62689, 40503, 741, 1713, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[3852977, 63432, 1788, 36, 519, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+ CellTags->"Bibliografia"],
+Cell[3854768, 63470, 1813, 38, 493, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
