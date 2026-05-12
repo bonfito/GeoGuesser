@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    186681,       3227]
-NotebookOptionsPosition[    184965,       3193]
-NotebookOutlinePosition[    185589,       3215]
-CellTagsIndexPosition[    185546,       3212]
+NotebookDataLength[    186670,       3229]
+NotebookOptionsPosition[    184995,       3196]
+NotebookOutlinePosition[    185578,       3217]
+CellTagsIndexPosition[    185535,       3214]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2205,9 +2205,10 @@ Cell[TextData[{
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["Per avviare il gioco : \n\t 1. Se appare \"Enable Dynamics?\", \
-accettalo \n\t 2. Dal menu: Evaluation \[RightArrow] Evaluate Notebook \n\t \
-3. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] qui sotto",
+ StyleBox["\t1. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] qui \
+sotto \n\t2. Se appare \"Enable Dynamics?\", accettalo \n\t 3. Se non appare \
+il bottone: dal Menu vai su Evaluate -> Evaluate Notebook e apparir\[AGrave] \
+qui in basso",
   FontSize->17,
   FontColor->GrayLevel[1]]
 }], "Text",
@@ -2236,7 +2237,7 @@ Cell[BoxData[{
   RowBox[{"SetDirectory", "[", 
    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
  RowBox[{
-  RowBox[{"Get", "[", "\"\<Pacchetto_styled.wl\>\"", "]"}], ";"}], "\n", 
+  RowBox[{"Get", "[", "\"\<Pacchetto.wl\>\"", "]"}], ";"}], "\n", 
  RowBox[{"DynamicModule", "[", 
   RowBox[{
    RowBox[{"{", 
@@ -2270,7 +2271,8 @@ Cell[BoxData[{
   "]"}]}], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
+ CellLabel->
+  "In[261]:=",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`cliccato$$ = False}, 
@@ -2290,8 +2292,9 @@ Cell[BoxData[
    ImageSize->{150, 50},
    Method->"Queued"],
   DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.987415634359707*^9, 3.9874231115401287`*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"9f90e0ff-e742-0949-b25a-e95fd331e48b"]
+ CellChangeTimes->{{3.9875737932456217`*^9, 3.98757380544016*^9}},
+ CellLabel->
+  "Out[265]=",ExpressionUUID->"1c491ccb-4b90-4d05-9979-4b53efe0d0ed"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -3192,14 +3195,13 @@ per tenere traccia dei propri miglioramenti.",
   0.1, 0.1, 0.18],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
 ScreenStyleEnvironment->"SlideShow",
-WindowSize->{1152, 579.6},
-WindowMargins->{{
-  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, -5}, {-6, Automatic}},
 DockedCells->{},
 TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
 Magnification:>1.05 Inherited,
 Background->RGBColor[0.07, 0.07, 0.13],
-FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 ]
@@ -3214,21 +3216,21 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 131393, 2180, 503, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[131950, 2202, 1119, 23, 134, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[554, 20, 131393, 2180, 457, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+Cell[131950, 2202, 1145, 24, 160, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[133094, 2229, 1670, 43, 14, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
+Cell[133120, 2230, 1668, 44, 26, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
  CellOpen->False],
-Cell[134767, 2274, 729, 19, 55, "Output",ExpressionUUID->"9f90e0ff-e742-0949-b25a-e95fd331e48b"]
+Cell[134791, 2276, 735, 20, 76, "Output",ExpressionUUID->"1c491ccb-4b90-4d05-9979-4b53efe0d0ed"]
 }, Open  ]],
-Cell[135511, 2296, 1540, 36, 214, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[137054, 2334, 1230, 26, 226, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[138287, 2362, 1334, 27, 263, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[139624, 2391, 2499, 52, 507, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[142126, 2445, 1103, 25, 208, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[143232, 2472, 38230, 644, 1383, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[181465, 3118, 1761, 35, 392, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
-Cell[183229, 3155, 1732, 36, 410, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[135541, 2299, 1540, 36, 307, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[137084, 2337, 1230, 26, 212, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[138317, 2365, 1334, 27, 288, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[139654, 2394, 2499, 52, 525, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[142156, 2448, 1103, 25, 212, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[143262, 2475, 38230, 644, 1383, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[181495, 3121, 1761, 35, 340, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
+Cell[183259, 3158, 1732, 36, 365, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
