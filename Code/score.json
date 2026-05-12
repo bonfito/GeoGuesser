@@ -1,6 +1,14 @@
 [
 	{
+		"nome":"miao",
+		"punteggio":170
+	},
+	{
 		"nome":"Paolo",
 		"punteggio":90
+	},
+	{
+		"nome":"ciao",
+		"punteggio":-30
 	}
 ]
