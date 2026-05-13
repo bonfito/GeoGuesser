@@ -1,11 +1,19 @@
 [
 	{
+		"nome":"onat",
+		"punteggio":350
+	},
+	{
 		"nome":"Paolo",
 		"punteggio":290
 	},
 	{
 		"nome":"miao",
 		"punteggio":170
+	},
+	{
+		"nome":"ont",
+		"punteggio":120
 	},
 	{
 		"nome":"ciao",
