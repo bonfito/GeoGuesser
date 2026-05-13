@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   7174932,     117866]
-NotebookOptionsPosition[   7173044,     117827]
-NotebookOutlinePosition[   7173777,     117853]
-CellTagsIndexPosition[   7173697,     117848]
+NotebookDataLength[   7176050,     117886]
+NotebookOptionsPosition[   7174162,     117847]
+NotebookOutlinePosition[   7174897,     117873]
+CellTagsIndexPosition[   7174817,     117868]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116705,10 +116705,10 @@ Cell[TextData[{
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["\t1. Clicca dal Menu: \[OpenCurlyQuote]Evaluation -> Evaluate \
-Notebook\[CloseCurlyQuote], prima di iniziare la partita.\[LineSeparator]\t2. \
-Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] qui sotto \n\t3. Se \
-appare \"Enable Dynamics?\", accettalo.",
+ StyleBox["\t1. Clicca dal Men\[UGrave]: \[OpenCurlyQuote]Evaluation -> \
+Evaluate Notebook\[CloseCurlyQuote], prima di iniziare la partita.\
+\[LineSeparator]\t2. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] \
+qui sotto \n\t3. Se appare \"Enable Dynamics?\", accettalo.",
   FontSize->17,
   FontColor->GrayLevel[1]]
 }], "Text",
@@ -116722,7 +116722,8 @@ appare \"Enable Dynamics?\", accettalo.",
    3.9858390663128757`*^9, 3.9858391635457516`*^9, {3.9858392090279865`*^9, 
    3.985839231116436*^9}, {3.985840146632084*^9, 3.9858401709332104`*^9}, {
    3.985840228906309*^9, 3.9858402553834953`*^9}, {3.9873402088382893`*^9, 
-   3.9873402378403463`*^9}, {3.987685968983274*^9, 3.98768601462619*^9}},
+   3.9873402378403463`*^9}, {3.987685968983274*^9, 3.98768601462619*^9}, {
+   3.987687396584449*^9, 3.987687397065979*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 
@@ -116914,6 +116915,7 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["L'interfaccia si divide in due fasi principali. Ecco come \
 utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\[LineSeparator]",
+  
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -116922,12 +116924,14 @@ utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\[LineSeparator]",
   FontSize->25,
   FontColor->RGBColor[0.98, 0.75, 0.2]],
  StyleBox["\[Bullet] Seleziona la difficolt\[AGrave]: usa i bottoni per \
-scegliere il livello (Facile, Media, Difficile).\n\[Bullet] Seed (Opzionale): \
-puoi inserire un numero intero nel campo di testo. Inserendo lo stesso numero \
-in partite future,  il computer generer\[AGrave] esattamente la stessa \
-parola. \[CapitalEGrave] utile per sfidare un amico ad armi pari!\n\[Bullet] \
-Clicca su \[OpenCurlyDoubleQuote]Avvia Gioco\[CloseCurlyDoubleQuote] per \
-generare l'esercizio.\n",
+scegliere il livello (Facile, Media, Difficile).\n\t Facile: parole da 1 a 5 \
+lettere\[LineSeparator]\t Media: parole da 6 a 8 lettere\[LineSeparator]\t \
+Difficile: parole da 9 a 15 lettere\n\[Bullet] Seed (Opzionale): puoi \
+inserire un numero intero nel campo di testo. Inserendo lo stesso numero in \
+partite future,  il computer generer\[AGrave] esattamente la stessa parola. \
+\[CapitalEGrave] utile per sfidare un amico ad armi pari!\n\[Bullet] Clicca \
+su \[OpenCurlyDoubleQuote]Avvia Gioco\[CloseCurlyDoubleQuote] per generare \
+l'esercizio.\n",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n 2. Fase di Gioco (Verifica Risultato)\n",
@@ -116935,16 +116939,21 @@ generare l'esercizio.\n",
   FontColor->RGBColor[0.98, 0.75, 0.2]],
  StyleBox["\[Bullet] Tastiera a schermo: Clicca sulle lettere per fare un \
 tentativo. Se la lettera \[EGrave] corretta (Verifica Risultato positiva) \
-diventer\[AGrave] verde e guadagnerai punti.\[LineSeparator]Se \[EGrave] \
-sbagliata, diventer\[AGrave] rossa e verr\[AGrave] aggiunto un pezzo al \
-patibolo.\n\[Bullet] Suggerimento: se sei bloccato, clicca su \
-\"Suggerimento\". Il computer sveler\[AGrave] una lettera mancante, ma ti \
-verr\[AGrave] sottratto del punteggio.\n\[Bullet] Mostra Soluzione: se vuoi \
-arrenderti, clicca su questo bottone. Un pop-up ti riveler\[AGrave] la parola \
-nascosta e la partita terminer\[AGrave].\n\[Bullet] Pulisci Campi: questo \
-tasto azzera i tuoi tentativi, gli errori e il punteggio per la nazione \
-corrente, permettendoti di ricominciare da capo la stessa parola (utile dopo \
-aver visto la soluzione).",
+diventer\[AGrave] verde e guadagnerai punti a seconda della \
+difficolt\[AGrave] selezionata:\[LineSeparator]\tFacile: +10 punti\
+\[LineSeparator]\tMedia: +20 punti\[LineSeparator]\tDifficile: +30 punti\
+\[LineSeparator]Se \[EGrave] sbagliata, diventer\[AGrave] rossa, non verranno \
+sottratti punti ma verr\[AGrave] aggiunto un pezzo al patibolo.\n\[Bullet] \
+Suggerimento: se sei bloccato, clicca su \"Suggerimento\". Il computer sveler\
+\[AGrave] una lettera mancante, ma ti verranno sottratti dal punteggio dei \
+punti in base alla difficolt\[AGrave] selezionata:\[LineSeparator]\tFacile: \
+-5 punti\[LineSeparator]\tMedia: -10 punti\[LineSeparator]\tDifficile: -15 \
+punti\n\[Bullet] Mostra Soluzione: se vuoi arrenderti, clicca su questo \
+bottone. Un pop-up ti riveler\[AGrave] la parola nascosta e la partita \
+terminer\[AGrave].\n\[Bullet] Pulisci Campi: questo tasto azzera i tuoi \
+tentativi, gli errori e il punteggio per la nazione corrente, permettendoti \
+di ricominciare da capo la stessa parola (utile dopo aver visto la \
+soluzione).",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -116957,7 +116966,8 @@ aver visto la soluzione).",
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
   3.9858387681869087`*^9}, {3.987351461665354*^9, 3.987351461924592*^9}, {
-  3.987600663965748*^9, 3.98760079184289*^9}},
+  3.987600663965748*^9, 3.98760079184289*^9}, {3.9876869905668917`*^9, 
+  3.987687190248562*^9}, {3.9876872440159492`*^9, 3.987687263933475*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
 
@@ -116969,9 +116979,18 @@ Cell[TextData[{
  StyleBox["Se riesci a indovinare la Nazione senza farti impiccare, avrai \
 accesso a una Domanda Bonus. Ti verranno proposti 4 bottoni a scelta multipla \
 per indovinare la Capitale di quella specifica Nazione. \nSe indovini, \
-guadagnerai ben 50 punti extra!\nAl termine della partita (vittoria o \
-sconfitta), potrai salvare il tuo nome e confrontare il tuo punteggio nella \
-Classifica dei migliori 50 giocatori.",
+guadagnerai ben ",
+  FontSize->17,
+  FontColor->GrayLevel[1]],
+ StyleBox["50 punti",
+  FontSize->17,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[1]],
+ StyleBox[" extra!\nAl termine della partita (vittoria o sconfitta), potrai \
+salvare il tuo nome e confrontare il tuo punteggio nella Classifica dei \
+migliori 50 giocatori.\[LineSeparator]Nel caso in cui lo stesso utente \
+registri un punteggio maggiore in una seconda partita, verr\[AGrave] salvato \
+in classifica soltanto il punteggio pi\[UGrave] alto.",
   FontSize->17,
   FontColor->GrayLevel[1]],
  StyleBox["\n",
@@ -116984,7 +117003,8 @@ Classifica dei migliori 50 giocatori.",
  CellFrameColor->RGBColor[0.93, 0.27, 0.27],
  CellChangeTimes->{{3.985838668708351*^9, 3.985838669514038*^9}, {
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
-  3.9858387681869087`*^9}, {3.9876006546107903`*^9, 3.987600655544779*^9}},
+  3.9858387681869087`*^9}, {3.9876006546107903`*^9, 3.987600655544779*^9}, {
+  3.9876872945831203`*^9, 3.9876873510467873`*^9}},
  Background->RGBColor[
   0.1, 0.1, 0.18],ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
 
@@ -117841,33 +117861,33 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 (*CellTagsOutline
 CellTagsIndex->{
  "Bibliografia"->{
-  Cell[7169527, 117749, 1788, 36, 519, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+  Cell[7170554, 117769, 1788, 36, 73, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
    CellTags->"Bibliografia"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Bibliografia", 7173635, 117842}
+ {"Bibliografia", 7174662, 117862}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[554, 20, 7115787, 116680, 440, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[7116344, 116702, 1214, 24, 160, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[7116344, 116702, 1272, 25, 160, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[7117583, 116730, 1663, 43, 19, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
+Cell[7117641, 116731, 1663, 43, 19, "Input",ExpressionUUID->"0e8b28e3-dab8-46e3-9dc0-eef3f2e64f9c",
  CellOpen->False],
-Cell[7119249, 116775, 872, 21, 70, "Output",ExpressionUUID->"898de6b1-304d-490c-9935-76ec248c4fa8"]
+Cell[7119307, 116776, 872, 21, 70, "Output",ExpressionUUID->"898de6b1-304d-490c-9935-76ec248c4fa8"]
 }, Open  ]],
-Cell[7120136, 116799, 1702, 38, 432, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[7121841, 116839, 1292, 27, 237, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[7123136, 116868, 1770, 39, 314, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[7124909, 116909, 2588, 52, 627, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[7127500, 116963, 1143, 25, 237, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[7128646, 116990, 40878, 757, 1721, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[7169527, 117749, 1788, 36, 519, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+Cell[7120194, 116800, 1702, 38, 432, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[7121899, 116840, 1292, 27, 237, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[7123194, 116869, 1770, 39, 288, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[7124967, 116910, 3183, 61, 806, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[7128153, 116973, 1517, 35, 237, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[7129673, 117010, 40878, 757, 1399, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[7170554, 117769, 1788, 36, 73, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
  CellTags->"Bibliografia"],
-Cell[7171318, 117787, 1813, 38, 519, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[7172345, 117807, 1813, 38, 73, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
