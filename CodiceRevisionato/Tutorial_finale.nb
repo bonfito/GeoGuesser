@@ -24,10 +24,10 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["Un'avventura didattica tra nazioni e capitali del mondo.\n",
   FontSize->25,
-  FontColor->RGBColor[0.98, 0.75, 0.2]],
+  FontColor->RGBColor[0.65, 0.4, 0]],
  StyleBox["Gruppo Numero 5 : Veni, Vidi, Wolfram\nMC 2025/2026\n\n",
   FontSize->18,
-  FontColor->RGBColor[1., 1., 1.]],
+  FontColor->GrayLevel[0.1]],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -116680,10 +116680,10 @@ Mkg=
 curriculum B)                             (Anno 1 - curriculum C)             \
     (Anno 1 - curriculum A)",
   FontSize->14,
-  FontColor->RGBColor[1., 1., 1.]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->18,
-  FontColor->RGBColor[1., 1., 1.]]
+  FontColor->GrayLevel[0.1]]
 }], "Text",
  CellMargins->{{50, 50}, {10, 10}},
  CellChangeTimes->{{3.9858360014789486`*^9, 3.9858360306143284`*^9}, {
@@ -116703,8 +116703,7 @@ curriculum B)                             (Anno 1 - curriculum C)             \
    3.9876010474507217`*^9}, 3.9876012906499214`*^9, {3.9876031507991314`*^9, 
    3.987603151624775*^9}, {3.987685732393189*^9, 3.9876857323932877`*^9}, {
    3.987687447155888*^9, 3.987687616212007*^9}},
- Background->RGBColor[
-  0.07, 0.07, 0.13],ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+ Background->GrayLevel[1],ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
 
 Cell[TextData[{
  StyleBox[" Gioco\n",
@@ -116716,7 +116715,7 @@ Evaluate Notebook\[CloseCurlyQuote], prima di iniziare la partita.\
 \[LineSeparator]\t2. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] \
 qui sotto \n\t3. Se appare \"Enable Dynamics?\", accettalo.",
   FontSize->17,
-  FontColor->GrayLevel[1]]
+  FontColor->GrayLevel[0.1]]
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
  CellMargins->{{50, 50}, {6, 6}},
@@ -116730,8 +116729,7 @@ qui sotto \n\t3. Se appare \"Enable Dynamics?\", accettalo.",
    3.985840228906309*^9, 3.9858402553834953`*^9}, {3.9873402088382893`*^9, 
    3.9873402378403463`*^9}, {3.987685968983274*^9, 3.98768601462619*^9}, {
    3.987687396584449*^9, 3.987687397065979*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+ Background->GrayLevel[1],ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 
 Cell[CellGroupData[{
 
@@ -116832,7 +116830,7 @@ Cell[TextData[{
  StyleBox["Introduzione\n",
   FontSize->20,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["I. Regole del gioco\nII. Guida all'uso dell'Interfaccia\
 \[LineSeparator]\tFase di selezione\n\tFase di gioco\nIII. Livello Bonus e \
 Interfaccia\nIV. Approfondimenti\n\tStoria\n\tStrategia\n\tFunzionamento del \
@@ -116840,7 +116838,7 @@ Seed\n\tSchema delle dipendenze funzionali\nV. Bibliografia e Sitografia\nVI. \
 Commenti e lavoro futuro",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  "\n"
 }], "Text",
  CellFrame->{{4, 0}, {0, 0}},
@@ -116860,8 +116858,7 @@ Commenti e lavoro futuro",
    3.98740919761302*^9}, {3.987600279716486*^9, 3.98760033928755*^9}, {
    3.9876887668521967`*^9, 3.9876887772581453`*^9}, {3.9876893312188873`*^9, 
    3.987689339662589*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+ Background->GrayLevel[1],ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
 
 Cell[TextData[{
  StyleBox["Introduzione\n",
@@ -116876,7 +116873,7 @@ non richiede alcuna competenza informatica pregressa: tutto \[EGrave] gestito \
 da una comoda interfaccia grafica.\[LineSeparator]Mettiti alla prova, \
 indovina le nazioni nascoste e scala le classifiche!",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17]
 }], "Text",
@@ -116889,8 +116886,7 @@ indovina le nazioni nascoste e scala le classifiche!",
   3.9858387681869087`*^9}, {3.9874096802827625`*^9, 3.987409693324892*^9}, {
   3.987423139293293*^9, 3.9874231510466156`*^9}, {3.9876009833462334`*^9, 
   3.9876010020359287`*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+ Background->GrayLevel[1],ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
 
 Cell[TextData[{
  StyleBox["I. Regole del gioco\n",
@@ -116900,12 +116896,12 @@ Cell[TextData[{
  StyleBox["Il computer sceglie il nome di una Nazione in base al seed \
 inserito [",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[ButtonBox["3",
   BaseStyle->"Hyperlink",
   ButtonData->"Bibliografia"],
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["]. Il tuo compito \[EGrave] indovinare la parola lettera per \
 lettera prima di commettere 6 errori (che porteranno al completamento del \
 disegno dell'impiccato).\n\nLa difficolt\[AGrave] (Facile, Media, Difficile) \
@@ -116916,7 +116912,7 @@ giochi a difficolt\[AGrave] elevata.\n\t 3. Penalit\[AGrave]: richiedere un \
 suggerimento coster\[AGrave] pi\[UGrave] punti ai livelli di difficolt\
 \[AGrave] maggiori.",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17]
 }], "Text",
@@ -116930,8 +116926,7 @@ suggerimento coster\[AGrave] pi\[UGrave] punti ai livelli di difficolt\
   3.987600807091959*^9, 3.987600830924261*^9}, {3.987600861653717*^9, 
   3.987600962174679*^9}, {3.987602511880476*^9, 3.9876025139711304`*^9}, {
   3.9876025868946323`*^9, 3.9876025868946323`*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+ Background->GrayLevel[1],ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
 
 Cell[TextData[{
  StyleBox["II. Guida all'uso dell'Interfaccia\n",
@@ -116942,12 +116937,12 @@ Cell[TextData[{
 utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\[LineSeparator]",
   
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17],
  StyleBox["1. Fase di Selezione (Genera Esercizio e Seed)\n",
   FontSize->25,
-  FontColor->RGBColor[0.98, 0.75, 0.2]],
+  FontColor->RGBColor[0.65, 0.4, 0]],
  StyleBox["\[Bullet] Seleziona la difficolt\[AGrave]: usa i bottoni per \
 scegliere il livello (Facile, Media, Difficile).\n\t Facile: parole da 1 a 5 \
 lettere\[LineSeparator]\t Media: parole da 6 a 8 lettere\[LineSeparator]\t \
@@ -116960,10 +116955,10 @@ casualmente dal computer, in modo da ritornare una nazione diversa ad ogni \
 partita.\[LineSeparator]\n\[Bullet] Clicca su \[OpenCurlyDoubleQuote]Avvia \
 Gioco\[CloseCurlyDoubleQuote] per generare l'esercizio.\n",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n 2. Fase di Gioco (Verifica Risultato)\n",
   FontSize->25,
-  FontColor->RGBColor[0.98, 0.75, 0.2]],
+  FontColor->RGBColor[0.65, 0.4, 0]],
  StyleBox["\[Bullet] Tastiera a schermo: Clicca sulle lettere per fare un \
 tentativo. Se la lettera \[EGrave] corretta (Verifica Risultato positiva) \
 diventer\[AGrave] verde e guadagnerai punti a seconda della \
@@ -116982,7 +116977,7 @@ tentativi, gli errori e il punteggio per la nazione corrente, permettendoti \
 di ricominciare da capo la stessa parola (utile dopo aver visto la \
 soluzione).",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17]
 }], "Text",
@@ -116997,8 +116992,7 @@ soluzione).",
   3.987687190248562*^9}, {3.9876872440159492`*^9, 3.987687263933475*^9}, {
   3.987688043909877*^9, 3.987688067454506*^9}, {3.987688843857503*^9, 
   3.987688902117683*^9}, {3.987689343116588*^9, 3.9876893435372887`*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+ Background->GrayLevel[1],ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
 
 Cell[TextData[{
  StyleBox["III. Livello Bonus e Interfaccia\n",
@@ -117010,18 +117004,18 @@ accesso a una Domanda Bonus. Ti verranno proposti 4 bottoni a scelta multipla \
 per indovinare la Capitale di quella specifica Nazione. \nSe indovini, \
 guadagnerai ben ",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["50 punti",
   FontSize->17,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[" extra!\nAl termine della partita (vittoria o sconfitta), potrai \
 salvare il tuo nome e confrontare il tuo punteggio nella Classifica dei \
 migliori 50 giocatori.\[LineSeparator]Nel caso in cui lo stesso utente \
 registri un punteggio maggiore in una seconda partita, verr\[AGrave] salvato \
 in classifica soltanto il punteggio pi\[UGrave] alto.",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17,
   FontColor->GrayLevel[0.88]]
@@ -117034,8 +117028,7 @@ in classifica soltanto il punteggio pi\[UGrave] alto.",
   3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
   3.9858387681869087`*^9}, {3.9876006546107903`*^9, 3.987600655544779*^9}, {
   3.9876872945831203`*^9, 3.9876873510467873`*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+ Background->GrayLevel[1],ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
 
 Cell[TextData[{
  StyleBox["IV.  Approfondimenti\n",
@@ -117044,7 +117037,7 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["1. Storia",
   FontSize->25,
-  FontColor->RGBColor[0.98, 0.75, 0.2]],
+  FontColor->RGBColor[0.65, 0.4, 0]],
  StyleBox["\n",
   FontSize->32,
   FontWeight->"Bold",
@@ -117058,15 +117051,15 @@ Games\[CloseCurlyDoubleQuote] di Alice Bertha Gomme del 1894, col nome \
 regole sono quasi uguali, eccetto che il giocatore che sceglie la parola deve \
 scriverne subito la prima e l\[CloseCurlyQuote]ultima lettera [",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[ButtonBox["4",
   BaseStyle->"Hyperlink",
   ButtonData->"Bibliografia"],
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["].\n\n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["2",
   FontSize->24,
   FontColor->RGBColor[1, 0.75, 0]],
@@ -117083,15 +117076,15 @@ proprio perch\[EAcute] contiene poche lettere, e almeno due molto poco \
 frequenti).\nUna buona tattica pu\[OGrave] essere psicologica, ossia \
 conoscere il proprio avversario e i suoi campi d\[CloseCurlyQuote]interesse [",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[ButtonBox["4",
   BaseStyle->"Hyperlink",
   ButtonData->"Bibliografia"],
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["].\n\n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["3",
   FontSize->24,
   FontColor->RGBColor[1, 0.75, 0]],
@@ -117117,10 +117110,10 @@ combinazione seed + difficolt\[AGrave]. Lo stesso seed con difficolt\[AGrave] \
 diversa ritorner\[AGrave] parole diverse perch\[EAcute] la wordlist cambia e \
 RandomChoice opera su una lista diversa.",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n\n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["4",
   FontSize->24,
   FontColor->RGBColor[1, 0.75, 0]],
@@ -117133,134 +117126,134 @@ utente (UI) coordina diverse funzioni specializzate per la logica di gioco e \
 la gestione dei dati. \[LineSeparator]Di seguito \[EGrave] riportata la \
 struttura delle dipendenze:  \n\n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["1. Punto di Ingresso (Top Level)", "Subsubsection",
   FontSize->20,
   FontWeight->"Normal",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n", "Subsubsection",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["GeneraInterfaccia[]", "Subsubsection",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": \n\[CapitalEGrave] l\[CloseCurlyQuote]unica  funzione pubblica \
 del package. \[LineSeparator]Gestisce l\[CloseCurlyQuote]intero ciclo di vita \
 del gioco (selezione difficolt\[AGrave], partita, bonus e classifica) tramite \
 un \tDynamicModule che mantiene lo stato locale.\n\t\n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["2. Funzioni di Gestione e Logica (Livello Intermedio)",
   FontSize->20,
   FontWeight->"Normal",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\nLe seguenti funzioni sono richiamate direttamente dall\
 \[CloseCurlyQuote]interfaccia per gestire le azioni \
 dell\[CloseCurlyQuote]utente:\[LineSeparator]",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["GeneraEsercizio[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Richiamata all\[CloseCurlyQuote]avvio per selezionare una \
 nazione dal dizionarioGeografia in base alla difficolt\[AGrave] scelta.  \n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["AggiornaStato[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Gestisce la logica di ogni mossa, verificando se la lettera \
 \[EGrave] corretta e aggiornando punteggio ed errori. \n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["Suggerimento[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Rivela una lettera mancante penalizzando il punteggio; delega l\
 \[CloseCurlyQuote]aggiornamento a ",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["AggiornaStato[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[". \n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["MostraClassificaGUI[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Crea la finestra di dialogo per il salvataggio dei record e la \
 visualizzazione della graduatoria.  \n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["DisegnaImpiccato[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Funzione grafica che genera l\[CloseCurlyQuote]immagine dinamica \
 in base al numero di errori correnti. \[LineSeparator]",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["MostraSoluzione[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[" e",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[" Pulisci[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Gestiscono rispettivamente la resa del giocatore e il reset \
 della partita corrente.  \n\n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["3. Utility e Persistenza (Livello Base)",
   FontSize->20,
   FontWeight->"Normal",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\nFunzioni di supporto che eseguono operazioni atomiche sui dati:\
 \[LineSeparator]",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["InizializzaStato[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Crea il vettore di trattini bassi e spazi; \[EGrave] utilizzata \
 da GeneraEsercizio e Pulisci.  \n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["SalvaRecord[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[" e ",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["RecuperaClassifica[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Gestiscono l\[CloseCurlyQuote]interazione con il file score.json \
 per la persistenza dei punteggi.  \[LineSeparator]",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["HaCaratteriNonAmmessiQ[]",
   FontSize->18,
   FontWeight->"Bold",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox[": Funzione di validazione per filtrare caratteri speciali non \
 supportati dalla tastiera.  \n",
   FontSize->18,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -117823,8 +117816,7 @@ gAEDBgwYMGDUwqCQV2NQyGHAgAEDBgwYMGDUwqCQV2NEhv8PPj/pkA==
    3.987600219175991*^9}, {3.9876003188659*^9, 3.987600365751219*^9}, 
    3.9876004813907433`*^9, 3.987600594976713*^9, {3.9876881440362*^9, 
    3.987688734612485*^9}, {3.987689221286408*^9, 3.987689273545805*^9}},
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+ Background->GrayLevel[1],ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
 
 Cell[TextData[{
  StyleBox["V. Bibliografia e Sitografia\n",
@@ -117848,7 +117840,7 @@ https://reference.wolfram.com/language/ref/Pane.html\n[8] Wolfram Language & \
 System Documentation Center, Grid. \
 https://reference.wolfram.com/language/ref/Grid.html",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17]
 }], "Text",
@@ -117860,7 +117852,7 @@ https://reference.wolfram.com/language/ref/Grid.html",
    3.985838704020897*^9, 3.9858387085672665`*^9}, {3.985838760582161*^9, 
    3.9858387681869087`*^9}, 3.9874098133055325`*^9, {3.987410893193001*^9, 
    3.987410914444002*^9}},
- Background->RGBColor[0.1, 0.1, 0.18],
+ Background->GrayLevel[1],
  CellTags->
   "Bibliografia",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812"],
 
@@ -117871,7 +117863,7 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["Commenti Tecnici : \n",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["Lo sviluppo del progetto ha richiesto un'attenta analisi per \
 quanto riguarda l'aggiornamento dinamico dell'interfaccia utente in \
 Mathematica. \[LineSeparator]Per evitare conflitti di \"shadowing\" e blocchi \
@@ -117881,7 +117873,7 @@ all'interno del DynamicModule. \[LineSeparator]La persistenza dei dati \
 \[EGrave] gestita tramite lettura/scrittura  di file score.json locali, \
 utilizzando il comando Quiet per prevenire crash derivati da file corrotti o \
 inesistenti.\n",
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\nLavoro Futuro : \n\[Bullet] Inserimento di un timer che \
 introduca un moltiplicatore di punteggio per premiare la velocit\[AGrave] di \
 risposta.\n\[Bullet] Ampliamento del dizionario con altre categorie \
@@ -117889,7 +117881,7 @@ didattiche (es. Chimica: Elemento e Formula; Storia: Evento e Data).\n\
 \[Bullet] Supporto per account utente con cronologia delle partite precedenti \
 per tenere traccia dei propri miglioramenti.",
   FontSize->17,
-  FontColor->GrayLevel[1]],
+  FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17]
 }], "Text",
@@ -117901,15 +117893,14 @@ per tenere traccia dei propri miglioramenti.",
    3.9873540896158133`*^9, 3.987409816505165*^9, {3.9876005394395027`*^9, 
    3.987600562886055*^9}, {3.987689301415663*^9, 3.987689303800605*^9}},
  FontSize->17,
- Background->RGBColor[
-  0.1, 0.1, 0.18],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+ Background->GrayLevel[1],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
 WindowSize->{Full, Full},
 WindowMargins->{{Automatic, 131}, {Automatic, 32}},
 DockedCells->{},
 TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
 Magnification:>1.05 Inherited,
-Background->RGBColor[0.07, 0.07, 0.13],
+Background->GrayLevel[1],
 FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"

@@ -592,7 +592,7 @@ MostraClassificaGUI[score_Integer] := DynamicModule[
 (* ============================================================== *)
 DisegnaImpiccato[n_] := Graphics[
   {
-    White,Thick,  (* Spessore delle linee *)
+    Black,Thick,  (* Spessore delle linee *)
     
     (* Forca: base orizzontale, palo verticale, traversa, cappio *)
     Line[{{0, 0}, {3, 0}}], 
@@ -674,14 +674,14 @@ GeneraInterfaccia[] := DynamicModule[
       (* ========================================================= *)
       "selezione", 
       Column[{
-        Style["Seleziona la difficolt\[AGrave]", Bold, White, 20], 
+        Style["Seleziona la difficolt\[AGrave]", Bold, Black, 20], 
         
         (* RadioButtonBar crea i bottoni radio collegati a gamemode.
            Dynamic[gamemode] aggiorna la variabile al click *)
         Row[{
-         RadioButton[Dynamic[gamemode], 1], Style[" Facile  ", White, 16],
-         RadioButton[Dynamic[gamemode], 2], Style[" Media   ", White, 16],
-         RadioButton[Dynamic[gamemode], 3], Style[" Difficile", White, 16]
+         RadioButton[Dynamic[gamemode], 1], Style[" Facile  ", Black, 16],
+         RadioButton[Dynamic[gamemode], 2], Style[" Media   ", Black, 16],
+         RadioButton[Dynamic[gamemode], 3], Style[" Difficile", Black, 16]
            }], 
         
         (* Campo seed con validazione in tempo reale.
@@ -689,7 +689,7 @@ GeneraInterfaccia[] := DynamicModule[
            ad ogni tasto grazie a ContinuousAction -> True.
            StringMatchQ[#, DigitCharacter..] accetta solo cifre decimali.
            StringMatchQ[#, ""] accetta il campo vuoto (seed non specificato) *)
-        Row[{Style["Seed (opzionale): ",White], InputField[
+        Row[{Style["Seed (opzionale): ",Black], InputField[
             Dynamic[seed, ({seed, seedError} = If[
               StringMatchQ[#, DigitCharacter ..] || StringMatchQ[#, ""],
               {#, ""},     (* Input valido: aggiorna seed, azzera errore *)
@@ -697,7 +697,8 @@ GeneraInterfaccia[] := DynamicModule[
             ]) &],  
             String,   (* Tipo di dato accettato *)
             FieldHint -> "Inserire un numero naturale",  (* Testo placeholder *)
-            ContinuousAction -> True  (* Valida ad ogni tasto *)
+            ContinuousAction -> True,  (* Valida ad ogni tasto *)
+            FieldSize -> {15, 1}, Background -> GrayLevel[0.93], BaseStyle -> {Black}
         ]}], 
         
         (* Mostra il messaggio di errore solo se seedError non e' vuoto *)   
@@ -730,12 +731,12 @@ GeneraInterfaccia[] := DynamicModule[
       (* ========================================================= *)
       "gioco", 
       Column[{
-        Style["Gioco dell'impiccato", Bold, 28, White],
+        Style["Gioco dell'impiccato", Bold, 28, Black],
         
         Spacer[10],
 
         (* Punteggio: rivalutato dall'esterno Dynamic[Switch[...]] *)
-        Row[{Style["Punteggio: ", White, 14], Style[score, Blue, Bold, 14]}], 
+        Row[{Style["Punteggio: ", Black, 14], Style[score, Blue, Bold, 14]}], 
         
         Spacer[10],
 
@@ -749,7 +750,7 @@ GeneraInterfaccia[] := DynamicModule[
           Which[
             # === " ", Style["   ", Bold, 28],  (* spazio: mostra vuoto *)
             # === "_", Style[" _ ", Gray, Bold, 28],  (* da indovinare *)
-            True,      Style[#, Bold, 28, White]             (* lettera indovinata *)
+            True,      Style[#, Bold, 28, Black]             (* lettera indovinata *)
            ] & /@ stato,
            " "
         ]], 
@@ -785,10 +786,10 @@ GeneraInterfaccia[] := DynamicModule[
         (* Lettere sbagliate: Riffle inserisce ", " tra gli elementi di errori.
            StringJoin ricostruisce la stringa dalla lista *)
         (* Lettere sbagliate: rivalutato dall'esterno Dynamic *)
-        Row[{Style["Lettere sbagliate: ", White], Style[StringJoin[Riffle[errori, ", "]], Red, Bold]}],
+        Row[{Style["Lettere sbagliate: ", Black], Style[StringJoin[Riffle[errori, ", "]], Red, Bold]}],
       
         (* Contatore errori: rivalutato dall'esterno Dynamic *)
-        Row[{Style["Errori: ", White], Style[Length[errori], Red, Bold], Style["/", White], maxErrori}],
+        Row[{Style["Errori: ", Black], Style[Length[errori], Red, Bold], Style["/", Black], Style[maxErrori, RGBColor[0.9, 0.4, 0], Bold]}],
         
         (* Messaggio: rivalutato dall'esterno Dynamic *)
         Style[messaggio, RGBColor[0.1, 0.4, 0.9], Bold], 
@@ -873,12 +874,12 @@ GeneraInterfaccia[] := DynamicModule[
                     Style["Domanda Bonus (+50 punti extra!):", Purple, Bold, 18],
                     Spacer[10],
                     (* Capitalize porta la prima lettera in maiuscolo per la visualizzazione *)
-                    Row[{Style["Qual \[EGrave] la capitale di ", White, 16],Style[Capitalize[StringJoin[parola]], White, Bold, 16],Style["?", White, 16]
+                    Row[{Style["Qual \[EGrave] la capitale di ", Black, 16],Style[Capitalize[StringJoin[parola]], Black, Bold, 16],Style["?", Black, 16]
                     }],
                     
                     (* Generazione bottoni Bonus a scelta multipla *)
                     Row[Riffle[
-                      Button[Capitalize[#],
+                      Button[Style[Capitalize[#], Black, Bold, FontSize -> 13],
                         If[# === dizionarioGeografia[StringJoin[parola]],
                           score = score + 50;  (* Risposta corretta: +50 punti *)
                           messaggioBonus = "Risposta corretta! Hai guadagnato 50 punti extra.",
@@ -886,6 +887,7 @@ GeneraInterfaccia[] := DynamicModule[
                           messaggioBonus = "Sbagliato! La risposta corretta era: " <> Capitalize[dizionarioGeografia[StringJoin[parola]]]
                         ];
                         faseBonusCompletata = True; (* Impedisce di rispondere di nuovo *)
+                        Background -> GrayLevel[0.88], ImageSize -> {120, 36}
                       ] & /@ opzioniBonus, 
                       Spacer[10] 
                     ]]
