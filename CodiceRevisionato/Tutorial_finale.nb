@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   7179702,     117946]
-NotebookOptionsPosition[   7177784,     117906]
-NotebookOutlinePosition[   7178547,     117933]
-CellTagsIndexPosition[   7178467,     117928]
+NotebookDataLength[   7192010,     118205]
+NotebookOptionsPosition[   7190021,     118165]
+NotebookOutlinePosition[   7190749,     118191]
+CellTagsIndexPosition[   7190669,     118186]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116778,7 +116778,7 @@ Cell[BoxData[{
   "]"}]}], "Input",
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
+ CellLabel->"In[16]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`cliccato$$ = True}, 
@@ -116802,8 +116802,267 @@ Cell[BoxData[
    3.987580284199943*^9, 3.987580344180171*^9, 3.987580658679132*^9, 
    3.9876002295993176`*^9, 3.987602032475361*^9, 3.987685842606348*^9, 
    3.987687698890567*^9, {3.9876893865891113`*^9, 3.987689390656489*^9}, 
-   3.98804631731106*^9, 3.9880818412849464`*^9},
- CellLabel->"Out[10]=",ExpressionUUID->"2bd94531-078f-d64b-8d72-321f670cfc8a"]
+   3.98804631731106*^9, 3.9880818412849464`*^9, 3.9880842003495464`*^9, 
+   3.9880845801286697`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"956a28cf-dd12-d24e-83d6-689d2ecd3688"],
+
+Cell[BoxData[
+ DynamicModuleBox[{HangmanGame`Private`seed$$ = 1234, 
+  HangmanGame`Private`seedError$$ = "", HangmanGame`Private`fase$$ = "gioco", 
+  HangmanGame`Private`gamemode$$ = 2, HangmanGame`Private`parola$$ = {
+  "e", "c", "u", "a", "d", "o", "r"}, HangmanGame`Private`stato$$ = {
+  "_", "_", "_", "_", "_", "_", "_"}, HangmanGame`Private`errori$$ = {}, 
+  HangmanGame`Private`score$$ = 0, HangmanGame`Private`messaggio$$ = "", 
+  HangmanGame`Private`maxErrori$$ = 6, 
+  HangmanGame`Private`opzioniBonus$$ = {}, 
+  HangmanGame`Private`faseBonusCompletata$$ = False, 
+  HangmanGame`Private`messaggioBonus$$ = ""}, 
+  DynamicBox[ToBoxes[
+    Switch[HangmanGame`Private`fase$$, "selezione", 
+     Column[{
+       Style["Seleziona la difficolt\[AGrave]", Bold, Black, 20], 
+       Row[{
+         RadioButton[
+          Dynamic[HangmanGame`Private`gamemode$$], 1], 
+         Style[" Facile  ", Black, 16], 
+         RadioButton[
+          Dynamic[HangmanGame`Private`gamemode$$], 2], 
+         Style[" Media   ", Black, 16], 
+         RadioButton[
+          Dynamic[HangmanGame`Private`gamemode$$], 3], 
+         Style[" Difficile", Black, 16]}], 
+       Row[{
+         Style["Seed (opzionale): ", Black], 
+         InputField[
+          Dynamic[
+          HangmanGame`Private`seed$$, ({
+            HangmanGame`Private`seed$$, HangmanGame`Private`seedError$$} = If[
+             Or[
+              StringMatchQ[#, 
+               Repeated[DigitCharacter]], 
+              StringMatchQ[#, ""]], {#, ""}, {
+             HangmanGame`Private`seed$$, 
+              "Inserire solo numeri naturali (0, 1, 2, ...)."}])& ], String, 
+          FieldHint -> "Inserire un numero naturale", ContinuousAction -> 
+          True, FieldSize -> {15, 1}, Background -> GrayLevel[1], 
+          BaseStyle -> {Black}]}], 
+       If[HangmanGame`Private`seedError$$ != "", 
+        Style[HangmanGame`Private`seedError$$, Red, Italic], ""], 
+       Button["Inizia partita", If[
+          And[
+           StringQ[HangmanGame`Private`seed$$], HangmanGame`Private`seed$$ != 
+           ""], HangmanGame`Private`seed$$ = 
+          ToExpression[HangmanGame`Private`seed$$], 
+          HangmanGame`Private`seed$$ = Automatic]; {
+          HangmanGame`Private`parola$$, HangmanGame`Private`stato$$, 
+           HangmanGame`Private`errori$$, HangmanGame`Private`score$$} = 
+         HangmanGame`Private`GeneraEsericizio[
+          HangmanGame`Private`gamemode$$, HangmanGame`Private`seed$$]; 
+        HangmanGame`Private`fase$$ = "gioco"; 
+        HangmanGame`Private`messaggio$$ = ""; 
+        HangmanGame`Private`opzioniBonus$$ = {}; 
+        HangmanGame`Private`faseBonusCompletata$$ = False; 
+        HangmanGame`Private`messaggioBonus$$ = ""; Null, 
+        ImageSize -> {150, 60}, BaseStyle -> {FontSize -> 16, Bold, White}, 
+        Background -> RGBColor[0.1, 0.4, 0.9]]}, Spacings -> 2], "gioco", 
+     Column[{
+       Style["Gioco dell'impiccato", Bold, 28, Black], 
+       Spacer[10], 
+       Row[{
+         Style["Punteggio: ", Black, 14], 
+         Style[HangmanGame`Private`score$$, Blue, Bold, 14]}], 
+       Spacer[10], 
+       Row[
+        Riffle[
+         Map[Which[# === " ", 
+           Style["   ", Bold, 28], # === "_", 
+           Style[" _ ", Gray, Bold, 28], True, 
+           Style[#, Bold, 28, Black]]& , HangmanGame`Private`stato$$], " "]], 
+       Spacer[10], 
+       Row[{
+         Button[
+         "Suggerimento", {
+           HangmanGame`Private`stato$$, HangmanGame`Private`errori$$, 
+            HangmanGame`Private`score$$} = 
+          HangmanGame`Private`Suggerimento[
+           HangmanGame`Private`parola$$, HangmanGame`Private`stato$$, 
+            HangmanGame`Private`errori$$, HangmanGame`Private`score$$, 
+            HangmanGame`Private`gamemode$$], Enabled -> And[
+            MemberQ[HangmanGame`Private`stato$$, "_"], 
+            Length[HangmanGame`Private`errori$$] < 
+            HangmanGame`Private`maxErrori$$], 
+          BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+          RGBColor[0.8, 0.5, 0.], ImageSize -> {140, 38}], 
+         Spacer[20], 
+         Button[
+         "Mostra soluzione", 
+          HangmanGame`Private`MostraSoluzione[
+           HangmanGame`Private`parola$$]; {
+            HangmanGame`Private`stato$$, HangmanGame`Private`fase$$, 
+             HangmanGame`Private`messaggio$$, 
+             HangmanGame`Private`seedError$$} = {
+            HangmanGame`Private`parola$$, "selezione", "", ""}, 
+          BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+          RGBColor[0.4, 0.1, 0.6], ImageSize -> {160, 38}]}], 
+       Row[{
+         Style["Lettere sbagliate: ", Black], 
+         Style[
+          StringJoin[
+           Riffle[HangmanGame`Private`errori$$, ", "]], Red, Bold]}], 
+       Row[{
+         Style["Errori: ", Black], 
+         Style[
+          Length[HangmanGame`Private`errori$$], Red, Bold], 
+         Style["/", Black], 
+         Style[HangmanGame`Private`maxErrori$$, 
+          RGBColor[0.9, 0.4, 0], Bold]}], 
+       Style[HangmanGame`Private`messaggio$$, 
+        RGBColor[0.1, 0.4, 0.9], Bold], 
+       HangmanGame`Private`DisegnaImpiccato[
+        Length[HangmanGame`Private`errori$$]], 
+       Spacer[10], 
+       Column[
+        Map[Row[
+          Join[{
+            Spacer[Part[#, 1] 25]}, 
+           Table[
+            With[{HangmanGame`Private`l$ = HangmanGame`Private`lettera}, 
+             Button[
+              Style[HangmanGame`Private`l$, White, Bold, FontSize -> 16], 
+              With[{HangmanGame`Private`guess$ = ToLowerCase[
+                  StringTrim[HangmanGame`Private`l$]]}, {
+                 HangmanGame`Private`stato$$, HangmanGame`Private`errori$$, 
+                  HangmanGame`Private`score$$} = 
+                HangmanGame`Private`AggiornaStato[
+                 HangmanGame`Private`parola$$, HangmanGame`Private`stato$$, 
+                  HangmanGame`Private`guess$, HangmanGame`Private`score$$, 
+                  HangmanGame`Private`gamemode$$, 
+                  HangmanGame`Private`errori$$]; 
+               HangmanGame`Private`messaggio$$ = If[
+                  MemberQ[
+                  HangmanGame`Private`parola$$, HangmanGame`Private`guess$], 
+                  "Lettera corretta!", "Lettera sbagliata!"]], Enabled -> And[
+                Not[
+                 MemberQ[
+                  Join[
+                  HangmanGame`Private`stato$$, HangmanGame`Private`errori$$], 
+                  ToLowerCase[HangmanGame`Private`l$]]], 
+                MemberQ[HangmanGame`Private`stato$$, "_"], 
+                Length[HangmanGame`Private`errori$$] < 
+                HangmanGame`Private`maxErrori$$], Background -> Which[
+                MemberQ[HangmanGame`Private`stato$$, 
+                 ToLowerCase[HangmanGame`Private`l$]], 
+                RGBColor[0.2, 0.7, 0.3], 
+                MemberQ[HangmanGame`Private`errori$$, 
+                 ToLowerCase[HangmanGame`Private`l$]], 
+                RGBColor[0.75, 0.15, 0.15], True, 
+                RGBColor[0.15, 0.35, 0.75]], ImageSize -> {48, 48}]], {
+            HangmanGame`Private`lettera, 
+             Part[#, 2]}]], 
+          Spacer[4]]& , HangmanGame`Private`righeTastiera], Spacings -> 0.8], 
+       If[
+        Or[
+        HangmanGame`Private`stato$$ === HangmanGame`Private`parola$$, 
+         Length[HangmanGame`Private`errori$$] >= 
+         HangmanGame`Private`maxErrori$$], 
+        Column[{
+          If[HangmanGame`Private`stato$$ === HangmanGame`Private`parola$$, 
+           If[
+            Not[HangmanGame`Private`faseBonusCompletata$$], 
+            If[HangmanGame`Private`opzioniBonus$$ === {}, 
+              
+              With[{HangmanGame`Private`corretta$ = 
+                HangmanGame`Private`dizionarioGeografia[
+                  StringJoin[HangmanGame`Private`parola$$]]}, 
+               HangmanGame`Private`opzioniBonus$$ = RandomSample[
+                 Join[{HangmanGame`Private`corretta$}, 
+                  RandomSample[
+                   DeleteCases[
+                    Values[HangmanGame`Private`dizionarioGeografia], 
+                    HangmanGame`Private`corretta$], 3]]]]]; Column[{
+               Spacer[10], 
+               Style["Hai vinto!", Green, Bold, 18], 
+               Style["Domanda Bonus (+50 punti extra!):", Purple, Bold, 18], 
+               Spacer[10], 
+               Row[{
+                 Style["Qual \[EGrave] la capitale di ", Black, 16], 
+                 Style[
+                  Capitalize[
+                   StringJoin[HangmanGame`Private`parola$$]], Black, Bold, 
+                  16], 
+                 Style["?", Black, 16]}], 
+               Row[
+                Riffle[
+                 Map[Button[
+                   Style[
+                    Capitalize[#], Cyan, Bold, FontSize -> 13], 
+                   If[# === HangmanGame`Private`dizionarioGeografia[
+                    StringJoin[HangmanGame`Private`parola$$]], 
+                    HangmanGame`Private`score$$ = 
+                    HangmanGame`Private`score$$ + 50; 
+                    HangmanGame`Private`messaggioBonus$$ = 
+                    "Risposta corretta! Hai guadagnato 50 punti extra.", 
+                    HangmanGame`Private`messaggioBonus$$ = 
+                    "Sbagliato! La risposta corretta era: " <> Capitalize[
+                    HangmanGame`Private`dizionarioGeografia[
+                    StringJoin[HangmanGame`Private`parola$$]]]]; 
+                   HangmanGame`Private`faseBonusCompletata$$ = True; 
+                   Background -> GrayLevel[0.88], ImageSize -> {120, 36}]& , 
+                  HangmanGame`Private`opzioniBonus$$], 
+                 Spacer[10]]]}, Alignment -> Center], 
+            Column[{
+              Spacer[10], 
+              Style[HangmanGame`Private`messaggioBonus$$, 
+               If[
+                StringContainsQ[
+                HangmanGame`Private`messaggioBonus$$, "punti extra"], Green, 
+                Red], Bold], 
+              Spacer[10], 
+              Button["Salva e Mostra Classifica", 
+               SessionSubmit[
+                HangmanGame`Private`MostraClassificaGUI[
+                HangmanGame`Private`score$$]], 
+               BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+               RGBColor[0.1, 0.4, 0.9], ImageSize -> {240, 42}]}, Alignment -> 
+             Center]], 
+           Column[{
+             Spacer[10], 
+             Style["Hai perso! La nazione era: " <> Capitalize[
+                StringJoin[HangmanGame`Private`parola$$]], Red, Bold], 
+             Spacer[10], 
+             Button["Salva e Mostra Classifica", 
+              SessionSubmit[
+               HangmanGame`Private`MostraClassificaGUI[
+               HangmanGame`Private`score$$]], 
+              BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+              RGBColor[0.1, 0.4, 0.9], ImageSize -> {240, 42}]}, Alignment -> 
+            Center]], 
+          Spacer[25], 
+          Button[
+          "Pulisci Campi", {
+             HangmanGame`Private`stato$$, HangmanGame`Private`errori$$, 
+              HangmanGame`Private`score$$} = 
+            HangmanGame`Private`Pulisci[HangmanGame`Private`parola$$]; 
+           HangmanGame`Private`opzioniBonus$$ = {}; 
+           HangmanGame`Private`faseBonusCompletata$$ = False; 
+           HangmanGame`Private`messaggioBonus$$ = ""; Null, 
+           BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+           RGBColor[0.2, 0.5, 0.7], ImageSize -> {150, 38}]}], ""], 
+       Button[
+       "Nuova partita", HangmanGame`Private`fase$$ = "selezione"; 
+        HangmanGame`Private`messaggio$$ = ""; 
+        HangmanGame`Private`seedError$$ = ""; 
+        HangmanGame`Private`opzioniBonus$$ = {}; 
+        HangmanGame`Private`faseBonusCompletata$$ = False; 
+        HangmanGame`Private`messaggioBonus$$ = ""; Null, 
+        BaseStyle -> {White, Bold, FontSize -> 13}, Background -> 
+        RGBColor[0.3, 0.3, 0.8], ImageSize -> {150, 40}]}]], StandardForm],
+   ImageSizeCache->{
+    524.4792363281252, {342.51587402343745`, 347.6746142578125}}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.988084815371294*^9},ExpressionUUID->"cb7cb859-893d-c04a-a6b2-\
+0a8f9879bbb6"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -117904,9 +118163,8 @@ per tenere traccia dei propri miglioramenti.",
  Background->GrayLevel[
   1],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
-WindowSize->{1152, 579.6},
-WindowMargins->{{
-  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+WindowSize->{1141.2, 573.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{},
 TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
 Magnification:>1.25 Inherited,
@@ -117921,13 +118179,13 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 (*CellTagsOutline
 CellTagsIndex->{
  "Bibliografia"->{
-  Cell[7174154, 117828, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+  Cell[7186391, 118087, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
    CellTags->"Bibliografia"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Bibliografia", 7178311, 117922}
+ {"Bibliografia", 7190513, 118180}
  }
 *)
 (*NotebookFileOutline
@@ -117935,19 +118193,20 @@ Notebook[{
 Cell[554, 20, 7115976, 116686, 586, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
 Cell[7116533, 116708, 1262, 25, 134, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[7117820, 116737, 1672, 43, 17, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
+Cell[7117820, 116737, 1673, 43, 17, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
  CellOpen->False],
-Cell[7119495, 116782, 995, 23, 66, "Output",ExpressionUUID->"2bd94531-078f-d64b-8d72-321f670cfc8a"]
+Cell[7119496, 116782, 1047, 24, 66, "Output",ExpressionUUID->"956a28cf-dd12-d24e-83d6-689d2ecd3688"],
+Cell[7120546, 116808, 12181, 256, 700, "Output",ExpressionUUID->"cb7cb859-893d-c04a-a6b2-0a8f9879bbb6"]
 }, Open  ]],
-Cell[7120505, 116808, 1828, 40, 368, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[7122336, 116850, 1282, 27, 244, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[7123621, 116879, 1764, 39, 310, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[7125388, 116920, 3747, 69, 929, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[7129138, 116991, 1511, 35, 244, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[7130652, 117028, 43499, 798, 2058, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[7174154, 117828, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+Cell[7132742, 117067, 1828, 40, 368, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[7134573, 117109, 1282, 27, 244, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[7135858, 117138, 1764, 39, 310, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[7137625, 117179, 3747, 69, 929, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[7141375, 117250, 1511, 35, 244, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[7142889, 117287, 43499, 798, 2058, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[7186391, 118087, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
  CellTags->"Bibliografia"],
-Cell[7175935, 117866, 1845, 38, 441, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[7188172, 118125, 1845, 38, 441, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
