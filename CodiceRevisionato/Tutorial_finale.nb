@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   7178587,     117930]
-NotebookOptionsPosition[   7176701,     117891]
-NotebookOutlinePosition[   7177434,     117917]
-CellTagsIndexPosition[   7177354,     117912]
+NotebookDataLength[   7179702,     117946]
+NotebookOptionsPosition[   7177784,     117906]
+NotebookOutlinePosition[   7178547,     117933]
+CellTagsIndexPosition[   7178467,     117928]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116781,7 +116781,7 @@ Cell[BoxData[{
  CellLabel->"In[6]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`cliccato$$ = False}, 
+ DynamicModuleBox[{$CellContext`cliccato$$ = True}, 
   ButtonBox["\<\"Avvia Gioco\"\>",
    Appearance->Automatic,
    Background->RGBColor[0.1, 0.4, 0.9],
@@ -116925,14 +116925,13 @@ Cell[TextData[{
   FontColor->RGBColor[0.93, 0.27, 0.27]],
  StyleBox["L'interfaccia si divide in due fasi principali. Ecco come \
 utilizzare tutte le funzionalit\[AGrave] a tua disposizione:\[LineSeparator]",
-  
   FontSize->17,
   FontColor->GrayLevel[0.1]],
  StyleBox["\n",
   FontSize->17],
  StyleBox["1. Fase di Selezione (Genera Esercizio e Seed)\n",
   FontSize->25,
-  FontColor->RGBColor[0.65, 0.4, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox["\[Bullet] Seleziona la difficolt\[AGrave]: usa i bottoni per \
 scegliere il livello (Facile, Media, Difficile).\n\t Facile: parole da 1 a 5 \
 lettere\[LineSeparator]\t Media: parole da 6 a 8 lettere\[LineSeparator]\t \
@@ -116946,9 +116945,12 @@ partita.\[LineSeparator]\n\[Bullet] Clicca su \[OpenCurlyDoubleQuote]Avvia \
 Gioco\[CloseCurlyDoubleQuote] per generare l'esercizio.\n",
   FontSize->17,
   FontColor->GrayLevel[0.1]],
- StyleBox["\n 2. Fase di Gioco (Verifica Risultato)\n",
+ StyleBox["\n",
   FontSize->25,
   FontColor->RGBColor[0.65, 0.4, 0]],
+ StyleBox[" 2. Fase di Gioco (Verifica Risultato)\n",
+  FontSize->25,
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox["\[Bullet] Tastiera a schermo: Clicca sulle lettere per fare un \
 tentativo. Se la lettera \[EGrave] corretta (Verifica Risultato positiva) \
 diventer\[AGrave] verde e guadagnerai punti a seconda della \
@@ -116981,7 +116983,9 @@ soluzione).",
   3.987600663965748*^9, 3.98760079184289*^9}, {3.9876869905668917`*^9, 
   3.987687190248562*^9}, {3.9876872440159492`*^9, 3.987687263933475*^9}, {
   3.987688043909877*^9, 3.987688067454506*^9}, {3.987688843857503*^9, 
-  3.987688902117683*^9}, {3.987689343116588*^9, 3.9876893435372887`*^9}},
+  3.987688902117683*^9}, {3.987689343116588*^9, 3.9876893435372887`*^9}, {
+  3.988083384635128*^9, 3.9880834004569016`*^9}, {3.9880834586982536`*^9, 
+  3.988083474605644*^9}},
  Background->GrayLevel[
   1],ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
 
@@ -117027,13 +117031,12 @@ Cell[TextData[{
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["1. Storia",
+ StyleBox["1",
+  FontSize->24,
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
+ StyleBox[". Storia\n",
   FontSize->25,
-  FontColor->RGBColor[0.65, 0.4, 0]],
- StyleBox["\n",
-  FontSize->32,
-  FontWeight->"Bold",
-  FontColor->RGBColor[0.93, 0.27, 0.27]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox["Tony Augarde sostiene che il gioco pare essere stato inventato \
 nell\[CloseCurlyQuote]epoca vittoriana (vedi \[OpenCurlyDoubleQuote]The \
 Oxford Guide to Word Games\[CloseCurlyDoubleQuote], Oxford University Press). \
@@ -117054,10 +117057,10 @@ scriverne subito la prima e l\[CloseCurlyQuote]ultima lettera [",
   FontColor->GrayLevel[0.1]],
  StyleBox["2",
   FontSize->24,
-  FontColor->RGBColor[1, 0.75, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox[". Strategia\n",
   FontSize->25,
-  FontColor->RGBColor[1, 0.75, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox["L\[CloseCurlyQuote]unica strategia generale per questo gioco pu\
 \[OGrave] basarsi su una tabella della frequenza delle varie lettere in \
 italiano (o nella lingua in cui si gioca); tuttavia, questa idea si presta \
@@ -117079,10 +117082,10 @@ conoscere il proprio avversario e i suoi campi d\[CloseCurlyQuote]interesse [",
   FontColor->GrayLevel[0.1]],
  StyleBox["3",
   FontSize->24,
-  FontColor->RGBColor[1, 0.75, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox[". Funzionamento del Seed\n",
   FontSize->25,
-  FontColor->RGBColor[1, 0.75, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox["\nDurante la fase di selezione del seed non \[EGrave] possibile \
 inserire: numeri negativi, caratteri speciali, lettere \
 dell\[CloseCurlyQuote]alfabeto o qualsiasi altro carattere diverso da un \
@@ -117100,18 +117103,15 @@ timestamp corrente come sorgente di casualit\[AGrave], in modo da ritornare \
 una Nazione diversa ad ogni esecuzione.\nIl seed \[EGrave] legato alla \
 combinazione seed + difficolt\[AGrave]. Lo stesso seed con difficolt\[AGrave] \
 diversa ritorner\[AGrave] parole diverse perch\[EAcute] la wordlist cambia e \
-RandomChoice opera su una lista diversa.",
-  FontSize->18,
-  FontColor->GrayLevel[0.1]],
- StyleBox["\n\n",
+RandomChoice opera su una lista diversa.\n\n",
   FontSize->18,
   FontColor->GrayLevel[0.1]],
  StyleBox["4",
   FontSize->24,
-  FontColor->RGBColor[1, 0.75, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox[". Schema delle dipendenze funzionali\n",
   FontSize->25,
-  FontColor->RGBColor[1, 0.75, 0]],
+  FontColor->RGBColor[1., 0.5019607843137255, 0.25098039215686274`]],
  StyleBox["L\[CloseCurlyQuote]architettura del pacchetto HangmanGame \
 \[EGrave] organizzata in modo gerarchico, dove l\[CloseCurlyQuote]interfaccia \
 utente (UI) coordina diverse funzioni specializzate per la logica di gioco e \
@@ -117119,13 +117119,15 @@ la gestione dei dati. \[LineSeparator]Di seguito \[EGrave] riportata la \
 struttura delle dipendenze:  \n\n",
   FontSize->18,
   FontColor->GrayLevel[0.1]],
- StyleBox["1. Punto di Ingresso (Top Level)", "Subsubsection",
+ StyleBox["1. Punto di Ingresso (Top Level) ", "Subsubsection",
   FontSize->20,
   FontWeight->"Normal",
-  FontColor->GrayLevel[0.1]],
+  FontColor->RGBColor[
+   0.9490196078431372, 0.7529411764705882, 0.1568627450980392]],
  StyleBox["\n", "Subsubsection",
   FontSize->18,
-  FontColor->GrayLevel[0.1]],
+  FontColor->RGBColor[
+   0.9490196078431372, 0.7529411764705882, 0.1568627450980392]],
  StyleBox["GeneraInterfaccia[]", "Subsubsection",
   FontSize->18,
   FontWeight->"Bold",
@@ -117133,14 +117135,19 @@ struttura delle dipendenze:  \n\n",
  StyleBox[": \n\[CapitalEGrave] l\[CloseCurlyQuote]unica  funzione pubblica \
 del package. \[LineSeparator]Gestisce l\[CloseCurlyQuote]intero ciclo di vita \
 del gioco (selezione difficolt\[AGrave], partita, bonus e classifica) tramite \
-un \tDynamicModule che mantiene lo stato locale.\n\t\n",
+un \tDynamicModule che mantiene lo stato locale.\n\n",
   FontSize->18,
   FontColor->GrayLevel[0.1]],
  StyleBox["2. Funzioni di Gestione e Logica (Livello Intermedio)",
   FontSize->20,
   FontWeight->"Normal",
-  FontColor->GrayLevel[0.1]],
- StyleBox["\nLe seguenti funzioni sono richiamate direttamente dall\
+  FontColor->RGBColor[
+   0.9490196078431372, 0.7529411764705882, 0.1568627450980392]],
+ StyleBox["\n",
+  FontSize->18,
+  FontColor->RGBColor[
+   0.9490196078431372, 0.7529411764705882, 0.1568627450980392]],
+ StyleBox["Le seguenti funzioni sono richiamate direttamente dall\
 \[CloseCurlyQuote]interfaccia per gestire le azioni \
 dell\[CloseCurlyQuote]utente:\[LineSeparator]",
   FontSize->18,
@@ -117210,8 +117217,13 @@ della partita corrente.  \n\n",
  StyleBox["3. Utility e Persistenza (Livello Base)",
   FontSize->20,
   FontWeight->"Normal",
-  FontColor->GrayLevel[0.1]],
- StyleBox["\nFunzioni di supporto che eseguono operazioni atomiche sui dati:\
+  FontColor->RGBColor[
+   0.9490196078431372, 0.7529411764705882, 0.1568627450980392]],
+ StyleBox["\n",
+  FontSize->18,
+  FontColor->RGBColor[
+   0.9490196078431372, 0.7529411764705882, 0.1568627450980392]],
+ StyleBox["Funzioni di supporto che eseguono operazioni atomiche sui dati:\
 \[LineSeparator]",
   FontSize->18,
   FontColor->GrayLevel[0.1]],
@@ -117807,7 +117819,10 @@ gAEDBgwYMGDUwqCQV2NQyGHAgAEDBgwYMGDUwqCQV2NEhv8PPj/pkA==
    3.9874272936452713`*^9, 3.987427364577284*^9, {3.98760019923386*^9, 
    3.987600219175991*^9}, {3.9876003188659*^9, 3.987600365751219*^9}, 
    3.9876004813907433`*^9, 3.987600594976713*^9, {3.9876881440362*^9, 
-   3.987688734612485*^9}, {3.987689221286408*^9, 3.987689273545805*^9}},
+   3.987688734612485*^9}, {3.987689221286408*^9, 3.987689273545805*^9}, {
+   3.9880830293589535`*^9, 3.988083069723707*^9}, {3.9880832812446365`*^9, 
+   3.9880833172592144`*^9}, {3.988083732242323*^9, 3.9880837330069466`*^9}, {
+   3.988083919070236*^9, 3.988083919534727*^9}},
  Background->GrayLevel[
   1],ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
 
@@ -117889,11 +117904,12 @@ per tenere traccia dei propri miglioramenti.",
  Background->GrayLevel[
   1],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
+WindowSize->{1152, 579.6},
 WindowMargins->{{
-  Automatic, -5.14285714285711}, {-5.14285714285711, Automatic}},
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 DockedCells->{},
 TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
-Magnification:>1.05 Inherited,
+Magnification:>1.25 Inherited,
 Background->GrayLevel[1],
 FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
@@ -117905,33 +117921,33 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 (*CellTagsOutline
 CellTagsIndex->{
  "Bibliografia"->{
-  Cell[7173071, 117813, 1778, 36, 73, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+  Cell[7174154, 117828, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
    CellTags->"Bibliografia"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Bibliografia", 7177199, 117906}
+ {"Bibliografia", 7178311, 117922}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 7115976, 116686, 444, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[7116533, 116708, 1262, 25, 131, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[554, 20, 7115976, 116686, 586, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+Cell[7116533, 116708, 1262, 25, 134, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[7117820, 116737, 1672, 43, 19, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
+Cell[7117820, 116737, 1672, 43, 17, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
  CellOpen->False],
-Cell[7119495, 116782, 996, 23, 70, "Output",ExpressionUUID->"2bd94531-078f-d64b-8d72-321f670cfc8a"]
+Cell[7119495, 116782, 995, 23, 66, "Output",ExpressionUUID->"2bd94531-078f-d64b-8d72-321f670cfc8a"]
 }, Open  ]],
-Cell[7120506, 116808, 1828, 40, 430, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[7122337, 116850, 1282, 27, 233, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[7123622, 116879, 1764, 39, 285, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[7125389, 116920, 3516, 65, 879, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[7128908, 116987, 1511, 35, 259, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[7130422, 117024, 42646, 787, 2132, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[7173071, 117813, 1778, 36, 73, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+Cell[7120505, 116808, 1828, 40, 368, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[7122336, 116850, 1282, 27, 244, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[7123621, 116879, 1764, 39, 310, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[7125388, 116920, 3747, 69, 929, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[7129138, 116991, 1511, 35, 244, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[7130652, 117028, 43499, 798, 2058, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[7174154, 117828, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
  CellTags->"Bibliografia"],
-Cell[7174852, 117851, 1845, 38, 73, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[7175935, 117866, 1845, 38, 441, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
