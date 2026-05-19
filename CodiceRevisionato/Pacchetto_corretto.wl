@@ -12,7 +12,7 @@
 (* :Copyright:        BA 2026                                     *)
 (* :Package Version:  4                                           *)
 (* :Mathematica Ver.: 14.3                                        *)
-(* :History:          last modified 12/05/2026                    *)
+(* :History:          last modified 19/05/2026                    *)
 (* :Keywords:         DynamicModule, interfaccia, gioco           *)
 (* :Discussion: *)
 (* :Requirements: *)
@@ -879,7 +879,7 @@ GeneraInterfaccia[] := DynamicModule[
                     
                     (* Generazione bottoni Bonus a scelta multipla *)
                     Row[Riffle[
-                      Button[Style[Capitalize[#], Black, Bold, FontSize -> 13],
+                      Button[Style[Capitalize[#], Orange, Bold, FontSize -> 13],
                         If[# === dizionarioGeografia[StringJoin[parola]],
                           score = score + 50;  (* Risposta corretta: +50 punti *)
                           messaggioBonus = "Risposta corretta! Hai guadagnato 50 punti extra.",
