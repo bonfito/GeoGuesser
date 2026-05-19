@@ -106,8 +106,9 @@ dizionarioGeografia = <|
 (* Parametri:                                                     *)
 (*   gamemode : 1 (facile), 2 (media), 3 (difficile)             *)
 (*              default = 1 se non specificato                    *)
-(*   seed     : intero per la selezione deterministica            *)
-(*              default = Automatic (casuale ad ogni esecuzione)  *)
+(*   seed     : intero per la selezione deterministica  
+                  o casuale          *)
+(*                *)
 (*                                                                *)
 (* Restituisce: {parola, stato, errori, score}                    *)
 (*   parola   = lista di caratteri in minuscolo es. {"i","t",...} *)
@@ -115,7 +116,7 @@ dizionarioGeografia = <|
 (*   errori   = lista vuota {}                                    *)
 (*   score    = 0                                                 *)
 (* ============================================================== *)
-GeneraEsericizio[ gamemode_:1, seed_:Automatic ] := Module[ 
+GeneraEsericizio[ gamemode_:1, seed_ :Automatic] := Module[ 
 { 
 	wordlist, (* Lista delle possibili parole *)
 	wordlen, (* Lunghezza della parola *)
@@ -281,7 +282,8 @@ HaCaratteriNonAmmessiQ[s_] := Module[
 (*                                                                *)
 (* Restituisce: lista di "_" e " " es. {"_","_"," ","_","_"}     *)
 (* ============================================================== *)
-InizializzaStato[word_List] := Map[If[# === " ", " ", "_"] &, word]
+InizializzaStato[word_List] := 
+  Map[If[# === " " || # === "-", #, "_"] &, word]
 
 
 (* ============================================================== *)
@@ -513,7 +515,8 @@ MostraClassificaGUI[score_Integer] := DynamicModule[
                  ad ogni tasto, quindi non serve Dynamic[...] qui dentro *)
               Button["Salva Punteggio",
                 faseClassifica = 2,  (* Avanza alla fase di conferma *)
-                Enabled -> StringLength[nomeUtente] > 0
+                 (* Dynamic qui solo per Enabled \[LongDash] non rivaluta il Column intero *)
+                Enabled -> Dynamic[StringLength[nomeUtente]] > 0
               ]
             }, Alignment -> Center, BaseStyle -> "Subsection"],
 
@@ -736,9 +739,10 @@ GeneraInterfaccia[] := DynamicModule[
         Spacer[10],
 
         (* Punteggio: rivalutato dall'esterno Dynamic[Switch[...]] *)
-        Row[{Style["Punteggio: ", Black, 14], Style[score, Blue, Bold, 14]}], 
+        Row[{Style["Punteggio: ", Black, 14], Style[score, Blue, Bold, 16]}], 
         
         Spacer[10],
+        
 
         (* Parola da indovinare: Dynamic rende la riga reattiva.
            Map (con /@) applica la funzione ad ogni elemento di stato.
@@ -790,6 +794,10 @@ GeneraInterfaccia[] := DynamicModule[
       
         (* Contatore errori: rivalutato dall'esterno Dynamic *)
         Row[{Style["Errori: ", Black], Style[Length[errori], Red, Bold], Style["/", Black], Style[maxErrori, RGBColor[0.9, 0.4, 0], Bold]}],
+          Row[{
+        Style["Seed inserito: ", Black, 13], 
+        Style[ToString[seed], Blue, Bold, 13]
+        }],
         
         (* Messaggio: rivalutato dall'esterno Dynamic *)
         Style[messaggio, RGBColor[0.1, 0.4, 0.9], Bold], 
