@@ -97,9 +97,9 @@ dizionarioGeografia = <|
 |>;
 
 
-(* Implementazione della funzione GeneraEsericizio *)
+(* Implementazione della funzione GeneraEsercizio *)
 (* ============================================================== *)
-(* GeneraEsericizio                                               *)
+(* GeneraEsercizio                                               *)
 (* Genera una nuova partita selezionando una parola dal           *)
 (* dizionario in base alla difficolt\[AGrave] e al seed forniti          *)
 (*                                                                *)
@@ -116,7 +116,7 @@ dizionarioGeografia = <|
 (*   errori   = lista vuota {}                                    *)
 (*   score    = 0                                                 *)
 (* ============================================================== *)
-GeneraEsericizio[ gamemode_:1, seed_ :Automatic] := Module[ 
+GeneraEsercizio[ gamemode_:1, seed_ :Automatic] := Module[ 
 { 
 	wordlist, (* Lista delle possibili parole *)
 	wordlen, (* Lunghezza della parola *)
@@ -657,7 +657,7 @@ GeneraInterfaccia[] := DynamicModule[
     seedError = "",                 (* Messaggio di errore se il seed non \[EGrave] valido *)
     fase = "selezione",             (* Schermata iniziale *)
     gamemode = 1,                   (* Difficolt\[AGrave] default: facile *)
-    parola, stato, errori, score,   (* Variabili di gioco inizializzate da GeneraEsericizio *)
+    parola, stato, errori, score,   (* Variabili di gioco inizializzate da GeneraEsercizio *)
     messaggio = "",                 (* Feedback dopo ogni lettera inserita *)
     maxErrori = 6,                  (* Massimo 6 errori prima di perdere *)
     opzioniBonus = {},              (* Lista delle 4 opzioni della domanda bonus *)
@@ -714,8 +714,8 @@ GeneraInterfaccia[] := DynamicModule[
           (* Se seed \[EGrave] una stringa non vuota, convertila in intero;
              altrimenti usa Automatic per una selezione casuale *)
           If[StringQ[seed] && seed != "", seed = ToExpression[seed], seed = Automatic]; 
-          (* GeneraEsericizio restituisce {parola, stato, errori, score} *)
-          {parola, stato, errori, score} = GeneraEsericizio[gamemode, seed]; 
+          (* GeneraEsercizio restituisce {parola, stato, errori, score} *)
+          {parola, stato, errori, score} = GeneraEsercizio[gamemode, seed]; 
           fase = "gioco";    (* Passa alla schermata di gioco *)
           messaggio = "";    (* Azzera il messaggio precedente *)
           (* Azzera tutte le variabili del bonus per la nuova partita *)
@@ -796,7 +796,7 @@ GeneraInterfaccia[] := DynamicModule[
         Row[{Style["Errori: ", Black], Style[Length[errori], Red, Bold], Style["/", Black], Style[maxErrori, RGBColor[0.9, 0.4, 0], Bold]}],
           Row[{
         Style["Seed inserito: ", Black, 13], 
-        Style[ToString[seed], Blue, Bold, 13]
+        Map[If[ToString[#]=="Automatic", "non inserito", #]&, Style[ToString[seed], Blue, Bold, 13]]
         }],
         
         (* Messaggio: rivalutato dall'esterno Dynamic *)
