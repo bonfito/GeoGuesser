@@ -1,6 +1,12 @@
 geoGuesser per Mc
 
-TODO:
-- Aggiungere le nostro foto
+per ora abbiamo fixato :
+•⁠  ⁠problema trattini
+•⁠  ⁠seed visualizzabile (domani vediamo se gli va bene opzionale)
+•⁠  ⁠problema nome classifica
 
-Codice finale per ora situato nella cartella Code -> Pacchetto.wl, Tutorial_finale.nb. score.json
+TODO:
+- Interfaccia che salta (?)
+- DynamicModule nel tutorial
+- codice poco modulare (GeneraInterfaccia[])
+- refusi (?)
