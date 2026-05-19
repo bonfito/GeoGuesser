@@ -64,7 +64,7 @@ dizionarioGeografia = <|
   "francia" -> "parigi", "gabon" -> "libreville", "gambia" -> "banjul", "georgia" -> "tbilisi", 
   "germania" -> "berlino", "ghana" -> "accra", "giamaica" -> "kingston", "giappone" -> "tokyo", 
   "gibuti" -> "gibuti", "giordania" -> "amman", "grecia" -> "atene", "grenada" -> "saint george's", 
-  "guatemala" -> "citta del guatemala", "guinea" -> "conakry", "guinea-bissau" -> "bissau", "guinea equatoriale" -> "malabo", 
+  "guatemala" -> "citta del guatemala", "guinea" -> "conakry", "guinea bissau" -> "bissau", "guinea equatoriale" -> "malabo", 
   "guyana" -> "georgetown", "haiti" -> "port-au-prince", "honduras" -> "tegucigalpa", "india" -> "nuova delhi", 
   "indonesia" -> "giacarta", "iran" -> "teheran", "iraq" -> "baghdad", "irlanda" -> "dublino", 
   "islanda" -> "reykjavik", "israele" -> "gerusalemme", "italia" -> "roma", "kazakistan" -> "astana", 
