@@ -614,7 +614,7 @@ DisegnaImpiccato[n_] := Graphics[
     If[n >= 6, Line[{{3, 2.5}, {3.3, 2}}], Nothing]   (* Gamba destra *)
   },
   PlotRange -> {{0, 4}, {0, 6}},  (* Estensione degli assi del piano grafico *)
-  ImageSize -> 200                (* Dimensione in pixel dell'immagine *)
+  ImageSize -> 150                (* Dimensione in pixel dell'immagine *)
 ]
 
 
