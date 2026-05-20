@@ -12,7 +12,7 @@
 (* :Copyright:        BA 2026                                     *)
 (* :Package Version:  4                                           *)
 (* :Mathematica Ver.: 14.3                                        *)
-(* :History:          last modified 19/05/2026                    *)
+(* :History:          last modified 20/05/2026                    *)
 (* :Keywords:         DynamicModule, interfaccia, gioco           *)
 (* :Discussion: *)
 (* :Requirements: *)
@@ -517,6 +517,7 @@ MostraClassificaGUI[score_Integer] := DynamicModule[
               Button["Salva Punteggio",
                 faseClassifica = 2,  (* Avanza alla fase di conferma *)
                  (* Dynamic qui solo per Enabled \[LongDash] non rivaluta il Column intero *)
+                 (* Dynamic necessaria, influenza solo la variabile nomeUtente in quanto evita situazioni di instabilit\[AGrave] nell'inserimento del nome nella classifica *)
                 Enabled -> Dynamic[StringLength[nomeUtente]] > 0
               ]
             }, Alignment -> Center, BaseStyle -> "Subsection"],
