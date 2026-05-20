@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   7204856,     118476]
-NotebookOptionsPosition[   7202543,     118430]
-NotebookOutlinePosition[   7203466,     118460]
-CellTagsIndexPosition[   7203351,     118454]
+NotebookDataLength[   7204937,     118478]
+NotebookOptionsPosition[   7202571,     118431]
+NotebookOutlinePosition[   7203546,     118462]
+CellTagsIndexPosition[   7203431,     118456]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116782,7 +116782,7 @@ Cell[BoxData[{
   3.9882659789782047`*^9, 3.9882659798473415`*^9}, {3.9882661583974953`*^9, 
   3.988266159056654*^9}, {3.9882662323142815`*^9, 3.9882662333918095`*^9}, {
   3.988266297608118*^9, 3.988266299950428*^9}},
- CellLabel->"In[27]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
+ CellLabel->"In[29]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
 
 Cell[BoxData[
  ButtonBox["\<\"Avvia Gioco\"\>",
@@ -116804,8 +116804,9 @@ Cell[BoxData[
   Evaluator->Automatic,
   ImageSize->{150, 50},
   Method->"Queued"]], "Output",
- CellChangeTimes->{{3.988266304669445*^9, 3.988266334020048*^9}},
- CellLabel->"Out[28]=",ExpressionUUID->"6535802c-514f-0945-95a7-03514a470037"]
+ CellChangeTimes->{{3.988266304669445*^9, 3.988266334020048*^9}, 
+   3.9882670470068893`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"55c4e351-f46c-854c-bfcb-3d7e74a4ee4a"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -118428,11 +118429,12 @@ Cell[BoxData[
  CellTags->
   "GiocoOutput",ExpressionUUID->"5467d628-8e1d-0044-84ad-d324ba489280"]
 },
+WindowSize->{966.8571428571428, 576.8571428571428},
 WindowMargins->{{
   Automatic, -5.14285714285711}, {-5.14285714285711, Automatic}},
 DockedCells->{},
 TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
-Magnification:>0.75 Inherited,
+Magnification:>0.85 Inherited,
 Background->GrayLevel[1],
 FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
@@ -118444,39 +118446,39 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 (*CellTagsOutline
 CellTagsIndex->{
  "Bibliografia"->{
-  Cell[7174291, 117830, 1778, 36, 221, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+  Cell[7174319, 117831, 1778, 36, 250, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
    CellTags->"Bibliografia"]},
  "GiocoOutput"->{
-  Cell[7190218, 118169, 12321, 259, 196, "Output",ExpressionUUID->"5467d628-8e1d-0044-84ad-d324ba489280",
+  Cell[7190246, 118170, 12321, 259, 222, "Output",ExpressionUUID->"5467d628-8e1d-0044-84ad-d324ba489280",
    CellTags->"GiocoOutput"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Bibliografia", 7203041, 118445},
- {"GiocoOutput", 7203192, 118448}
+ {"Bibliografia", 7203121, 118447},
+ {"GiocoOutput", 7203272, 118450}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 7115976, 116686, 317, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[7116533, 116708, 1262, 25, 93, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[554, 20, 7115976, 116686, 359, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
+Cell[7116533, 116708, 1262, 25, 106, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[7117820, 116737, 2007, 47, 14, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
+Cell[7117820, 116737, 2007, 47, 16, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
  CellOpen->False],
-Cell[7119830, 116786, 797, 21, 50, "Output",ExpressionUUID->"6535802c-514f-0945-95a7-03514a470037"]
+Cell[7119830, 116786, 825, 22, 56, "Output",ExpressionUUID->"55c4e351-f46c-854c-bfcb-3d7e74a4ee4a"]
 }, Open  ]],
-Cell[7120642, 116810, 1828, 40, 307, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[7122473, 116852, 1282, 27, 148, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[7123758, 116881, 1764, 39, 185, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[7125525, 116922, 3747, 69, 591, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[7129275, 116993, 1511, 35, 148, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[7130789, 117030, 43499, 798, 1235, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[7174291, 117830, 1778, 36, 221, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+Cell[7120670, 116811, 1828, 40, 348, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[7122501, 116853, 1282, 27, 168, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[7123786, 116882, 1764, 39, 210, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[7125553, 116923, 3747, 69, 669, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[7129303, 116994, 1511, 35, 167, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[7130817, 117031, 43499, 798, 1399, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[7174319, 117831, 1778, 36, 250, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
  CellTags->"Bibliografia"],
-Cell[7176072, 117868, 1845, 38, 258, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"],
-Cell[7177920, 117908, 12295, 259, 196, "Output",ExpressionUUID->"54bc982e-ccd3-4c49-b6fc-0cfa47f786c5"],
-Cell[7190218, 118169, 12321, 259, 196, "Output",ExpressionUUID->"5467d628-8e1d-0044-84ad-d324ba489280",
+Cell[7176100, 117869, 1845, 38, 292, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"],
+Cell[7177948, 117909, 12295, 259, 222, "Output",ExpressionUUID->"54bc982e-ccd3-4c49-b6fc-0cfa47f786c5"],
+Cell[7190246, 118170, 12321, 259, 222, "Output",ExpressionUUID->"5467d628-8e1d-0044-84ad-d324ba489280",
  CellTags->"GiocoOutput"]
 }
 ]
