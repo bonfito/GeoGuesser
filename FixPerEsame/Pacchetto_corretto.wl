@@ -633,10 +633,146 @@ righeTastiera = {
 };
 
 
+
+(* ============================================================== *)
+(* FUNZIONI AUSILIARIE DI RENDERING                               *)
+(* Estraggono blocchi UI da GeneraInterfaccia per ridurne         *)
+(* le dimensioni e migliorare la modularita' del codice.          *)
+(* Usano HoldAll: i simboli del DynamicModule vengono passati     *)
+(* per riferimento, cosi' i Button possono modificarli.           *)
+(* ============================================================== *)
+
+(* ============================================================== *)
+(* TastieraUI                                                     *)
+(* Costruisce la tastiera QWERTY con bottoni colorati.            *)
+(* Verde = lettera indovinata, Rosso = sbagliata, Blu = neutrale  *)
+(*                                                                *)
+(* Parametri (tutti per riferimento tramite HoldAll):             *)
+(*   parola, stato, errori, score, gamemode, maxErrori, messaggio *)
+(* ============================================================== *)
+SetAttributes[TastieraUI, HoldAll]
+TastieraUI[parola_, stato_, errori_, score_, gamemode_, maxErrori_, messaggio_] :=
+  Column[
+    Map[
+      Row[
+        Join[
+          {Spacer[#[[1]] * 25]},
+          Table[
+            With[{l = lettera},
+              Button[
+                Style[l, White, Bold, FontSize -> 16],
+                With[{guess = ToLowerCase[StringTrim[l]]},
+                  {stato, errori, score} = AggiornaStato[parola, stato, guess, score, gamemode, errori];
+                  messaggio = If[MemberQ[parola, guess], "Lettera corretta!", "Lettera sbagliata!"]
+                ],
+                Enabled -> !MemberQ[Join[stato, errori], ToLowerCase[l]] &&
+                           MemberQ[stato, "_"] &&
+                           Length[errori] < maxErrori,
+                Background -> Which[
+                  MemberQ[stato, ToLowerCase[l]], RGBColor[0.2, 0.7, 0.3],
+                  MemberQ[errori, ToLowerCase[l]], RGBColor[0.75, 0.15, 0.15],
+                  True, RGBColor[0.15, 0.35, 0.75]
+                ],
+                ImageSize -> {48, 48}
+              ]
+            ],
+            {lettera, #[[2]]}
+          ]
+        ],
+        Spacer[4]
+      ] &,
+      righeTastiera
+    ],
+    Spacings -> 0.8
+  ]
+
+
+(* ============================================================== *)
+(* GestioneFinaleUI                                               *)
+(* Gestisce la visualizzazione di fine partita:                   *)
+(* vittoria con domanda bonus, o sconfitta con bottone classifica *)
+(*                                                                *)
+(* Parametri (tutti per riferimento tramite HoldAll):             *)
+(*   stato, parola, errori, maxErrori, score,                     *)
+(*   opzioniBonus, faseBonusCompletata, messaggioBonus            *)
+(* ============================================================== *)
+SetAttributes[GestioneFinaleUI, HoldAll]
+GestioneFinaleUI[stato_, parola_, errori_, maxErrori_, score_,
+                 opzioniBonus_, faseBonusCompletata_, messaggioBonus_] :=
+  If[stato === parola || Length[errori] >= maxErrori,
+    Column[{
+      If[stato === parola,
+
+        (* VITTORIA: mostra domanda bonus *)
+        If[!faseBonusCompletata,
+          If[opzioniBonus === {},
+            With[{corretta = dizionarioGeografia[StringJoin[parola]]},
+              opzioniBonus = RandomSample[Join[{corretta},
+                RandomSample[DeleteCases[Values[dizionarioGeografia], corretta], 3]]]
+            ]
+          ];
+          Column[{
+            Spacer[10],
+            Style["Hai vinto!", Green, Bold, 18],
+            Style["Domanda Bonus (+50 punti extra!):", Purple, Bold, 18],
+            Spacer[10],
+            Row[{Style["Qual e' la capitale di ", Black, 16],
+                 Style[Capitalize[StringJoin[parola]], Black, Bold, 16],
+                 Style["?", Black, 16]}],
+            Row[Riffle[
+              Button[Style[Capitalize[#], Orange, Bold, FontSize -> 13],
+                If[# === dizionarioGeografia[StringJoin[parola]],
+                  score = score + 50;
+                  messaggioBonus = "Risposta corretta! Hai guadagnato 50 punti extra.",
+                  messaggioBonus = "Sbagliato! La risposta corretta era: " <>
+                    Capitalize[dizionarioGeografia[StringJoin[parola]]]
+                ];
+                faseBonusCompletata = True,
+                Background -> GrayLevel[0.88], ImageSize -> {120, 36}
+              ] & /@ opzioniBonus,
+              Spacer[10]
+            ]]
+          }, Alignment -> Center],
+
+          (* Bonus completato *)
+          Column[{
+            Spacer[10],
+            Style[messaggioBonus, If[StringContainsQ[messaggioBonus, "punti extra"], Green, Red], Bold],
+            Spacer[10],
+            Button["Salva e Mostra Classifica",
+              SessionSubmit[MostraClassificaGUI[score]],
+              BaseStyle -> {White, Bold, FontSize -> 13},
+              Background -> RGBColor[0.1, 0.4, 0.9],
+              ImageSize -> {240, 42}
+            ]
+          }, Alignment -> Center]
+        ],
+
+        (* SCONFITTA *)
+        Column[{
+          Spacer[10],
+          Style["Hai perso! La nazione era: " <> Capitalize[StringJoin[parola]], Red, Bold],
+          Spacer[10],
+          Button["Salva e Mostra Classifica",
+            SessionSubmit[MostraClassificaGUI[score]],
+            BaseStyle -> {White, Bold, FontSize -> 13},
+            Background -> RGBColor[0.1, 0.4, 0.9],
+            ImageSize -> {240, 42}
+          ]
+        }, Alignment -> Center]
+      ]
+    }],
+    ""  (* Stringa vuota se la partita e' ancora in corso *)
+  ]
+
+
 (* ============================================================== *)
 (* GeneraInterfaccia                                              *)
 (* Funzione principale: genera l'interfaccia interattiva          *)
 (* completa del gioco usando DynamicModule.                       *)
+(* La UI e' suddivisa in funzioni ausiliarie per modularita':     *)
+(*   TastieraUI       : tastiera QWERTY con colori dinamici       *)
+(*   GestioneFinaleUI : vittoria, bonus, sconfitta, classifica    *)
 (*                                                                *)
 (* DynamicModule mantiene le variabili di stato locali e          *)
 (* persistenti per tutta la durata dell'interfaccia:              *)
@@ -809,143 +945,26 @@ GeneraInterfaccia[] := DynamicModule[
         
         Spacer[10],
 
-        (* ---- TASTIERA ---- *)
-        (* Rivalutata dall'esterno Dynamic ad ogni cambio di stato/errori *)
-        Column[
-           (* Map scorre le 3 righe di righeTastiera *)
-            Map[
-             (* Per ogni riga costruisce una Row di bottoni *)
-              Row[
-                Join[
-                  (* Spacer[offset*25] crea l'indentazione della riga *)
-                  {Spacer[#[[1]]*25]}, 
-                  (* Table genera i bottoni per ogni lettera della riga *)
-                  Table[
-                    (* With[{l=lettera},...] cattura il valore corrente di lettera
-                       nel momento in cui il bottone viene creato (closure).
-                       Senza With, tutti i bottoni catturerebbero la stessa lettera
-                       (l'ultima del ciclo Table) *)
-                    With[{l = lettera}, 
-                      Button[
-                        Style[l, White, Bold, FontSize -> 16],
-                        (* Azione al click: With cattura guess localmente senza Module *)
-                        With[{guess = ToLowerCase[StringTrim[l]]}, 
-                          {stato, errori, score} = AggiornaStato[parola, stato, guess, score, gamemode, errori]; 
-                          messaggio = If[MemberQ[parola, guess], "Lettera corretta!", "Lettera sbagliata!"]
-                        ], 
-                        (* Il bottone \[EGrave] disabilitato se:
-                           - la lettera \[EGrave] gi\[AGrave] stata indovinata (in stato)
-                           - la lettera \[EGrave] gi\[AGrave] stata sbagliata (in errori)
-                           - non ci sono pi\[UGrave] lettere da trovare
-                           - gli errori hanno raggiunto il massimo *)
-                        Enabled -> !MemberQ[Join[stato, errori], ToLowerCase[l]] &&
-                          MemberQ[stato, "_"] &&
-                          Length[errori] < maxErrori,
-                        (* Colore dinamico del tasto:
-                           Which valuta le condizioni in ordine e usa la prima vera *)
-                        Background -> Which[
-                          MemberQ[stato, ToLowerCase[l]], RGBColor[0.2, 0.7, 0.3],     (* Verde: lettera indovinata *)
-                          MemberQ[errori, ToLowerCase[l]], RGBColor[0.75, 0.15, 0.15], (* Rosso: lettera sbagliata *)
-                          True, RGBColor[0.15, 0.35, 0.75]                             (* Blu: lettera non ancora usata *)
-                        ],
-                        ImageSize -> {48, 48} (* Dimensione bottone tastiera *)
-                      ]
-                    ],
-                    {lettera, #[[2]]}  (* Itera sulle lettere della riga corrente *)
-                  ]
-                ],
-                Spacer[4]  (* Spaziatura orizzontale tra i bottoni *)
-              ] &,
-              righeTastiera  (* Lista delle 3 righe della tastiera *)
-            ], 
-            Spacings -> 0.8  (* Spaziatura verticale tra le righe *)
-        ],
+       (* ---- TASTIERA ---- *)
+        (* Delegata a TastieraUI \[LongDash] definita sopra con HoldAll
+           cosi' i Button possono modificare stato, errori, score, messaggio *)
+        TastieraUI[parola, stato, errori, score, gamemode, maxErrori, messaggio],
 
         (* ---- GESTIONE FINE PARTITA ---- *)
-        (* Rivalutato dall'esterno Dynamic ad ogni cambio di stato/errori *)
-        If[stato === parola || Length[errori] >= maxErrori, 
-            Column[{
-              If[stato === parola, 
+        (* Delegata a GestioneFinaleUI \[LongDash] definita sopra con HoldAll *)
+        GestioneFinaleUI[stato, parola, errori, maxErrori, score,
+                         opzioniBonus, faseBonusCompletata, messaggioBonus],
 
-                (* GESTIONE VITTORIA E DOMANDA BONUS *)
-                If[!faseBonusCompletata,
-                  (* Genera 4 opzioni random per il Bonus (1 corretta, 3 sbagliate) *)
-                  If[opzioniBonus === {},
-                    With[{corretta = dizionarioGeografia[StringJoin[parola]]},
-                      (* RandomSample sceglie 3 capitali sbagliate ed unisce alla corretta *)
-                      opzioniBonus = RandomSample[Join[{corretta},
-                        RandomSample[DeleteCases[Values[dizionarioGeografia], corretta], 3]]]
-                    ]
-                  ];
-                  (* Mostra la domanda bonus con i 4 bottoni risposta *)
-                  Column[{
-                    Spacer[10],
-                    Style["Hai vinto!", Green, Bold, 18],
-                    Style["Domanda Bonus (+50 punti extra!):", Purple, Bold, 18],
-                    Spacer[10],
-                    (* Capitalize porta la prima lettera in maiuscolo per la visualizzazione *)
-                    Row[{Style["Qual \[EGrave] la capitale di ", Black, 16],Style[Capitalize[StringJoin[parola]], Black, Bold, 16],Style["?", Black, 16]
-                    }],
-                    
-                    (* Generazione bottoni Bonus a scelta multipla *)
-                    Row[Riffle[
-                      Button[Style[Capitalize[#], Orange, Bold, FontSize -> 13],
-                        If[# === dizionarioGeografia[StringJoin[parola]],
-                          score = score + 50;  (* Risposta corretta: +50 punti *)
-                          messaggioBonus = "Risposta corretta! Hai guadagnato 50 punti extra.",
-                          (* Risposta sbagliata: mostra la capitale corretta *)
-                          messaggioBonus = "Sbagliato! La risposta corretta era: " <> Capitalize[dizionarioGeografia[StringJoin[parola]]]
-                        ];
-                        faseBonusCompletata = True; (* Impedisce di rispondere di nuovo *)
-                        Background -> GrayLevel[0.88], ImageSize -> {120, 36}
-                      ] & /@ opzioniBonus, 
-                      Spacer[10] 
-                    ]]
-                  }, Alignment -> Center],
-
-                  (* Bonus completato: mostra feedback e bottone classifica *)
-                  Column[{
-                    Spacer[10],
-                    (* Colore del feedback in base alla correttezza della risposta *)
-                    Style[messaggioBonus, If[StringContainsQ[messaggioBonus, "punti extra"], Green, Red], Bold],
-                    Spacer[10],
-                    (* SessionSubmit lancia MostraClassificaGUI in un thread separato,
-                       fuori dal contesto Dynamic \[LongDash] evita problemi di esecuzione bloccante *)
-                    Button["Salva e Mostra Classifica",
-                      SessionSubmit[MostraClassificaGUI[score]],
-                      BaseStyle -> {White, Bold, FontSize -> 13},
-                      Background -> RGBColor[0.1, 0.4, 0.9],
-                      ImageSize -> {240, 42}
-                    ]
-                  }, Alignment -> Center]
-                ],
-
-                (* SCONFITTA: mostra la nazione e il bottone classifica *)
-                Column[{
-                  Spacer[10],
-                  Style["Hai perso! La nazione era: " <> Capitalize[StringJoin[parola]], Red, Bold],
-                  Spacer[10],
-                  Button["Salva e Mostra Classifica",
-                    SessionSubmit[MostraClassificaGUI[score]],
-                    BaseStyle -> {White, Bold, FontSize -> 13},
-                    Background -> RGBColor[0.1, 0.4, 0.9],
-                    ImageSize -> {240, 42}
-                  ]
-                }, Alignment -> Center]
-              ],
-
-              Spacer[25],
-              (* Pulisci Campi: reimposta stato ed errori per la parola corrente
-                 senza cambiarla \[LongDash] utile per riprovare dopo aver visto la soluzione *)
-              Button["Pulisci Campi",
-                {stato, errori, score} = Pulisci[parola];
-                opzioniBonus = {}; faseBonusCompletata = False; messaggioBonus = "";,
-                BaseStyle -> {White, Bold, FontSize -> 13},
-                Background -> RGBColor[0.2, 0.5, 0.7],
-                ImageSize -> {150, 38}
-              ]
-            }],
-            ""        (* Stringa vuota: non mostra nulla se la partita e' ancora in corso *)
+        (* Pulisci Campi: reimposta stato ed errori per la parola corrente *)
+        If[stato === parola || Length[errori] >= maxErrori,
+          Button["Pulisci Campi",
+            {stato, errori, score} = Pulisci[parola];
+            opzioniBonus = {}; faseBonusCompletata = False; messaggioBonus = "";,
+            BaseStyle -> {White, Bold, FontSize -> 13},
+            Background -> RGBColor[0.2, 0.5, 0.7],
+            ImageSize -> {150, 38}
+          ],
+          ""
         ],
 
         (* Nuova partita: torna alla schermata di selezione e azzera tutto *)
