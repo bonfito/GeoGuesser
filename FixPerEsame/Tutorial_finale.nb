@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   7181866,     117980]
-NotebookOptionsPosition[   7179926,     117940]
-NotebookOutlinePosition[   7180712,     117967]
-CellTagsIndexPosition[   7180632,     117962]
+NotebookDataLength[   7181748,     117978]
+NotebookOptionsPosition[   7179843,     117939]
+NotebookOutlinePosition[   7180594,     117965]
+CellTagsIndexPosition[   7180514,     117960]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116707,14 +116707,12 @@ curriculum B)                             (Anno 1 - curriculum C)             \
   1],ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
 
 Cell[TextData[{
- StyleBox[" Gioco\n",
+ StyleBox[" Gioco",
   FontSize->32,
   FontWeight->"Bold",
   FontColor->RGBColor[0.93, 0.27, 0.27]],
- StyleBox["\t1. Clicca dal Men\[UGrave]: \[OpenCurlyQuote]Evaluation -> \
-Evaluate Notebook\[CloseCurlyQuote], prima di iniziare la partita.\
-\[LineSeparator]\t2. Clicca il bottone \"Avvia Gioco\" che apparir\[AGrave] \
-qui sotto \n\t3. Se appare \"Enable Dynamics?\", accettalo.",
+ StyleBox["\[LineSeparator]\t1. Clicca il bottone \"Avvia Gioco\" che apparir\
+\[AGrave] qui sotto \n\t2. Se appare \"Enable Dynamics?\", accettalo.",
   FontSize->17,
   FontColor->GrayLevel[0.1]]
 }], "Text",
@@ -116729,7 +116727,8 @@ qui sotto \n\t3. Se appare \"Enable Dynamics?\", accettalo.",
    3.985839231116436*^9}, {3.985840146632084*^9, 3.9858401709332104`*^9}, {
    3.985840228906309*^9, 3.9858402553834953`*^9}, {3.9873402088382893`*^9, 
    3.9873402378403463`*^9}, {3.987685968983274*^9, 3.98768601462619*^9}, {
-   3.987687396584449*^9, 3.987687397065979*^9}},
+   3.987687396584449*^9, 3.987687397065979*^9}, {3.988272277693615*^9, 
+   3.988272286142044*^9}},
  Background->GrayLevel[
   1],ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 
@@ -117938,9 +117937,8 @@ per tenere traccia dei propri miglioramenti.",
  Background->GrayLevel[
   1],ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 },
-WindowSize->{966.8571428571428, 576.8571428571428},
-WindowMargins->{{
-  Automatic, -5.14285714285711}, {-5.14285714285711, Automatic}},
+WindowSize->{956.5714285714286, 571.7142857142857},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{},
 TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
 Magnification:>0.75 Inherited,
@@ -117955,36 +117953,34 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 (*CellTagsOutline
 CellTagsIndex->{
  "Bibliografia"->{
-  Cell[7175016, 117845, 1778, 36, 221, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+  Cell[7174933, 117844, 1778, 36, 221, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
    CellTags->"Bibliografia"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Bibliografia", 7180476, 117956}
+ {"Bibliografia", 7180358, 117954}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[554, 20, 7115976, 116686, 317, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
-Cell[7116533, 116708, 1262, 25, 93, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
+Cell[7116533, 116708, 1179, 24, 75, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[7117820, 116737, 2590, 59, 14, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
+Cell[7117737, 116736, 2590, 59, 14, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
  CellOpen->False],
-Cell[7120413, 116798, 939, 24, 50, "Output",ExpressionUUID->"00ef2e34-b7ce-e944-9f48-05d3295ccd6b"]
+Cell[7120330, 116797, 939, 24, 50, "Output",ExpressionUUID->"00ef2e34-b7ce-e944-9f48-05d3295ccd6b"]
 }, Open  ]],
-Cell[7121367, 116825, 1828, 40, 307, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[7123198, 116867, 1282, 27, 148, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[7124483, 116896, 1764, 39, 185, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[7126250, 116937, 3747, 69, 591, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[7130000, 117008, 1511, 35, 148, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[7131514, 117045, 43499, 798, 1235, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[7175016, 117845, 1778, 36, 221, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+Cell[7121284, 116824, 1828, 40, 307, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[7123115, 116866, 1282, 27, 148, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[7124400, 116895, 1764, 39, 185, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[7126167, 116936, 3747, 69, 591, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[7129917, 117007, 1511, 35, 148, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[7131431, 117044, 43499, 798, 1235, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[7174933, 117844, 1778, 36, 221, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
  CellTags->"Bibliografia"],
-Cell[7176797, 117883, 3125, 55, 368, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[7176714, 117882, 3125, 55, 368, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
