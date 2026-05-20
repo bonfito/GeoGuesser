@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   7180060,     117951]
-NotebookOptionsPosition[   7178197,     117912]
-NotebookOutlinePosition[   7178904,     117938]
-CellTagsIndexPosition[   7178824,     117933]
+NotebookDataLength[   7179250,     117938]
+NotebookOptionsPosition[   7177387,     117899]
+NotebookOutlinePosition[   7178094,     117925]
+CellTagsIndexPosition[   7178014,     117920]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -116745,71 +116745,58 @@ Cell[BoxData[{
    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
  RowBox[{
   RowBox[{"Get", "[", "\"\<Pacchetto_corretto.wl\>\"", "]"}], ";"}], "\n", 
- RowBox[{"DynamicModule", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"cliccato", "=", "False"}], "}"}], ",", 
-   RowBox[{"Button", "[", 
-    RowBox[{"\"\<Avvia Gioco\>\"", ",", 
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{"!", "cliccato"}], ",", 
-       RowBox[{
-        RowBox[{"CellPrint", "[", 
-         RowBox[{"ExpressionCell", "[", 
-          RowBox[{
-           RowBox[{"GeneraInterfaccia", "[", "]"}], ",", "\"\<Output\>\""}], 
-          "]"}], "]"}], ";", 
-        RowBox[{"cliccato", "=", "True"}], ";"}]}], "]"}], ",", 
-     RowBox[{"Enabled", "->", 
-      RowBox[{"Dynamic", "[", 
-       RowBox[{"!", "cliccato"}], "]"}]}], ",", 
-     RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", 
-     RowBox[{"ImageSize", "->", 
-      RowBox[{"{", 
-       RowBox[{"150", ",", "50"}], "}"}]}], ",", 
-     RowBox[{"Background", "->", 
-      RowBox[{"RGBColor", "[", 
-       RowBox[{"0.1`", ",", "0.4`", ",", "0.9`"}], "]"}]}], ",", 
-     RowBox[{"BaseStyle", "->", 
-      RowBox[{"{", 
-       RowBox[{"White", ",", "Bold", ",", 
-        RowBox[{"FontSize", "->", "16"}]}], "}"}]}]}], "]"}]}], 
-  "]"}]}], "Input",
+ RowBox[{
+  RowBox[{"giocoAvviato", "=", "False"}], ";"}], "\n", 
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Avvia Gioco\>\"", ",", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"!", "giocoAvviato"}], ",", 
+     RowBox[{
+      RowBox[{"giocoAvviato", "=", "True"}], ";", 
+      RowBox[{"CellPrint", "[", 
+       RowBox[{"ExpressionCell", "[", 
+        RowBox[{
+         RowBox[{"GeneraInterfaccia", "[", "]"}], ",", "\"\<Output\>\""}], 
+        "]"}], "]"}]}]}], "]"}], ",", 
+   RowBox[{"Enabled", "->", 
+    RowBox[{"Dynamic", "[", 
+     RowBox[{"!", "giocoAvviato"}], "]"}]}], ",", 
+   RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", 
+   RowBox[{"ImageSize", "->", 
+    RowBox[{"{", 
+     RowBox[{"150", ",", "50"}], "}"}]}], ",", 
+   RowBox[{"Background", "->", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"0.1`", ",", "0.4`", ",", "0.9`"}], "]"}]}], ",", 
+   RowBox[{"BaseStyle", "->", 
+    RowBox[{"{", 
+     RowBox[{"White", ",", "Bold", ",", 
+      RowBox[{"FontSize", "->", "16"}]}], "}"}]}]}], "]"}]}], "Input",
+ InitializationCellEvaluation->True,
+ InitializationCellWarning->False,
  CellOpen->False,
  CellChangeTimes->{{3.9858392419526634`*^9, 3.985839337558592*^9}},
- CellLabel->"In[11]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
+ CellLabel->"In[49]:=",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`cliccato$$ = False}, 
-  ButtonBox["\<\"Avvia Gioco\"\>",
-   Appearance->Automatic,
-   Background->RGBColor[0.1, 0.4, 0.9],
-   BaseStyle->{
-     GrayLevel[1], Bold, FontSize -> 16},
-   ButtonFunction:>If[
-     Not[$CellContext`cliccato$$], CellPrint[
-       ExpressionCell[
-        HangmanGame`GeneraInterfaccia[], "Output"]]; $CellContext`cliccato$$ = 
-      True; Null],
-   Enabled->Dynamic[
-     Not[$CellContext`cliccato$$]],
-   Evaluator->Automatic,
-   ImageSize->{150, 50},
-   Method->"Queued"],
-  DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{{3.9875737932456217`*^9, 3.98757380544016*^9}, 
-   3.987580284199943*^9, 3.987580344180171*^9, 3.987580658679132*^9, 
-   3.9876002295993176`*^9, 3.987602032475361*^9, 3.987685842606348*^9, 
-   3.987687698890567*^9, {3.9876893865891113`*^9, 3.987689390656489*^9}, 
-   3.98804631731106*^9, 3.9880818412849464`*^9, 3.9880842003495464`*^9, 
-   3.9880845801286697`*^9, 3.9880896319409437`*^9, 3.9880896860405684`*^9, 
-   3.988089809094157*^9, 3.988089976203595*^9, 3.988090234303576*^9, 
-   3.988090316773814*^9, 3.988091163237041*^9, 3.9880914224116096`*^9, {
-   3.988091482536689*^9, 3.988091521565387*^9}, 3.9880922456684027`*^9, 
-   3.988169614329176*^9, 3.98816990246271*^9, 3.9881699880124397`*^9, 
-   3.9881700464358*^9},
- CellLabel->"Out[15]=",ExpressionUUID->"bdce772a-1713-4c01-af43-cfc19a181232"]
+ ButtonBox["\<\"Avvia Gioco\"\>",
+  Appearance->Automatic,
+  Background->RGBColor[0.1, 0.4, 0.9],
+  BaseStyle->{
+    GrayLevel[1], Bold, FontSize -> 16},
+  ButtonFunction:>If[
+    Not[$CellContext`giocoAvviato], $CellContext`giocoAvviato = True; 
+    CellPrint[
+      ExpressionCell[
+       HangmanGame`GeneraInterfaccia[], "Output"]]],
+  Enabled->Dynamic[
+    Not[$CellContext`giocoAvviato]],
+  Evaluator->Automatic,
+  ImageSize->{150, 50},
+  Method->"Queued"]], "Output",
+ CellChangeTimes->{3.988265406265402*^9, 3.98826545193969*^9},
+ CellLabel->"Out[54]=",ExpressionUUID->"c15ce6f7-bd3a-492c-b1f0-a7d509a7ea42"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -117926,13 +117913,13 @@ ExpressionUUID->"1f4f49b3-77f9-1d44-b50c-4029361f40e3"
 (*CellTagsOutline
 CellTagsIndex->{
  "Bibliografia"->{
-  Cell[7174567, 117834, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+  Cell[7173757, 117821, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
    CellTags->"Bibliografia"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Bibliografia", 7178668, 117927}
+ {"Bibliografia", 7177858, 117914}
  }
 *)
 (*NotebookFileOutline
@@ -117940,19 +117927,19 @@ Notebook[{
 Cell[554, 20, 7115976, 116686, 528, "Text",ExpressionUUID->"e68983e0-46e1-0d4e-9338-3f0ee091783d"],
 Cell[7116533, 116708, 1262, 25, 156, "Text",ExpressionUUID->"582b1ab8-2703-4c05-9eef-e6ab983f7114"],
 Cell[CellGroupData[{
-Cell[7117820, 116737, 1673, 43, 23, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
+Cell[7117820, 116737, 1641, 42, 23, "Input",ExpressionUUID->"30ba4fdd-dc94-4bd1-9cef-fe2303d387b6",
  CellOpen->False],
-Cell[7119496, 116782, 1407, 29, 83, "Output",ExpressionUUID->"bdce772a-1713-4c01-af43-cfc19a181232"]
+Cell[7119464, 116781, 629, 17, 83, "Output",ExpressionUUID->"c15ce6f7-bd3a-492c-b1f0-a7d509a7ea42"]
 }, Open  ]],
-Cell[7120918, 116814, 1828, 40, 512, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
-Cell[7122749, 116856, 1282, 27, 248, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
-Cell[7124034, 116885, 1764, 39, 308, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
-Cell[7125801, 116926, 3747, 69, 929, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
-Cell[7129551, 116997, 1511, 35, 244, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
-Cell[7131065, 117034, 43499, 798, 2058, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
-Cell[7174567, 117834, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
+Cell[7120108, 116801, 1828, 40, 512, "Text",ExpressionUUID->"a2cf4ed4-8e98-2244-a2be-22e64bc08852"],
+Cell[7121939, 116843, 1282, 27, 248, "Text",ExpressionUUID->"c6da6e88-2037-be42-abe5-6f1cb2d9dae3"],
+Cell[7123224, 116872, 1764, 39, 308, "Text",ExpressionUUID->"c1d52f11-e0af-304c-b931-3923f58b8f58"],
+Cell[7124991, 116913, 3747, 69, 1016, "Text",ExpressionUUID->"8b9859a0-bc1f-4913-8f0f-331c59ce4f3b"],
+Cell[7128741, 116984, 1511, 35, 244, "Text",ExpressionUUID->"b8a5fdc3-dfff-48f4-accd-b0d2c30c0c9d"],
+Cell[7130255, 117021, 43499, 798, 2058, "Text",ExpressionUUID->"3305120a-741e-0d47-82f9-1966b7df78d8"],
+Cell[7173757, 117821, 1778, 36, 419, "Text",ExpressionUUID->"79d8cb74-d9a4-4994-b884-9d2a243c0812",
  CellTags->"Bibliografia"],
-Cell[7176348, 117872, 1845, 38, 441, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
+Cell[7175538, 117859, 1845, 38, 441, "Text",ExpressionUUID->"db7db663-06b5-4cc5-b716-e753132fb25d"]
 }
 ]
 *)
