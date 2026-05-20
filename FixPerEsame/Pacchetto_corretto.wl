@@ -244,31 +244,6 @@ Pulisci[stato_List] := Module[
 
 
 (* ============================================================== *)
-(* HaCaratteriNonAmmessiQ                                         *)
-(* Predicato: restituisce True se la stringa s contiene           *)
-(* caratteri accentati o apostrofi, che non sono sulla tastiera   *)
-(* standard e causerebbero problemi nell'input                    *)
-(*                                                                *)
-(* Parametri:                                                     *)
-(*   s : stringa da controllare                                   *)
-(*                                                                *)
-(* Restituisce: True / False                                      *)
-(* ============================================================== *)
-HaCaratteriNonAmmessiQ[s_] := Module[ 
-{ 
-    (* Lista di tutti i caratteri accentati da controllare *)
-	accenti = {"\[AGrave]", "\[EGrave]", "\[IGrave]", "\[OGrave]", "\[UGrave]", "\[AAcute]", "\[EAcute]", "\[IAcute]", "\[OAcute]", "\[UAcute]"} 
-},
-
-    (* Alternatives @@ accenti costruisce un pattern OR tra tutti gli accenti.
-	   StringContainsQ torna True se almeno uno e' presente nella stringa.
-	   || include anche l'apostrofo come carattere non ammesso *)
-	StringContainsQ[s, Alternatives @@ accenti] || StringContainsQ[s, "'"]
-];
-
-
-
-(* ============================================================== *)
 (* InizializzaStato                                               *)
 (* Crea lo stato iniziale del gioco: una lista di "_"             *)
 (* lunga quanto la parola da indovinare.                          *)
